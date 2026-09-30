@@ -1184,7 +1184,7 @@ function buildOrganisationGraph() {
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: '인젝션 특수방수', description: '누수 경로 추적, 우레탄 인젝션, 배면 그라우팅, 액상고무 도막방수', url: absUrl(SITE_URL, 'waterproof.html') } },
         /* 세 전문 분야 아래의 공정별 상세 — 각각 전용 페이지가 있습니다. */
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: '제주 에폭시 균열보수 · 저압주입', description: '비구조부 균열보수, 구조부 에폭시 저압주입, 에폭시 기계식 인젝션', url: absUrl(SITE_URL, 'epoxy-crack-repair.html') } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: '제주 탄소섬유 보강 · CFRP 구조보강', description: '구조검토와 보강설계에 따른 탄소섬유시트(CFRP) 부착 보강. 철판·강재보강은 전문 협력팀 연계', url: absUrl(SITE_URL, 'carbon-fiber-reinforcement.html') } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: '제주 탄소섬유 보강 · CFRP 구조보강', description: '구조검토와 보강설계에 따른 탄소섬유시트(CFRP) 부착 보강. 철판·강재보강 전문시공', url: absUrl(SITE_URL, 'carbon-fiber-reinforcement.html') } },
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: '제주 콘크리트 표면강화 · 발수코팅', description: '표면강화와 경화·분진억제, 침투형 발수코팅, 수분·염분 침투 저감', url: absUrl(SITE_URL, 'concrete-surface-protection.html') } },
         /* 콘채 제주총판 — 시공과 함께 자재를 공급합니다. 근거가 있는 사실만 적습니다. */
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: '노출콘크리트 면보수재 콘채 공급 · 기술지원', description: '제주도 콘채 총판. 노출콘크리트 보수재·색보정 마감재 공급과 배합·시공 기술지원', url: absUrl(SITE_URL, 'materials.html') } }

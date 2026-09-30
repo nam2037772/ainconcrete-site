@@ -110,7 +110,7 @@ window.SITE = {
       items: ['비구조부 균열보수', '구조부 에폭시 저압주입', '구조부 에폭시 기계식 인젝션'],
       link: 'epoxy-crack-repair.html', linkText: '에폭시 균열보수' },
     { no: '03', title: '구조 보강',
-      items: ['탄소섬유시트(CFRP)', '철판·강재보강 — 전문 협력팀 연계'],
+      items: ['탄소섬유시트(CFRP)', '철판·강재보강 전문시공'],
       link: 'carbon-fiber-reinforcement.html', linkText: '탄소섬유 보강' },
     { no: '04', title: '콘크리트 복원',
       items: ['철근부식·박락 단면복구', '노출콘크리트 면보수·외관복원'],
