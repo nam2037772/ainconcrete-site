@@ -52,7 +52,7 @@ body{background:#fff;color:var(--ink);font-family:var(--font-ko);font-weight:300
 .brand__text strong{font-family:var(--font-serif);font-size:1.12rem;font-weight:500;letter-spacing:.04em;color:var(--ink)!important}
 /* 브랜드 아래 한 줄 — 한글 서브라인. 영문용 자간(.28em)을 한글에 그대로 쓰면
    글자가 흩어지고 헤더 폭을 넘깁니다. 홈(home-inline.css .brand span)과 같은 값. */
-.brand__text em{margin-top:.3em;font-size:.66rem;font-weight:400;letter-spacing:.02em;color:var(--color-gray-dark)!important;white-space:nowrap}
+.brand__text em{margin-top:.25em;font-size:.8rem;font-weight:400;line-height:1.4;letter-spacing:.02em;color:#444!important;white-space:nowrap}
 .gnb{margin-left:auto;gap:0}.gnb__list{gap:clamp(14px,1.5vw,24px)}
 .gnb__list>li>a,.gnb__shop,.gnb__quote{min-height:44px;padding:.3em 0;border:0;background:transparent;font-size:.82rem;font-weight:400;letter-spacing:.03em;color:var(--ink-2);white-space:nowrap}
 .gnb__list>li>a[aria-current=page]{font-weight:500;color:var(--ink)}

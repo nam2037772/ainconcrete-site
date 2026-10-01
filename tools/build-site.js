@@ -1005,7 +1005,7 @@ ${docs}
 <footer class="footer">
   <div class="wrap footer__grid">
     <div class="footer__brand">
-      <b>${esc(c.brand)}</b>
+      <b>${esc(c.footerBrand || c.brand)}</b>
       <span>${esc(c.footerSummary)}</span>
       <p class="trust">${esc(c.trustLine)}</p>
       <p class="tel">${esc(c.tel)}</p>
@@ -1033,7 +1033,7 @@ ${linkList(channels)}
     </nav>
   </div>
   <div class="footer__bottom">
-    <small>© <span id="year">2026</span> ${esc(c.brand)}. All rights reserved.</small>
+    <small>© <span id="year">2026</span> ${esc(c.footerBrand || c.brand)}. All rights reserved.</small>
     <small>${esc(c.slogan)}</small>
   </div>
 </footer>

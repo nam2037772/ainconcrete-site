@@ -101,7 +101,7 @@ ul,ol{list-style:none}
    자간만 벌어진 채 헤더 폭을 넘깁니다(390px 에서 약 206px). 한글에 맞춰
    자간을 좁히고 uppercase 를 뺍니다. uppercase 는 한글에 효과가 없으면서
    섞여 들어오는 영문만 대문자로 바꿔 표기가 갈라집니다. */
-.brand span{font-size:.66rem;letter-spacing:.02em;color:var(--sub);margin-top:.3em;white-space:nowrap}
+.brand span{font-size:.8rem;font-weight:400;line-height:1.4;letter-spacing:.02em;color:#444;margin-top:.25em;white-space:nowrap}
 
 .nav{display:flex;align-items:center;gap:clamp(18px,1.9vw,30px)}
 .nav a{font-size:.84rem;letter-spacing:.04em;font-weight:400;color:var(--ink-2);

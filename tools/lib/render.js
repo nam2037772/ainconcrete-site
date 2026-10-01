@@ -95,7 +95,7 @@ function footer(prefix, COMPANY, EXTERNAL_LINKS) {
   <div class="wrap footer__grid">
     <div class="footer__brand">
       <img src="${prefix}assets/images/brand/logo.png" alt="${esc(COMPANY.brand)} 로고" width="40" height="40" loading="lazy" />
-      <p class="footer__name">${esc(COMPANY.brand)}</p>
+      <p class="footer__name">${esc(COMPANY.footerBrand || COMPANY.brand)}</p>
       <p class="footer__tag">${esc(COMPANY.footerSummary)}</p>
       <p class="footer__trust">${esc(COMPANY.trustLine)}</p>
       <p class="footer__tel"><a href="${esc(COMPANY.telHref)}">대표전화 ${esc(COMPANY.tel)}</a></p>
@@ -137,7 +137,7 @@ ${ext('blog', '네이버 블로그')}${ext('youtube', '유튜브')}${ext('instag
     </nav>
   </div>
   <div class="wrap footer__bottom">
-    <small>© <span data-year>2026</span> ${esc(COMPANY.brand)}. All rights reserved.</small>
+    <small>© <span data-year>2026</span> ${esc(COMPANY.footerBrand || COMPANY.brand)}. All rights reserved.</small>
     <small data-business-number>${esc(legalLine(COMPANY))}</small>
   </div>
 </footer>
