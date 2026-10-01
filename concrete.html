@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>제주 노출콘크리트 보수·복원 · 면보수 공정 | 제주노출콘크리트</title>
-<meta name="description" content="제주 노출콘크리트 보수와 복원 공정. 곰보·기포 면보수, 층조인트 단차 보정, 색상 및 패턴 복원, 오염·백화 하자보수까지 공정별 판단 기준과 시공 순서를 공개합니다. 제주도 노출콘크리트 면보수, 덮지 않고 다시 만들어 넣는 보수." />
+<title>제주 노출콘크리트 보수 · 면보수 · 색상복원 | 제주노출콘크리트</title>
+<meta name="description" content="제주 노출콘크리트 보수 · 미관복원. 곰보·기포 면보수, 층조인트 단차 보정, 색상 및 질감 복원, 오염·백화 하자보수까지 공정별 판단 기준과 시공 순서를 공개합니다. 도장으로 덮지 않고 노출콘크리트의 표정을 다시 만들어 넣습니다." />
 <link rel="canonical" href="https://ainconcrete.com/concrete.html" />
 <meta name="robots" content="index, follow" />
 <meta name="theme-color" content="#111111" />
 <meta property="og:type" content="article" />
 <meta property="og:site_name" content="제주노출콘크리트" />
-<meta property="og:title" content="제주 노출콘크리트 보수·복원 · 면보수 공정 | 제주노출콘크리트" />
+<meta property="og:title" content="제주 노출콘크리트 보수 · 면보수 · 색상복원 | 제주노출콘크리트" />
 <meta property="og:description" content="곰보·기포 면보수부터 색상 및 패턴 복원, 오염·백화 하자보수, 발수 처리까지. 제주도 노출콘크리트 보수의 공정별 기준을 공개합니다." />
 <meta property="og:image" content="https://ainconcrete.com/assets/images/hero/hero-1.jpg" />
 <meta property="og:url" content="https://ainconcrete.com/concrete.html" />
@@ -19,28 +19,97 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "제주 노출콘크리트 보수·복원",
-  "alternateName": ["제주 노출콘크리트 면보수", "제주도 노출콘크리트 면보수", "제주 노출콘크리트 하자보수", "노출콘크리트 표면 결함 복원"],
-  "serviceType": "노출콘크리트 표면 결함 복원",
-  "areaServed": { "@type": "AdministrativeArea", "name": "제주특별자치도" },
-  "description": "제주 노출콘크리트 면보수와 복원. 곰보·기포 보수, 층조인트 단차 보정, 색상 및 패턴 복원, 오염·백화 하자보수, 발수 및 표면 보호. 결함을 덮지 않고 주변 면의 질감과 색을 읽어 다시 만들어 넣는 보수입니다.",
-  "url": "https://ainconcrete.com/concrete.html",
-  "provider": { "@id": "https://ainconcrete.com/#organization" },
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "공정별 시공 범위",
-    "itemListElement": [
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "곰보 및 기포 보수" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "층조인트 및 단차 보정" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "색상 및 패턴 복원" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "발수 및 표면 보호", "url": "https://ainconcrete.com/concrete-surface-protection.html" } }
-    ]
-  },
-  "isRelatedTo": [
-    { "@type": "Service", "name": "콘크리트 보수보강", "url": "https://ainconcrete.com/reinforcement.html" },
-    { "@type": "Service", "name": "인젝션 특수방수", "url": "https://ainconcrete.com/waterproof.html" },
-    { "@type": "Service", "name": "제주 콘크리트 표면강화 · 발수코팅", "url": "https://ainconcrete.com/concrete-surface-protection.html" }
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "제주 노출콘크리트 보수·복원",
+      "alternateName": [
+        "제주 노출콘크리트 면보수",
+        "제주도 노출콘크리트 면보수",
+        "제주 노출콘크리트 하자보수",
+        "노출콘크리트 표면 결함 복원"
+      ],
+      "serviceType": "노출콘크리트 표면 결함 복원",
+      "areaServed": {
+        "@type": "AdministrativeArea",
+        "name": "제주특별자치도"
+      },
+      "description": "제주 노출콘크리트 면보수와 복원. 곰보·기포 보수, 층조인트 단차 보정, 색상 및 패턴 복원, 오염·백화 하자보수, 발수 및 표면 보호. 결함을 덮지 않고 주변 면의 질감과 색을 읽어 다시 만들어 넣는 보수입니다.",
+      "url": "https://ainconcrete.com/concrete.html",
+      "provider": {
+        "@id": "https://ainconcrete.com/#organization"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "공정별 시공 범위",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "곰보 및 기포 보수"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "층조인트 및 단차 보정"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "색상 및 패턴 복원"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "발수 및 표면 보호",
+              "url": "https://ainconcrete.com/concrete-surface-protection.html"
+            }
+          }
+        ]
+      },
+      "isRelatedTo": [
+        {
+          "@type": "Service",
+          "name": "콘크리트 보수보강",
+          "url": "https://ainconcrete.com/reinforcement.html"
+        },
+        {
+          "@type": "Service",
+          "name": "인젝션 특수방수",
+          "url": "https://ainconcrete.com/waterproof.html"
+        },
+        {
+          "@type": "Service",
+          "name": "제주 콘크리트 표면강화 · 발수코팅",
+          "url": "https://ainconcrete.com/concrete-surface-protection.html"
+        }
+      ],
+      "@id": "https://ainconcrete.com/concrete.html#service"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://ainconcrete.com/concrete.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "HOME",
+          "item": "https://ainconcrete.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "제주노출콘크리트"
+        }
+      ]
+    }
   ]
 }
 </script>
@@ -59,17 +128,17 @@
   <div class="header__bar">
     <a class="brand" href="index.html">
       <img class="brand__mark" src="assets/images/brand/logo.png" alt="" width="38" height="38" />
-      <span class="brand__text"><strong>제주노출콘크리트</strong><em>제주 노출콘크리트 보수·복원 전문</em></span>
+      <span class="brand__text"><strong>제주노출콘크리트</strong><em>노출콘크리트 · 콘크리트 보수보강 전문</em></span>
     </a>
     <nav class="gnb" id="gnb" aria-label="주요 메뉴">
       <ul class="gnb__list">
         <li><a href="index.html">HOME</a></li>
-        <li><a href="concrete.html" aria-current="page">노출콘크리트 보수</a></li>
-        <li><a href="reinforcement.html">콘크리트 보수보강</a></li>
-        <li><a href="waterproof.html">인젝션 특수방수</a></li>
+        <li><a href="concrete.html" aria-current="page">제주노출콘크리트</a></li>
+        <li><a href="reinforcement.html">제주콘크리트보수보강</a></li>
+        <li><a href="waterproof.html">인젝션·특수방수</a></li>
         <li><a href="projects.html">시공사례</a></li>
         <li><a href="resources.html">기술자료</a></li>
-        <li><a href="materials.html">자재 구매</a></li>
+        <li><a href="materials.html">자재구매</a></li>
         <li><a href="about.html">회사소개</a></li>
         <li><a class="gnb__quote" href="contact.html">상담문의</a></li>
       </ul>
@@ -89,7 +158,7 @@
   <div class="phero__media"><img src="assets/images/hero/hero-1.jpg" alt="문구 없이 촬영된 노출콘크리트 벽면" width="1600" height="900" fetchpriority="high" /></div>
   <div class="phero__inner">
     <p class="eyebrow">EXPOSED CONCRETE</p>
-    <h1 class="h1">노출콘크리트 면보수</h1>
+    <h1 class="h1" style="max-width:none">제주 노출콘크리트 보수<br />면보수 · 색상복원</h1>
     <p class="phero__desc">덮지 않고 되살립니다. 제주 현장의 조건에서 표면의 결과 색을 다시 만드는 일.</p>
   </div>
 </section>
@@ -97,7 +166,7 @@
 <nav class="wrap" aria-label="현재 위치">
   <ol class="crumb">
     <li><a href="index.html">HOME</a></li>
-    <li>노출콘크리트 보수</li>
+    <li>제주노출콘크리트</li>
   </ol>
 </nav>
 
@@ -106,6 +175,8 @@
     <div class="intro__body reveal">
       <p class="lead">노출콘크리트 보수는 “무엇을 채웠는가”가 아니라 “무엇을 다시 만들었는가”로 평가됩니다.</p>
       <p>표면을 덮는 도장 마감과 달리, 노출콘크리트는 보수 흔적이 그대로 드러납니다. 그래서 결함 자체보다 주변 면을 읽는 시간이 더 필요합니다. 제주노출콘크리트는 결함부만 보지 않고 벽면 전체의 톤 범위와 질감 밀도를 먼저 기록한 뒤 작업 계획을 세웁니다.</p>
+      <h2 class="h3" id="vs-reinforcement" style="margin-top:1.6em">노출콘크리트 보수와 콘크리트 보수보강은 무엇이 다른가요?</h2>
+      <p><strong>노출콘크리트 보수는 곰보 · 단차 · 얼룩처럼 표면의 미관을 색과 질감까지 복원하는 작업이고, 균열 · 박락 · 철근노출 · 내력 부족 같은 구조적 손상은 콘크리트 보수보강에서 다룹니다.</strong> 두 가지가 함께 있는 현장은 <a href="reinforcement.html">제주 콘크리트 보수보강</a>으로 구조를 먼저 바로잡은 뒤, 마지막에 노출콘크리트 면보수로 표정을 되살립니다.</p>
     </div>
   </div>
 </section>
@@ -116,7 +187,7 @@
   <div class="wrap">
     <header class="section__head reveal">
       <p class="eyebrow">FREQUENT QUESTIONS</p>
-      <h2 class="h2">자주 받는 질문</h2>
+      <h2 class="h2">노출콘크리트 보수<br />자주 묻는 질문</h2>
     </header>
     <dl class="qa reveal">
       <div>
@@ -134,6 +205,10 @@
       <div>
         <dt>층조인트 단차는 갈아내나요, 채우나요?</dt>
         <dd>단차의 방향에 따라 다릅니다. 밀려 나온 단차는 연마로, 들어간 단차는 충전으로 처리합니다. 라인은 눈으로 맞추지 않고 먹줄과 레이저 기준선으로 잡습니다.</dd>
+      </div>
+      <div>
+        <dt>노출콘크리트에 균열이나 철근 노출이 있으면 면보수만 하면 되나요?</dt>
+        <dd>아니요. 구조적 손상을 먼저 보수한 뒤 면보수로 마감합니다. 균열은 거동 여부를 확인해 주입 · 충전하고, 철근이 보이는 부위는 방청과 단면복구를 거친 다음 색과 질감을 맞춥니다. 구조 보수 공정은 <a href="reinforcement.html">제주 콘크리트 보수보강</a>에 정리했습니다.</dd>
       </div>
     </dl>
   </div>
@@ -252,21 +327,22 @@
     <div class="footer__brand">
       <img src="assets/images/brand/logo.png" alt="제주노출콘크리트 로고" width="40" height="40" loading="lazy" />
       <p class="footer__name">제주노출콘크리트</p>
-      <p class="footer__tag">노출콘크리트 보수·복원 · 콘크리트 보수보강 · 인젝션 특수방수 전문</p>
+      <p class="footer__tag">제주 노출콘크리트 보수 · 콘크리트 보수보강(철판·강재보강 포함) · 인젝션 특수방수 전문</p>
       <p class="footer__trust">(주)아인산업안전 · 제주도 콘채 총판</p>
       <p class="footer__tel"><a href="tel:16604019">대표전화 1660-4019</a></p>
       <address>제주특별자치도 서귀포시 성산읍 풍천로 142, 103호</address>
     </div>
-    <!-- 전문 분야 — 상단 메뉴(분야 3개)가 아니라 실제 공종 6개를 적습니다.
-         공종별 상세 페이지가 생긴 뒤로 메뉴 3줄만으로는 에폭시 주입·CFRP·표면보호가
-         전역 어디에서도 닿지 않았습니다. 옆 칼럼(바로가기)도 6줄이라 높이가 맞습니다.
-         철근부식·단면복구는 상세 페이지가 없으므로 허브의 해당 절로 보냅니다.
-         철판·강재보강은 협력 공종이라 여기 넣지 않고 허브 안에서만 밝힙니다. -->
+    <!-- 전문 분야 — 핵심 두 축(노출콘크리트 · 콘크리트 보수보강)을 맨 위에 두고,
+         그 아래에 공종별 상세 페이지를 적습니다. 메뉴만으로는 에폭시 주입·CFRP·
+         표면보호 같은 공종 페이지가 전역 어디에서도 닿지 않기 때문입니다.
+         철근부식·단면복구와 철판·강재보강은 상세 페이지가 없으므로 허브의 해당 절로 보냅니다. -->
     <nav class="footer__col" aria-label="전문 분야">
       <h2 class="footer__ttl">전문 분야</h2>
       <ul>
-        <li><a href="concrete.html">노출콘크리트 보수·복원</a></li>
+        <li><a href="concrete.html">제주노출콘크리트 보수·복원</a></li>
+        <li><a href="reinforcement.html">제주콘크리트보수보강</a></li>
         <li><a href="epoxy-crack-repair.html">에폭시 균열주입</a></li>
+        <li><a href="reinforcement.html#steel">철판 · 강재보강</a></li>
         <li><a href="carbon-fiber-reinforcement.html">CFRP 탄소섬유 구조보강</a></li>
         <li><a href="reinforcement.html#rebar">철근부식 · 단면복구</a></li>
         <li><a href="waterproof.html">우레탄 인젝션 특수방수</a></li>
@@ -278,7 +354,7 @@
       <ul>
         <li><a href="projects.html">시공사례</a></li>
         <li><a href="resources.html">기술자료</a></li>
-        <li><a href="materials.html">자재 구매</a></li>
+        <li><a href="materials.html">자재구매</a></li>
         <li><a href="about.html">회사소개</a></li>
         <li><a href="contact.html">상담문의</a></li>
         <li><a href="privacy.html">개인정보처리방침</a></li>
@@ -307,7 +383,7 @@
 </div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<script src="assets/js/config.js?v=9b3fe379"></script>
+<script src="assets/js/config.js?v=27b16800"></script>
 <script src="assets/js/projects.js?v=4e56a9ad"></script>
 <script src="assets/js/case-images.js?v=6d82e8d9"></script>
 <script src="assets/js/main.js?v=814a7f04"></script>

@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>제주 콘크리트 보수보강 · 균열보수 · 단면복구 | 제주노출콘크리트</title>
-<meta name="description" content="제주도 콘크리트 보수보강 전문. 균열보수와 에폭시 주입, 단면복구, 철근노출 및 박락 보수까지. 구조물 손상의 진행 여부를 먼저 진단한 뒤 원인에 맞는 공법으로 보수·보강합니다. 제주 콘크리트 보수보강 상담 1660-4019." />
+<title>제주 콘크리트 보수보강 · 균열보수 · 단면복구 · 철판보강 | 제주노출콘크리트</title>
+<meta name="description" content="제주 콘크리트 보수보강 전문 시공. 균열보수와 에폭시 인젝션, 단면복구, 철근노출·박락 보수부터 보·기둥·슬래브의 철판·강재보강과 탄소섬유보강까지. 손상 원인을 먼저 진단하고, 보강은 구조검토에 따라 시공합니다. 상담 1660-4019." />
 <link rel="canonical" href="https://ainconcrete.com/reinforcement.html" />
 <meta name="robots" content="index, follow" />
 <meta name="theme-color" content="#111111" />
 <meta property="og:type" content="article" />
 <meta property="og:site_name" content="제주노출콘크리트" />
-<meta property="og:title" content="제주 콘크리트 보수보강 · 균열보수 · 단면복구 | 제주노출콘크리트" />
-<meta property="og:description" content="균열보수·에폭시 주입부터 단면복구, 철근노출 및 박락 보수까지. 제주도 구조물 보수보강의 진단 기준과 공정을 공개합니다." />
+<meta property="og:title" content="제주 콘크리트 보수보강 · 균열보수 · 단면복구 · 철판보강 | 제주노출콘크리트" />
+<meta property="og:description" content="균열보수·에폭시 인젝션, 단면복구부터 보·기둥·슬래브의 철판·강재보강, 탄소섬유보강까지. 제주 콘크리트 구조물 보수보강의 진단 기준과 공정을 공개합니다." />
 <meta property="og:image" content="https://ainconcrete.com/assets/images/hero/tech-crack.jpg" />
 <meta property="og:url" content="https://ainconcrete.com/reinforcement.html" />
 <meta property="og:locale" content="ko_KR" />
@@ -19,30 +19,46 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "제주 콘크리트 보수보강",
-  "alternateName": ["제주도 콘크리트 보수보강", "제주도 보수보강", "제주도 구조물 보수보강", "제주도 균열보수", "균열보수", "단면복구"],
-  "serviceType": "콘크리트 구조물 보수보강",
-  "areaServed": { "@type": "AdministrativeArea", "name": "제주특별자치도" },
-  "description": "제주도 콘크리트 보수보강. 균열보수와 저압 에폭시 주입, 단면복구, 철근노출 및 박락 보수까지. 균열과 박락의 진행 여부를 먼저 진단한 뒤, 원인에 맞는 공법으로 보수·보강합니다. 현장 조건에 따라 탄소섬유 보강 등 추가 보강 공법을 별도로 검토합니다.",
-  "url": "https://ainconcrete.com/reinforcement.html",
-  "provider": { "@id": "https://ainconcrete.com/#organization" },
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "공정별 시공 범위",
-    "itemListElement": [
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "균열보수 및 에폭시 주입" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "단면복구" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "철근노출 및 박락 보수" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "탄소섬유시트(CFRP) 구조보강", "url": "https://ainconcrete.com/carbon-fiber-reinforcement.html" } }
-    ]
-  },
-  "isRelatedTo": [
-    { "@type": "Service", "name": "제주 노출콘크리트 보수·복원", "url": "https://ainconcrete.com/concrete.html" },
-    { "@type": "Service", "name": "인젝션 특수방수", "url": "https://ainconcrete.com/waterproof.html" },
-    { "@type": "Service", "name": "제주 에폭시 균열보수 · 저압주입", "url": "https://ainconcrete.com/epoxy-crack-repair.html" },
-    { "@type": "Service", "name": "제주 탄소섬유 보강 · CFRP 구조보강", "url": "https://ainconcrete.com/carbon-fiber-reinforcement.html" },
-    { "@type": "Service", "name": "제주 콘크리트 표면강화 · 발수코팅", "url": "https://ainconcrete.com/concrete-surface-protection.html" }
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://ainconcrete.com/reinforcement.html#service",
+      "name": "제주 콘크리트 보수보강",
+      "alternateName": ["제주콘크리트보수보강", "제주도 콘크리트 보수보강", "제주 구조물 보수보강", "제주 콘크리트 보강", "제주 균열보수", "제주 철판보강", "제주 강재보강"],
+      "serviceType": "콘크리트 구조물 보수보강",
+      "areaServed": { "@type": "AdministrativeArea", "name": "제주특별자치도" },
+      "description": "제주 콘크리트 보수보강. 균열보수와 에폭시 인젝션, 단면복구, 철근노출 및 박락 보수로 손상된 부위를 복원하고, 내력 보강이 필요한 보·기둥·슬래브는 구조기술자의 검토와 보강설계에 따라 철판·강재보강 또는 탄소섬유보강으로 시공합니다.",
+      "url": "https://ainconcrete.com/reinforcement.html",
+      "provider": { "@id": "https://ainconcrete.com/#organization" },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "주요 보수보강 공법",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "콘크리트 균열보수", "url": "https://ainconcrete.com/reinforcement.html#crack" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "에폭시 인젝션 (저압주입 · 기계식 인젝션)", "url": "https://ainconcrete.com/epoxy-crack-repair.html" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "단면복구", "url": "https://ainconcrete.com/reinforcement.html#section" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "철근노출 및 박락 보수", "url": "https://ainconcrete.com/reinforcement.html#rebar" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "철판보강 · 강재보강", "url": "https://ainconcrete.com/reinforcement.html#steel" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "탄소섬유시트(CFRP) 구조보강", "url": "https://ainconcrete.com/carbon-fiber-reinforcement.html" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "보 · 기둥 · 슬래브 구조보강", "url": "https://ainconcrete.com/reinforcement.html#members" } }
+        ]
+      },
+      "isRelatedTo": [
+        { "@type": "Service", "name": "제주 노출콘크리트 보수·복원", "url": "https://ainconcrete.com/concrete.html" },
+        { "@type": "Service", "name": "인젝션 특수방수", "url": "https://ainconcrete.com/waterproof.html" },
+        { "@type": "Service", "name": "제주 에폭시 균열보수 · 저압주입", "url": "https://ainconcrete.com/epoxy-crack-repair.html" },
+        { "@type": "Service", "name": "제주 탄소섬유 보강 · CFRP 구조보강", "url": "https://ainconcrete.com/carbon-fiber-reinforcement.html" },
+        { "@type": "Service", "name": "제주 콘크리트 표면강화 · 발수코팅", "url": "https://ainconcrete.com/concrete-surface-protection.html" }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://ainconcrete.com/reinforcement.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "HOME", "item": "https://ainconcrete.com/" },
+        { "@type": "ListItem", "position": 2, "name": "제주콘크리트보수보강" }
+      ]
+    }
   ]
 }
 </script>
@@ -61,17 +77,17 @@
   <div class="header__bar">
     <a class="brand" href="index.html">
       <img class="brand__mark" src="assets/images/brand/logo.png" alt="" width="38" height="38" />
-      <span class="brand__text"><strong>제주노출콘크리트</strong><em>제주 노출콘크리트 보수·복원 전문</em></span>
+      <span class="brand__text"><strong>제주노출콘크리트</strong><em>노출콘크리트 · 콘크리트 보수보강 전문</em></span>
     </a>
     <nav class="gnb" id="gnb" aria-label="주요 메뉴">
       <ul class="gnb__list">
         <li><a href="index.html">HOME</a></li>
-        <li><a href="concrete.html">노출콘크리트 보수</a></li>
-        <li><a href="reinforcement.html" aria-current="page">콘크리트 보수보강</a></li>
-        <li><a href="waterproof.html">인젝션 특수방수</a></li>
+        <li><a href="concrete.html">제주노출콘크리트</a></li>
+        <li><a href="reinforcement.html" aria-current="page">제주콘크리트보수보강</a></li>
+        <li><a href="waterproof.html">인젝션·특수방수</a></li>
         <li><a href="projects.html">시공사례</a></li>
         <li><a href="resources.html">기술자료</a></li>
-        <li><a href="materials.html">자재 구매</a></li>
+        <li><a href="materials.html">자재구매</a></li>
         <li><a href="about.html">회사소개</a></li>
         <li><a class="gnb__quote" href="contact.html">상담문의</a></li>
       </ul>
@@ -96,15 +112,15 @@
   </picture></div>
   <div class="phero__inner">
     <p class="eyebrow">STRUCTURAL REPAIR &amp; REINFORCEMENT</p>
-    <h1 class="h1">콘크리트 보수보강</h1>
-    <p class="phero__desc">덮는 보수와 구조를 되살리는 보수는 다릅니다. 제주도 현장에서 균열과 박락의 진행을 먼저 진단합니다.</p>
+    <h1 class="h1" style="max-width:none">제주 콘크리트 보수보강<br />전문 시공</h1>
+    <p class="phero__desc">균열보수 · 단면복구 · 에폭시 인젝션부터 철판·강재보강, 탄소섬유보강까지. 덮는 보수가 아니라 구조를 되살리는 보수보강을 제주 현장에서 시공합니다.</p>
   </div>
 </section>
 
 <nav class="wrap" aria-label="현재 위치">
   <ol class="crumb">
     <li><a href="index.html">HOME</a></li>
-    <li>콘크리트 보수보강</li>
+    <li>제주콘크리트보수보강</li>
   </ol>
 </nav>
 
@@ -112,66 +128,63 @@
   <div class="wrap">
     <div class="intro__body reveal">
       <p class="lead">콘크리트 보수보강은 “겉이 메워졌는가”가 아니라 “안쪽의 손상이 멈췄는가”로 평가됩니다.</p>
-      <p>균열은 폭이 아니라 진행 여부가 먼저입니다. 철근이 노출되거나 콘크리트가 박락된 부위는 방치할수록 해풍과 염분이 철근에 닿는 경로가 넓어집니다. 제주노출콘크리트는 손상의 원인을 먼저 진단한 뒤, 균열보수·단면복구·철근 보수를 원인에 맞는 순서로 진행합니다.</p>
+      <h2 class="h3" id="repair-vs-strengthening" style="margin-top:1.6em">콘크리트 보수와 보강의 차이는 무엇인가요?</h2>
+      <p><strong>콘크리트 보수는 균열 · 박락 · 철근노출처럼 손상된 부분을 원래 상태로 복원하는 작업이고, 콘크리트 보강은 기존 구조물의 내력이나 구조성능을 높이는 작업입니다.</strong></p>
+      <p>균열을 에폭시로 채우거나 떨어져 나간 단면을 복구하는 일은 보수입니다. 하중이 늘었거나 처짐 · 균열로 보 · 기둥 · 슬래브의 내력이 부족하다고 판단될 때 철판 · 강재나 탄소섬유를 덧대는 일은 보강입니다. 실제 현장은 둘이 함께 필요한 경우가 많아, 제주노출콘크리트는 손상의 원인을 먼저 진단한 뒤 보수와 보강을 원인에 맞는 순서로 진행합니다. 보강 여부와 보강량은 구조기술자의 검토와 보강설계가 정합니다.</p>
     </div>
   </div>
 </section>
 
-<!-- 보수보강 서비스 — 이 페이지가 무엇의 허브인지 한 번에 보이게 하는 목록입니다.
-     아래 '공정별 시공 기준'은 각 공종을 어떻게 시공하는지, '증상별 공법 선택 가이드'는
-     지금 보이는 증상이 어느 갈래인지를 다룹니다. 여기는 그 앞에 놓이는 색인입니다.
-
-     여섯 줄의 마크업을 일부러 똑같이 맞췄습니다. 상세 페이지가 있는 공종(01·02·05)만
-     크게 보이면 상세 페이지가 없는 공종(03·04)이 '안 하는 일'로 읽힙니다.
-     상세 페이지가 있든 없든 같은 층위로 적고, 갈 곳만 다르게 둡니다. -->
-<section class="section section--mist" id="services">
+<!-- 콘크리트 보수보강이 필요한 경우 — 검색으로 들어온 사람이 '내 현장이 여기에 해당하는가'를
+     먼저 확인하도록 서비스 목록 앞에 둡니다. -->
+<section class="section section--mist" id="when">
   <div class="wrap">
-    <header class="section__head section__head--row reveal">
-      <div><p class="eyebrow">SERVICE SCOPE</p><h2 class="h2">보수보강<br />서비스 범위</h2></div>
-      <p class="section__desc">제주 현장에서 실제로 시공하는 여섯 갈래입니다. 한 현장에 여러 갈래가 함께 필요한 경우가 많아, 진단 결과에 따라 순서를 정해 조합합니다.</p>
+    <header class="section__head reveal">
+      <p class="eyebrow">CHECK POINT</p>
+      <h2 class="h2">콘크리트 보수보강이<br />필요한 경우</h2>
     </header>
     <ol class="strength">
-      <li class="strength__item reveal"><p class="strength__no">SERVICE 01</p><h3 class="strength__ttl">균열보수 · 에폭시 주입</h3><p class="strength__text">비구조부 균열보수, 구조부 에폭시 저압주입, 구조부 에폭시 기계식 인젝션. 균열의 거동 여부와 누수 여부를 먼저 확인한 뒤 방식을 나눕니다.</p><p class="strength__text"><a class="link-arrow" href="epoxy-crack-repair.html">에폭시 균열보수 자세히 보기</a></p></li>
-      <li class="strength__item reveal"><p class="strength__no">SERVICE 02</p><h3 class="strength__ttl">CFRP 탄소섬유 구조보강</h3><p class="strength__text">보·슬래브·기둥·벽체의 탄소섬유시트 부착 보강. 보강량과 섬유 방향, 정착은 구조검토와 보강설계가 정하며, 당사는 그 설계도서에 따라 시공합니다.</p><p class="strength__text"><a class="link-arrow" href="carbon-fiber-reinforcement.html">CFRP 탄소섬유 보강 자세히 보기</a></p></li>
-      <li class="strength__item reveal"><p class="strength__no">SERVICE 03</p><h3 class="strength__ttl">철근부식 · 박락 · 단면복구</h3><p class="strength__text">철근노출, 박락, 단면결손 부위의 열화부 제거와 방청 처리, 단면복구. 녹을 그대로 덮으면 안에서 팽창이 계속돼 다시 박락됩니다.</p><p class="strength__text"><a class="link-arrow" href="#rebar">이 페이지의 시공 기준 보기</a></p><p class="strength__text"><a class="link-arrow" href="guide/rebar-corrosion-spalling-repair-015.html">철근부식 · 박락 보수공정 기술자료</a></p></li>
-      <li class="strength__item reveal"><p class="strength__no">SERVICE 04</p><h3 class="strength__ttl">철판 · 강재보강 전문시공</h3><p class="strength__text">철판보강, 강재보강, H빔 등 구조보강 공사를 구조설계와 현장 조건에 맞춰 전문 장비와 숙련 인력으로 시공합니다.</p><p class="strength__text"><a class="link-arrow" href="#partnership">전문시공 범위 보기</a></p></li>
-      <li class="strength__item reveal"><p class="strength__no">SERVICE 05</p><h3 class="strength__ttl">표면강화 · 발수보호</h3><p class="strength__text">표면강화와 침투형 발수코팅으로 수분·염분 침투를 줄입니다. 균열·박락 등 원인을 보수한 뒤에 적용하는 마지막 공정입니다.</p><p class="strength__text"><a class="link-arrow" href="concrete-surface-protection.html">표면강화 · 발수보호 자세히 보기</a></p></li>
-      <li class="strength__item reveal"><p class="strength__no">SERVICE 06</p><h3 class="strength__ttl">누수 균열</h3><p class="strength__text">물이 흐르는 균열은 우레탄 인젝션으로 지수를 먼저 검토합니다. 물이 남아 있으면 에폭시가 균열면에 붙지 못합니다.</p><p class="strength__text"><a class="link-arrow" href="waterproof.html">인젝션 특수방수 자세히 보기</a></p></li>
+      <li class="strength__item reveal"><p class="strength__no">CASE 01</p><h3 class="strength__ttl">균열이 진행 중인 구조물</h3><p class="strength__text">폭이 서서히 벌어지거나 균열을 따라 백태·박락이 함께 나타나는 현장.</p></li>
+      <li class="strength__item reveal"><p class="strength__no">CASE 02</p><h3 class="strength__ttl">철근이 노출·박락된 부위</h3><p class="strength__text">피복이 떨어져 나가 철근이 드러나고 녹이 진행되는 현장.</p></li>
+      <li class="strength__item reveal"><p class="strength__no">CASE 03</p><h3 class="strength__ttl">단면 결손이 있는 부위</h3><p class="strength__text">모서리·바닥판 등이 깨지거나 떨어져 나가 단면 자체가 줄어든 현장.</p></li>
+      <li class="strength__item reveal"><p class="strength__no">CASE 04</p><h3 class="strength__ttl">노후 구조물 보수보강 검토</h3><p class="strength__text">사용 연수가 오래돼 여러 부위의 손상 정도와 보강 필요 여부를 함께 진단해야 하는 현장.</p></li>
+      <li class="strength__item reveal"><p class="strength__no">CASE 05</p><h3 class="strength__ttl">보 · 슬래브의 내력 보강이 필요한 경우</h3><p class="strength__text">용도 변경이나 설비 추가로 하중이 늘었거나, 처짐 · 휨균열이 나타나 구조검토에서 보강이 필요하다고 판단된 보 · 슬래브 · 기둥.</p></li>
+    </ol>
+    <div class="section__more">
+      <a class="btn btn--dark" href="contact.html">콘크리트 보수보강 상담하기</a>
+      <a class="btn btn--line" href="waterproof.html">누수가 함께 있다면 인젝션 특수방수</a>
+    </div>
+  </div>
+</section>
+
+<!-- 주요 보수보강 공법 — 이 페이지가 무엇의 허브인지 한 번에 보이게 하는 목록입니다.
+     아래 '공정별 시공 기준'은 각 공종을 어떻게 시공하는지, '현장 조사와 보강공법 선정'은
+     지금 보이는 증상이 어느 갈래인지를 다룹니다. 여기는 그 앞에 놓이는 색인입니다.
+
+     모든 줄의 마크업을 일부러 똑같이 맞췄습니다. 상세 페이지가 있는 공종만 크게 보이면
+     상세 페이지가 없는 공종(단면복구 · 철판·강재보강)이 '안 하는 일'로 읽힙니다.
+     상세 페이지가 있든 없든 같은 층위로 적고, 갈 곳만 다르게 둡니다. -->
+<section class="section" id="services">
+  <div class="wrap">
+    <header class="section__head section__head--row reveal">
+      <div><p class="eyebrow">SERVICE SCOPE</p><h2 class="h2">주요<br />보수보강 공법</h2></div>
+      <p class="section__desc">제주 현장에서 실제로 시공하는 공법입니다. 한 현장에 여러 공법이 함께 필요한 경우가 많아, 진단 결과에 따라 순서를 정해 조합합니다.</p>
+    </header>
+    <ol class="strength">
+      <li class="strength__item reveal"><p class="strength__no">SERVICE 01</p><h3 class="strength__ttl">콘크리트 균열보수</h3><p class="strength__text">비구조부 균열은 표면 충전 · 실링으로, 구조균열은 에폭시 주입으로 나눕니다. 균열의 거동 여부와 누수 여부를 먼저 확인한 뒤 방식을 정합니다.</p><p class="strength__text"><a class="link-arrow" href="#crack">균열보수 시공 기준 보기</a></p></li>
+      <li class="strength__item reveal"><p class="strength__no">SERVICE 02</p><h3 class="strength__ttl">에폭시 인젝션</h3><p class="strength__text">구조부 에폭시 저압주입과 기계식 인젝션. 건조한 비거동 구조균열의 내부를 채워 콘크리트를 다시 일체화합니다.</p><p class="strength__text"><a class="link-arrow" href="epoxy-crack-repair.html">에폭시 균열보수 · 저압주입 알아보기</a></p></li>
+      <li class="strength__item reveal"><p class="strength__no">SERVICE 03</p><h3 class="strength__ttl">단면복구 · 철근부식 보수</h3><p class="strength__text">철근노출, 박락, 단면결손 부위의 열화부 제거와 방청 처리, 단면복구. 녹을 그대로 덮으면 안에서 팽창이 계속돼 다시 박락됩니다.</p><p class="strength__text"><a class="link-arrow" href="#rebar">단면복구 시공 기준 보기</a></p><p class="strength__text"><a class="link-arrow" href="guide/rebar-corrosion-spalling-repair-015.html">철근부식 · 박락 보수공정 기술자료</a></p></li>
+      <li class="strength__item reveal"><p class="strength__no">SERVICE 04</p><h3 class="strength__ttl">철판보강 · 강재보강</h3><p class="strength__text">보 · 기둥 · 슬래브 등 기존 콘크리트 구조물의 내력 보강이 필요한 경우, 현장 조건과 구조 상태를 확인하고 구조설계에 따라 철판 · 강재 · H빔 보강을 전문 장비와 숙련 인력으로 시공합니다.</p><p class="strength__text"><a class="link-arrow" href="#steel">철판보강 시공 알아보기</a></p></li>
+      <li class="strength__item reveal"><p class="strength__no">SERVICE 05</p><h3 class="strength__ttl">탄소섬유보강 (CFRP)</h3><p class="strength__text">보 · 슬래브 · 기둥 · 벽체의 탄소섬유시트 부착 보강. 보강량과 섬유 방향, 정착은 구조검토와 보강설계가 정하며, 당사는 그 설계도서에 따라 시공합니다.</p><p class="strength__text"><a class="link-arrow" href="carbon-fiber-reinforcement.html">탄소섬유보강 시공 알아보기</a></p></li>
+      <li class="strength__item reveal"><p class="strength__no">SERVICE 06</p><h3 class="strength__ttl">보 · 기둥 · 슬래브 구조보강</h3><p class="strength__text">부재마다 손상 양상과 보강 방식이 다릅니다. 보의 휨 · 전단, 슬래브 하부, 기둥 구속 보강을 구조검토 결과에 맞춰 철판 · 강재 또는 탄소섬유로 시공합니다.</p><p class="strength__text"><a class="link-arrow" href="#members">부재별 보강 방식 보기</a></p></li>
+      <li class="strength__item reveal"><p class="strength__no">SERVICE 07</p><h3 class="strength__ttl">기타 구조물 보수 · 표면보호</h3><p class="strength__text">옹벽 · 계단 · 지하구조물 등 콘크리트 구조물의 손상 보수와, 보수를 마친 면의 표면강화 · 침투형 발수코팅으로 수분 · 염분 침투를 줄입니다.</p><p class="strength__text"><a class="link-arrow" href="concrete-surface-protection.html">표면강화 · 발수보호 알아보기</a></p></li>
+      <li class="strength__item reveal"><p class="strength__no">SERVICE 08</p><h3 class="strength__ttl">누수 균열</h3><p class="strength__text">물이 흐르는 균열은 우레탄 인젝션으로 지수를 먼저 검토합니다. 물이 남아 있으면 에폭시가 균열면에 붙지 못합니다.</p><p class="strength__text"><a class="link-arrow" href="waterproof.html">인젝션 특수방수 알아보기</a></p></li>
     </ol>
     <div class="section__more">
       <a class="btn btn--dark" href="epoxy-crack-repair.html">에폭시 균열보수 자세히 보기</a>
       <a class="btn btn--line" href="carbon-fiber-reinforcement.html">CFRP 탄소섬유 보강 자세히 보기</a>
       <a class="btn btn--line" href="concrete-surface-protection.html">표면강화 · 발수보호 자세히 보기</a>
     </div>
-  </div>
-</section>
-
-<!-- 자주 받는 질문 — 답은 모두 아래 '공정별 시공 기준' 본문에 있는 내용입니다.
-     새로 지어낸 설명은 없습니다. -->
-<section class="section">
-  <div class="wrap">
-    <header class="section__head reveal">
-      <p class="eyebrow">FREQUENT QUESTIONS</p>
-      <h2 class="h2">자주 받는 질문</h2>
-    </header>
-    <dl class="qa reveal">
-      <div>
-        <dt>균열 폭이 크지 않은데도 보수가 필요한가요?</dt>
-        <dd>폭보다 중요한 것은 “움직이는가”입니다. 균열게이지로 거동 여부를 먼저 확인합니다. 폭이 작아도 거동 중이거나 해안가처럼 염분 침투 우려가 있는 환경이면 방치할수록 내부 손상이 커집니다.</dd>
-      </div>
-      <div>
-        <dt>철근이 보이는데 그 부분만 메우면 되나요?</dt>
-        <dd>안 됩니다. 노출된 철근에 녹이 있으면 방청 처리부터 먼저 하고, 들뜨거나 박락된 콘크리트를 완전히 제거한 뒤 단면을 복구합니다. 녹을 그대로 덮으면 안에서 팽창이 계속돼 다시 박락됩니다.</dd>
-      </div>
-      <div>
-        <dt>균열보수와 인젝션 방수는 어떻게 다른가요?</dt>
-        <dd>목적이 다릅니다. 균열보수의 저압 에폭시 주입은 균열 내부를 채워 구조적으로 다시 붙이는 작업이고, 인젝션 특수방수의 우레탄 인젝션은 물길을 막는 작업입니다. 누수가 함께 있는 균열은 두 공법을 순서대로 함께 검토합니다.</dd>
-      </div>
-      <div>
-        <dt>탄소섬유 보강도 하나요?</dt>
-        <dd>모든 현장에 기본으로 적용하는 공정은 아닙니다. 균열보수와 단면복구만으로 구조 성능 회복이 부족하다고 진단되는 경우에 한해, 현장 조건에 맞춰 별도로 검토해 안내해 드립니다.</dd>
-      </div>
-    </dl>
   </div>
 </section>
 
@@ -187,7 +200,7 @@
         <div class="tech__media"><img src="assets/images/hero/tech-crack.jpg" alt="균열 내부에 에폭시를 저압 주입하는 모습" loading="lazy" width="800" height="500" /></div>
         <div class="tech__body">
           <p class="tech__no">01</p>
-          <h3 class="tech__ttl">균열보수 · 에폭시 주입</h3>
+          <h3 class="tech__ttl">균열보수와 에폭시 인젝션</h3>
           <p class="tech__en">CRACK REPAIR &amp; EPOXY INJECTION</p>
           <p class="tech__text">균열게이지로 거동 여부를 먼저 확인합니다. 비거동 균열은 균열의 폭·깊이·수분 상태·구조적 영향과 보수 목적을 확인한 뒤 주입, 충전 등 적합한 공법을 선정합니다. 거동 균열은 변형 추종성이 있는 실링·충전 시스템을 검토합니다. 에폭시 주입은 균열 내부를 채워 구조적으로 다시 붙이는 것이 목적입니다.</p>
           <p class="tech__text"><a class="link-arrow" href="epoxy-crack-repair.html">에폭시 저압주입 · 기계식 인젝션 자세히 보기</a></p>
@@ -197,7 +210,7 @@
         <div class="tech__media"><img src="assets/images/hero/concrete-detail.jpg" alt="단면이 결손된 콘크리트 부위를 복구하는 모습" loading="lazy" width="800" height="500" /></div>
         <div class="tech__body">
           <p class="tech__no">02</p>
-          <h3 class="tech__ttl">단면복구</h3>
+          <h3 class="tech__ttl">콘크리트 단면복구</h3>
           <p class="tech__en">SECTION REPAIR</p>
           <p class="tech__text">박락되거나 들뜬 콘크리트는 건전한 면이 나올 때까지 완전히 제거한 뒤 단면복구재로 채웁니다. 한 번에 두껍게 채우지 않고 여러 층으로 나눠 다지며, 각 층이 안정된 뒤 다음 층을 올립니다.</p>
         </div>
@@ -215,13 +228,59 @@
         <div class="tech__media"><img src="assets/images/hero/tech-joint.jpg" alt="구조 보강 검토가 필요한 콘크리트 부재" loading="lazy" width="800" height="500" /></div>
         <div class="tech__body">
           <p class="tech__no">04</p>
-          <h3 class="tech__ttl">탄소섬유 보강 <small style="font-weight:400">(현장 진단 후 검토)</small></h3>
-          <p class="tech__en">OPTIONAL — CASE BY CASE</p>
-          <p class="tech__text">균열보수와 단면복구만으로 구조 성능 회복이 부족하다고 판단되는 경우, 탄소섬유 시트 보강 같은 추가 공법을 현장 진단 후 별도로 검토합니다. 모든 현장에 기본으로 포함하는 공정은 아닙니다. 보강량과 섬유 방향, 정착은 구조검토와 보강설계가 정하며, 철판·강재보강은 전문 장비와 숙련 인력으로 시공합니다.</p>
+          <h3 class="tech__ttl">탄소섬유보강 <small style="font-weight:400">(구조검토 후 시공)</small></h3>
+          <p class="tech__en">CFRP STRENGTHENING</p>
+          <p class="tech__text">균열보수와 단면복구만으로 구조 성능 회복이 부족하다고 판단되는 경우, 탄소섬유 시트 보강 같은 추가 공법을 현장 진단 후 별도로 검토합니다. 모든 현장에 기본으로 포함하는 공정은 아닙니다. 보강량과 섬유 방향, 정착은 구조검토와 보강설계가 정합니다. 강판 · 강재가 더 적합한 부재는 <a href="#steel">철판보강 · 강재보강</a>으로 시공합니다.</p>
           <p class="tech__text"><a class="link-arrow" href="carbon-fiber-reinforcement.html">CFRP 탄소섬유 보강 자세히 보기</a></p>
         </div>
       </article>
     </div>
+  </div>
+</section>
+
+<!-- 철판보강 · 강재보강 — 실제 문의(보 철판보강)가 들어오는 주요 공종입니다.
+     부가 항목처럼 보이지 않도록 독립 구간으로 둡니다.
+     구조안전성 판단 · 보강설계는 구조기술자의 몫이라는 점을 같은 구간에 함께 밝힙니다. -->
+<section class="section" id="steel">
+  <div class="wrap">
+    <header class="section__head section__head--row reveal">
+      <div><p class="eyebrow">STEEL PLATE &amp; STEEL REINFORCEMENT</p><h2 class="h2">철판보강 및<br />강재보강</h2></div>
+      <p class="section__desc">보 · 기둥 · 슬래브 등 기존 콘크리트 구조물의 내력 보강이 필요한 경우, 현장 조건과 구조 상태를 확인하고 적절한 강재보강 방법을 검토해 시공합니다.</p>
+    </header>
+    <div class="intro__body reveal">
+      <h3 class="h3">철판보강은 어떤 경우에 필요한가요?</h3>
+      <p><strong>하중 증가, 처짐, 휨 · 전단 균열 등으로 보 · 슬래브의 내력이 부족하다고 판단될 때, 부재 표면에 강판을 앵커와 에폭시로 일체화해 내력을 보완하는 공법입니다.</strong></p>
+      <p>용도 변경으로 하중이 늘어난 보, 개구부를 새로 뚫은 슬래브, 처짐이나 균열이 진행된 부재가 대표적입니다. 강판 대신 H빔 등 강재를 덧대 지지하는 방식이 필요한 현장도 있으며, 철판 · 강재보강은 전문 장비와 숙련 인력으로 직접 시공합니다.</p>
+    </div>
+    <ul class="facts reveal" style="margin-top:clamp(28px,4vw,44px)">
+      <li><strong>현장 확인</strong><span>부재 치수 · 손상 상태 · 철근 위치 확인, 작업 공간과 장비 반입 조건 점검</span></li>
+      <li><strong>바탕면 처리</strong><span>열화부 제거 · 단면복구 · 균열 주입 뒤 접착면 정리</span></li>
+      <li><strong>강판 · 강재 설치</strong><span>설계도서에 따른 앵커 천공과 강판 고정, H빔 등 강재 설치</span></li>
+      <li><strong>일체화 · 방청</strong><span>공법에 따른 에폭시 주입 · 충전, 방청 도장과 마감</span></li>
+    </ul>
+    <div class="intro__body reveal" style="margin-top:clamp(28px,4vw,44px)">
+      <p><strong>구조안전성 판단과 보강설계는 구조기술자의 검토가 필요합니다.</strong> 강판 두께 · 앵커 배치 · 보강 범위는 구조검토와 보강설계로 정해지며, 당사는 그 설계도서에 따라 시공합니다. 검토가 아직 없는 현장이라면 어떤 조사와 검토가 필요한지 먼저 안내해 드립니다.</p>
+    </div>
+    <div class="section__more">
+      <a class="btn btn--dark" href="contact.html">철판보강 현장 상담하기</a>
+      <a class="btn btn--line" href="#partnership">구조설계 연계 방식 보기</a>
+    </div>
+  </div>
+</section>
+
+<!-- 부재별 보강 — 보 · 슬래브 · 기둥처럼 부재로 찾는 사람을 위한 색인.
+     공법을 확정하지 않고 '검토'로 끝냅니다. -->
+<section class="section section--mist" id="members">
+  <div class="wrap">
+    <header class="section__head section__head--row reveal">
+      <div><p class="eyebrow">BEAM · COLUMN · SLAB</p><h2 class="h2">보 · 기둥 · 슬래브<br />구조보강</h2></div>
+      <p class="section__desc">부재마다 손상 양상과 보강 방식이 다릅니다. 보강 방식과 보강량은 부재의 손상 상태와 구조검토 결과로 정해집니다.</p>
+    </header>
+    <ol class="strength">
+      <li class="strength__item reveal"><p class="strength__no">MEMBER 01</p><h3 class="strength__ttl">보 보강</h3><p class="strength__text">휨 · 전단 내력이 부족한 보는 하부 인장측에 철판이나 탄소섬유시트를 붙이거나, 측면에 전단 보강을 하는 방식을 구조검토에 따라 적용합니다.</p><p class="strength__text"><a class="link-arrow" href="#steel">보 철판보강 알아보기</a></p></li>
+      <li class="strength__item reveal"><p class="strength__no">MEMBER 02</p><h3 class="strength__ttl">슬래브 보강</h3><p class="strength__text">처짐이나 하부 균열이 나타난 슬래브는 하부면에 탄소섬유시트나 강판을 부착하는 방식을 검토합니다. 철근부식 · 박락이 있으면 단면복구를 먼저 합니다.</p><p class="strength__text"><a class="link-arrow" href="carbon-fiber-reinforcement.html">슬래브 탄소섬유보강 알아보기</a></p></li>
+      <li class="strength__item reveal"><p class="strength__no">MEMBER 03</p><h3 class="strength__ttl">기둥 보강</h3><p class="strength__text">기둥은 탄소섬유시트를 감아 구속하거나 강재로 둘러싸는 방식을 검토합니다. 단면 결손이 있으면 먼저 복구한 뒤 보강합니다.</p><p class="strength__text"><a class="link-arrow" href="carbon-fiber-reinforcement.html">기둥 구속보강 알아보기</a></p></li>
+    </ol>
   </div>
 </section>
 
@@ -231,15 +290,15 @@
 <section class="section" id="method-guide">
   <div class="wrap">
     <header class="section__head section__head--row reveal">
-      <div><p class="eyebrow">METHOD GUIDE</p><h2 class="h2">증상별<br />공법 선택 가이드</h2></div>
-      <p class="section__desc">지금 보이는 증상이 어느 갈래로 이어지는지 정리했습니다. 어느 줄에 해당하는지 모르셔도 됩니다 — 현장 사진을 보내주시면 함께 확인합니다.</p>
+      <div><p class="eyebrow">METHOD GUIDE</p><h2 class="h2">현장 조사와<br />보강공법 선정</h2></div>
+      <p class="section__desc">증상별로 먼저 검토하는 공법을 정리했습니다. 어느 줄에 해당하는지 모르셔도 됩니다 — 현장 사진을 보내주시면 함께 확인합니다.</p>
     </header>
     <ol class="strength">
       <li class="strength__item reveal"><p class="strength__no">SYMPTOM 01</p><h3 class="strength__ttl">물이 흐르는 균열</h3><p class="strength__text">우레탄 인젝션으로 지수를 먼저 검토합니다. 물이 남아 있으면 에폭시가 균열면에 붙지 못합니다.</p><p class="strength__text"><a class="link-arrow" href="waterproof.html">인젝션 특수방수</a></p></li>
       <li class="strength__item reveal"><p class="strength__no">SYMPTOM 02</p><h3 class="strength__ttl">건조한 비거동 구조균열</h3><p class="strength__text">에폭시 저압주입 또는 기계식 인젝션을 검토합니다. 부재 두께와 균열 깊이에 따라 방식이 갈립니다.</p><p class="strength__text"><a class="link-arrow" href="epoxy-crack-repair.html">에폭시 균열보수</a></p></li>
       <li class="strength__item reveal"><p class="strength__no">SYMPTOM 03</p><h3 class="strength__ttl">표면 미세균열</h3><p class="strength__text">비구조부 균열보수로 검토합니다. 미관과 침투 저감이 목적이면 표면 충전·면보수로 충분한 경우가 많습니다.</p><p class="strength__text"><a class="link-arrow" href="epoxy-crack-repair.html">균열보수 판단 기준</a></p></li>
       <li class="strength__item reveal"><p class="strength__no">SYMPTOM 04</p><h3 class="strength__ttl">철근노출 · 박락</h3><p class="strength__text">철근 녹 제거와 방청 처리 뒤 단면복구를 검토합니다. 녹을 덮으면 안에서 팽창이 계속됩니다.</p><p class="strength__text"><a class="link-arrow" href="#rebar">철근노출 및 박락 보수</a></p></li>
-      <li class="strength__item reveal"><p class="strength__no">SYMPTOM 05</p><h3 class="strength__ttl">구조내력 부족</h3><p class="strength__text">CFRP 탄소섬유 보강이나 강재보강을 검토합니다. 보강 여부와 보강량은 구조검토가 정합니다.</p><p class="strength__text"><a class="link-arrow" href="carbon-fiber-reinforcement.html">CFRP 구조보강</a></p></li>
+      <li class="strength__item reveal"><p class="strength__no">SYMPTOM 05</p><h3 class="strength__ttl">구조내력 부족</h3><p class="strength__text">CFRP 탄소섬유 보강이나 철판 · 강재보강을 검토합니다. 보강 여부와 보강량은 구조검토가 정합니다.</p><p class="strength__text"><a class="link-arrow" href="#steel">철판 · 강재보강</a></p><p class="strength__text"><a class="link-arrow" href="carbon-fiber-reinforcement.html">CFRP 탄소섬유보강</a></p></li>
       <li class="strength__item reveal"><p class="strength__no">SYMPTOM 06</p><h3 class="strength__ttl">노출콘크리트 외관 손상</h3><p class="strength__text">면보수와 색상·질감 복원을 검토합니다. 구조적 보수를 마친 뒤의 마감 단계입니다.</p><p class="strength__text"><a class="link-arrow" href="concrete.html">노출콘크리트 면보수</a></p></li>
       <li class="strength__item reveal"><p class="strength__no">SYMPTOM 07</p><h3 class="strength__ttl">보수 후 수분 · 염분 보호</h3><p class="strength__text">표면강화와 침투형 발수를 검토합니다. 원인을 처리한 뒤에 적용하는 마지막 공정입니다.</p><p class="strength__text"><a class="link-arrow" href="concrete-surface-protection.html">표면강화 · 발수코팅</a></p></li>
     </ol>
@@ -255,48 +314,79 @@
 <section class="section section--mist" id="partnership">
   <div class="wrap">
     <header class="section__head section__head--row reveal">
-      <div><p class="eyebrow">PARTNERSHIP</p><h2 class="h2">구조설계 · 안전진단과<br />연계한 제주 현장 시공</h2></div>
-      <p class="section__desc">구조검토 및 보강설계는 구조기술자와 설계자의 판단에 따릅니다. 당사는 설계도서와 보강상세에 따라 제주 현장에서 실제 시공을 수행합니다.</p>
+      <div><p class="eyebrow">PARTNERSHIP</p><h2 class="h2">제주지역 콘크리트<br />보수보강 시공</h2></div>
+      <p class="section__desc">구조설계 · 안전진단과 연계해 시공합니다. 구조검토 및 보강설계는 구조기술자와 설계자의 판단에 따르며, 당사는 설계도서와 보강상세에 따라 제주 현장에서 실제 시공을 수행합니다.</p>
     </header>
     <ul class="facts reveal">
       <li><strong>설계자 · 구조기술자</strong><span>구조검토, 보강설계, 보강량·방향·정착길이 결정</span></li>
-      <li><strong>당사 직접 시공</strong><span>에폭시 균열주입 · CFRP 탄소섬유 보강 · 단면복구 · 우레탄 인젝션</span></li>
+      <li><strong>당사 직접 시공</strong><span>에폭시 균열주입 · 단면복구 · 철판 · 강재보강 · CFRP 탄소섬유 보강 · 우레탄 인젝션</span></li>
       <li><strong>철판 · 강재보강 전문시공</strong><span>철판보강 · 강재보강 · H빔 등 구조보강, 전문 장비와 숙련 인력 투입</span></li>
-      <li><strong>제주 현지 대응</strong><span>현장 확인, 시공기록, 품질관리, 시공 후 상태 확인</span></li>
+      <li><strong>제주 현지 대응</strong><span>제주시 · 서귀포시 현장 확인, 시공기록, 품질관리, 시공 후 상태 확인</span></li>
     </ul>
     <div class="intro__body reveal" style="margin-top:clamp(28px,4vw,44px)">
       <p>구조설계사무소나 안전진단 전문기관이 이미 검토를 마친 현장이라면 그 결과를 그대로 받아 시공합니다. 검토가 아직 없는 현장이라면 어떤 조사와 검토가 필요한지 정리해 드리고, 철근탐사·초음파·반발경도·자연전위·염화물량 시험 같은 비파괴·재료시험은 전문기관과 연계해 진행할 수 있습니다.</p>
     </div>
     <div class="section__more">
       <a class="btn btn--dark" href="contact.html">도면 · 구조검토서로 상담하기</a>
-      <a class="btn btn--line" href="carbon-fiber-reinforcement.html">CFRP 구조보강 자세히 보기</a>
+      <a class="btn btn--line" href="projects.html">시공사례 보기</a>
     </div>
   </div>
 </section>
 
-<section class="section">
+<!-- 자주 묻는 질문 — 첫 문장에 바로 답하고(굵게), 그 뒤에 이유를 적습니다.
+     답은 모두 이 페이지 본문(공정별 시공 기준 · 철판보강 · 부재별 보강 · 제주지역 시공)에 있는 내용입니다.
+     FAQPage 구조화데이터는 넣지 않습니다(tools/check-site.js 가 막습니다) — 화면 본문으로만 둡니다. -->
+<section class="section" id="faq">
   <div class="wrap">
     <header class="section__head reveal">
-      <p class="eyebrow">CHECK POINT</p>
-      <h2 class="h2">이런 현장에<br />적용합니다</h2>
+      <p class="eyebrow">FREQUENT QUESTIONS</p>
+      <h2 class="h2">콘크리트 보수보강<br />자주 묻는 질문</h2>
     </header>
-    <ol class="strength">
-      <li class="strength__item reveal"><p class="strength__no">CASE 01</p><h3 class="strength__ttl">균열이 진행 중인 구조물</h3><p class="strength__text">폭이 서서히 벌어지거나 균열을 따라 백태·박락이 함께 나타나는 현장.</p></li>
-      <li class="strength__item reveal"><p class="strength__no">CASE 02</p><h3 class="strength__ttl">철근이 노출·박락된 부위</h3><p class="strength__text">피복이 떨어져 나가 철근이 드러나고 녹이 진행되는 현장.</p></li>
-      <li class="strength__item reveal"><p class="strength__no">CASE 03</p><h3 class="strength__ttl">단면 결손이 있는 부위</h3><p class="strength__text">모서리·바닥판 등이 깨지거나 떨어져 나가 단면 자체가 줄어든 현장.</p></li>
-      <li class="strength__item reveal"><p class="strength__no">CASE 04</p><h3 class="strength__ttl">노후 구조물 보수보강 검토</h3><p class="strength__text">사용 연수가 오래돼 여러 부위의 손상 정도와 보강 필요 여부를 함께 진단해야 하는 현장.</p></li>
-    </ol>
-    <div class="section__more">
-      <a class="btn btn--dark" href="contact.html">콘크리트 보수보강 상담하기</a>
-      <a class="btn btn--line" href="waterproof.html">누수가 함께 있다면 인젝션 특수방수</a>
-    </div>
+    <dl class="qa reveal">
+      <div>
+        <dt>콘크리트 균열은 모두 보강해야 하나요?</dt>
+        <dd><strong>아니요. 대부분의 균열은 충전 · 주입 같은 보수로 충분하고, 보강은 구조검토에서 내력이 부족하다고 판단될 때만 합니다.</strong> 폭보다 중요한 것은 “움직이는가”입니다. 균열게이지로 거동 여부를 먼저 확인하며, 폭이 작아도 거동 중이거나 해안가처럼 염분 침투 우려가 있는 환경이면 방치할수록 내부 손상이 커집니다.</dd>
+      </div>
+      <div>
+        <dt>에폭시 인젝션은 어떤 균열에 사용하나요?</dt>
+        <dd><strong>건조하고 움직이지 않는 구조균열에 사용합니다.</strong> 균열 내부를 채워 콘크리트를 구조적으로 다시 붙이는 것이 목적입니다. 물이 흐르는 균열은 우레탄 인젝션으로 지수를 먼저 하고, 거동 균열은 변형을 따라가는 실링 · 충전을 검토합니다. 자세한 기준은 <a href="epoxy-crack-repair.html">에폭시 균열보수 · 저압주입</a>에 정리했습니다.</dd>
+      </div>
+      <div>
+        <dt>철판보강은 어떤 경우에 필요한가요?</dt>
+        <dd><strong>하중 증가, 처짐, 휨 · 전단 균열 등으로 보 · 슬래브의 내력이 부족하다고 구조검토에서 판단될 때 필요합니다.</strong> 강판 두께와 보강 범위, 앵커 배치는 보강설계가 정하며, 당사는 그 설계도서에 따라 <a href="#steel">철판 · 강재보강</a>을 시공합니다.</dd>
+      </div>
+      <div>
+        <dt>콘크리트 보와 슬래브도 보강할 수 있나요?</dt>
+        <dd><strong>네. 보 · 슬래브 · 기둥 모두 보강할 수 있습니다.</strong> 보는 하부 · 측면의 철판이나 탄소섬유로, 슬래브는 하부면 부착 보강으로, 기둥은 감싸는 구속 보강으로 검토합니다. 부재별 방식은 <a href="#members">보 · 기둥 · 슬래브 구조보강</a>에 정리했습니다.</dd>
+      </div>
+      <div>
+        <dt>탄소섬유보강과 철판보강의 차이는 무엇인가요?</dt>
+        <dd><strong>탄소섬유보강은 얇고 가벼운 시트를 에폭시로 붙이는 방식이고, 철판보강은 강판을 앵커와 에폭시로 콘크리트에 일체화하는 방식입니다.</strong> 탄소섬유는 자중이 거의 늘지 않고 기둥처럼 감싸야 하는 부재에 유리하며, 철판은 강판 자체의 강성을 쓸 수 있지만 무게가 있고 방청 관리가 필요합니다. 어느 쪽이 맞는지는 구조검토와 보강설계가 정합니다.</dd>
+      </div>
+      <div>
+        <dt>콘크리트가 떨어져 철근이 보이면 어떻게 해야 하나요?</dt>
+        <dd><strong>그 부분만 메우지 말고, 녹 제거와 방청 처리를 한 뒤 단면을 복구해야 합니다.</strong> 들뜨거나 박락된 콘크리트를 건전한 면이 나올 때까지 제거하고 철근을 방청한 뒤 단면복구재로 채웁니다. 녹을 그대로 덮으면 안에서 팽창이 계속돼 다시 박락됩니다. 떨어질 듯한 조각이 있으면 먼저 아래 통행을 막아 주세요.</dd>
+      </div>
+      <div>
+        <dt>균열보수와 인젝션 방수는 어떻게 다른가요?</dt>
+        <dd><strong>균열보수는 구조를 다시 붙이는 작업이고, 인젝션 방수는 물길을 막는 작업입니다.</strong> 균열보수의 에폭시 주입은 균열 내부를 채워 콘크리트를 일체화하고, <a href="waterproof.html">인젝션 특수방수</a>의 우레탄 인젝션은 누수를 차단합니다. 누수가 함께 있는 균열은 두 공법을 순서대로 함께 적용하는 경우가 많습니다.</dd>
+      </div>
+      <div>
+        <dt>제주에서도 구조물 보강공사가 가능한가요?</dt>
+        <dd><strong>네. 제주시 · 서귀포시 등 제주특별자치도 전 지역에서 시공합니다.</strong> 서귀포시 성산읍에 사무소를 두고, 현장 확인부터 시공기록 · 품질관리 · 시공 후 상태 확인까지 제주 현지에서 직접 대응합니다.</dd>
+      </div>
+      <div>
+        <dt>현장 방문 후 견적을 받을 수 있나요?</dt>
+        <dd><strong>네. 현장 사진으로 먼저 상태를 확인하고, 필요한 경우 현장을 방문해 확인한 뒤 견적을 드립니다.</strong> 도면이나 구조검토서가 있으면 함께 보내 주시면 보강 범위를 더 정확히 검토할 수 있습니다. <a href="contact.html">상담문의</a> 또는 대표전화 1660-4019로 연락해 주세요.</dd>
+      </div>
+    </dl>
   </div>
 </section>
 
 <section class="section section--mist">
   <div class="wrap">
     <header class="section__head section__head--row reveal">
-      <div><p class="eyebrow">TECHNICAL NOTES</p><h2 class="h2">보수보강 기술자료</h2></div>
+      <div><p class="eyebrow">TECHNICAL NOTES</p><h2 class="h2">콘크리트 보수보강<br />기술자료</h2></div>
       <p class="section__desc">균열 거동 여부 판단과 보수 순서의 기준을 정리했습니다.</p>
     </header>
     <div class="resource-list" data-resources="보수보강" data-limit="6" data-built>
@@ -321,21 +411,22 @@
     <div class="footer__brand">
       <img src="assets/images/brand/logo.png" alt="제주노출콘크리트 로고" width="40" height="40" loading="lazy" />
       <p class="footer__name">제주노출콘크리트</p>
-      <p class="footer__tag">노출콘크리트 보수·복원 · 콘크리트 보수보강 · 인젝션 특수방수 전문</p>
+      <p class="footer__tag">제주 노출콘크리트 보수 · 콘크리트 보수보강(철판·강재보강 포함) · 인젝션 특수방수 전문</p>
       <p class="footer__trust">(주)아인산업안전 · 제주도 콘채 총판</p>
       <p class="footer__tel"><a href="tel:16604019">대표전화 1660-4019</a></p>
       <address>제주특별자치도 서귀포시 성산읍 풍천로 142, 103호</address>
     </div>
-    <!-- 전문 분야 — 상단 메뉴(분야 3개)가 아니라 실제 공종 6개를 적습니다.
-         공종별 상세 페이지가 생긴 뒤로 메뉴 3줄만으로는 에폭시 주입·CFRP·표면보호가
-         전역 어디에서도 닿지 않았습니다. 옆 칼럼(바로가기)도 6줄이라 높이가 맞습니다.
-         철근부식·단면복구는 상세 페이지가 없으므로 허브의 해당 절로 보냅니다.
-         철판·강재보강은 협력 공종이라 여기 넣지 않고 허브 안에서만 밝힙니다. -->
+    <!-- 전문 분야 — 핵심 두 축(노출콘크리트 · 콘크리트 보수보강)을 맨 위에 두고,
+         그 아래에 공종별 상세 페이지를 적습니다. 메뉴만으로는 에폭시 주입·CFRP·
+         표면보호 같은 공종 페이지가 전역 어디에서도 닿지 않기 때문입니다.
+         철근부식·단면복구와 철판·강재보강은 상세 페이지가 없으므로 허브의 해당 절로 보냅니다. -->
     <nav class="footer__col" aria-label="전문 분야">
       <h2 class="footer__ttl">전문 분야</h2>
       <ul>
-        <li><a href="concrete.html">노출콘크리트 보수·복원</a></li>
+        <li><a href="concrete.html">제주노출콘크리트 보수·복원</a></li>
+        <li><a href="reinforcement.html">제주콘크리트보수보강</a></li>
         <li><a href="epoxy-crack-repair.html">에폭시 균열주입</a></li>
+        <li><a href="reinforcement.html#steel">철판 · 강재보강</a></li>
         <li><a href="carbon-fiber-reinforcement.html">CFRP 탄소섬유 구조보강</a></li>
         <li><a href="reinforcement.html#rebar">철근부식 · 단면복구</a></li>
         <li><a href="waterproof.html">우레탄 인젝션 특수방수</a></li>
@@ -347,7 +438,7 @@
       <ul>
         <li><a href="projects.html">시공사례</a></li>
         <li><a href="resources.html">기술자료</a></li>
-        <li><a href="materials.html">자재 구매</a></li>
+        <li><a href="materials.html">자재구매</a></li>
         <li><a href="about.html">회사소개</a></li>
         <li><a href="contact.html">상담문의</a></li>
         <li><a href="privacy.html">개인정보처리방침</a></li>
@@ -376,7 +467,7 @@
 </div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<script src="assets/js/config.js?v=9b3fe379"></script>
+<script src="assets/js/config.js?v=27b16800"></script>
 <script src="assets/js/resources.js?v=039569c3"></script>
 <script src="assets/js/main.js?v=814a7f04"></script>
 </body>

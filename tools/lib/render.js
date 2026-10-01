@@ -29,12 +29,12 @@ const {
 
 const NAV_ITEMS = [
   ['index.html', 'HOME'],
-  ['concrete.html', '노출콘크리트 보수'],
-  ['reinforcement.html', '콘크리트 보수보강'],
-  ['waterproof.html', '인젝션 특수방수'],
+  ['concrete.html', '제주노출콘크리트'],
+  ['reinforcement.html', '제주콘크리트보수보강'],
+  ['waterproof.html', '인젝션·특수방수'],
   ['projects.html', '시공사례'],
   ['resources.html', '기술자료'],
-  ['materials.html', '자재 구매'],
+  ['materials.html', '자재구매'],
   ['about.html', '회사소개']
 ];
 
@@ -101,16 +101,17 @@ function footer(prefix, COMPANY, EXTERNAL_LINKS) {
       <p class="footer__tel"><a href="${esc(COMPANY.telHref)}">대표전화 ${esc(COMPANY.tel)}</a></p>
       <address>${esc(COMPANY.address)}</address>
     </div>
-    <!-- 전문 분야 — 상단 메뉴(분야 3개)가 아니라 실제 공종 6개를 적습니다.
-         공종별 상세 페이지가 생긴 뒤로 메뉴 3줄만으로는 에폭시 주입·CFRP·표면보호가
-         전역 어디에서도 닿지 않았습니다. 옆 칼럼(바로가기)도 6줄이라 높이가 맞습니다.
-         철근부식·단면복구는 상세 페이지가 없으므로 허브의 해당 절로 보냅니다.
-         철판·강재보강은 협력 공종이라 여기 넣지 않고 허브 안에서만 밝힙니다. -->
+    <!-- 전문 분야 — 핵심 두 축(노출콘크리트 · 콘크리트 보수보강)을 맨 위에 두고,
+         그 아래에 공종별 상세 페이지를 적습니다. 메뉴만으로는 에폭시 주입·CFRP·
+         표면보호 같은 공종 페이지가 전역 어디에서도 닿지 않기 때문입니다.
+         철근부식·단면복구와 철판·강재보강은 상세 페이지가 없으므로 허브의 해당 절로 보냅니다. -->
     <nav class="footer__col" aria-label="전문 분야">
       <h2 class="footer__ttl">전문 분야</h2>
       <ul>
-        <li><a href="${prefix}concrete.html">노출콘크리트 보수·복원</a></li>
+        <li><a href="${prefix}concrete.html">제주노출콘크리트 보수·복원</a></li>
+        <li><a href="${prefix}reinforcement.html">제주콘크리트보수보강</a></li>
         <li><a href="${prefix}epoxy-crack-repair.html">에폭시 균열주입</a></li>
+        <li><a href="${prefix}reinforcement.html#steel">철판 · 강재보강</a></li>
         <li><a href="${prefix}carbon-fiber-reinforcement.html">CFRP 탄소섬유 구조보강</a></li>
         <li><a href="${prefix}reinforcement.html#rebar">철근부식 · 단면복구</a></li>
         <li><a href="${prefix}waterproof.html">우레탄 인젝션 특수방수</a></li>
@@ -122,7 +123,7 @@ function footer(prefix, COMPANY, EXTERNAL_LINKS) {
       <ul>
         <li><a href="${prefix}projects.html">시공사례</a></li>
         <li><a href="${prefix}resources.html">기술자료</a></li>
-        <li><a href="${prefix}materials.html">자재 구매</a></li>
+        <li><a href="${prefix}materials.html">자재구매</a></li>
         <li><a href="${prefix}about.html">회사소개</a></li>
         <li><a href="${prefix}contact.html">상담문의</a></li>
         <li><a href="${prefix}privacy.html">개인정보처리방침</a></li>

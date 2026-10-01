@@ -51,17 +51,17 @@ const SITE_URL = BASE_ARG ? BASE_ARG.replace(/\/+$/, '') + '/' : siteUrlOf(COMPA
 
 /* 분야 → 서비스 페이지 (Article 의 about, 관련 링크에 씁니다) */
 const SERVICE_BY_CATEGORY = {
-  '노출콘크리트': { name: '노출콘크리트 면보수', page: 'concrete.html' },
-  '면보수':       { name: '노출콘크리트 면보수', page: 'concrete.html' },
-  '색상재현':     { name: '노출콘크리트 면보수', page: 'concrete.html' },
-  '시공기준':     { name: '노출콘크리트 면보수', page: 'concrete.html' },
+  '노출콘크리트': { name: '제주 노출콘크리트 보수', page: 'concrete.html' },
+  '면보수':       { name: '제주 노출콘크리트 보수', page: 'concrete.html' },
+  '색상재현':     { name: '제주 노출콘크리트 보수', page: 'concrete.html' },
+  '시공기준':     { name: '제주 노출콘크리트 보수', page: 'concrete.html' },
   '표면보호':     { name: '제주 콘크리트 표면강화 · 발수코팅', page: 'concrete-surface-protection.html' },
   '발수':         { name: '제주 콘크리트 표면강화 · 발수코팅', page: 'concrete-surface-protection.html' },
-  '보수보강':     { name: '콘크리트 보수보강', page: 'reinforcement.html' },
-  '균열보수':     { name: '콘크리트 보수보강', page: 'reinforcement.html' },
-  '균열·보수':    { name: '콘크리트 보수보강', page: 'reinforcement.html' },
-  '단면복구':     { name: '콘크리트 보수보강', page: 'reinforcement.html' },
-  '철근노출':     { name: '콘크리트 보수보강', page: 'reinforcement.html' },
+  '보수보강':     { name: '제주 콘크리트 보수보강', page: 'reinforcement.html' },
+  '균열보수':     { name: '제주 콘크리트 보수보강', page: 'reinforcement.html' },
+  '균열·보수':    { name: '제주 콘크리트 보수보강', page: 'reinforcement.html' },
+  '단면복구':     { name: '제주 콘크리트 보수보강', page: 'reinforcement.html' },
+  '철근노출':     { name: '제주 콘크리트 보수보강', page: 'reinforcement.html' },
   /* 아래 세 분류는 공정별 상세 페이지가 따로 있습니다.
      사례 데이터에 이 분류를 적으면 상세 페이지의 about · 관련 링크가
      reinforcement.html 이 아니라 해당 공정 페이지를 가리킵니다. */
@@ -74,7 +74,7 @@ const SERVICE_BY_CATEGORY = {
   '누수보수':     { name: '인젝션 특수방수', page: 'waterproof.html' },
   '특수방수':     { name: '인젝션 특수방수', page: 'waterproof.html' }
 };
-const DEFAULT_SERVICE = { name: '노출콘크리트 면보수', page: 'concrete.html' };
+const DEFAULT_SERVICE = { name: '제주 노출콘크리트 보수', page: 'concrete.html' };
 function serviceOf(category) { return SERVICE_BY_CATEGORY[category] || DEFAULT_SERVICE; }
 
 const ORG_ID = SITE_URL + '#organization';
@@ -643,6 +643,13 @@ function buildHome() {
   const S = SITE || {};
   const c = COMPANY;
   const hero = S.hero || {};
+  /* 첫 화면의 핵심 두 축 — 같은 마크업 · 같은 크기로 나란히 둡니다.
+     분야 이름은 제목 태그가 아니라 링크 안의 span 입니다: 히어로 안에 제목 계층을
+     만들지 않고, 페이지의 h2 는 아래 구간 제목들이 맡습니다. */
+  const heroPillars = (hero.pillars || []).length ? `    <ul class="hero__pillars" aria-label="핵심 전문 분야">
+${hero.pillars.map((p) => `      <li><a class="pillar" href="${esc(p.link)}"><span class="pillar__ttl">${esc(p.title)}</span><span class="pillar__items">${p.items.map(esc).join(' · ')}</span></a></li>`).join('\n')}
+    </ul>
+` : '';
   const about = S.about || {};
   const ss = S.serviceSection || {};
   const sc = S.scopeSection || {};
@@ -824,12 +831,12 @@ ${inlineCss.trim()}
     </a>
     <nav class="nav" id="nav" aria-label="주요 메뉴" inert>
       <a href="index.html">HOME</a>
-      <a href="concrete.html">노출콘크리트 보수</a>
-      <a href="reinforcement.html">콘크리트 보수보강</a>
-      <a href="waterproof.html">인젝션 특수방수</a>
+      <a href="concrete.html">제주노출콘크리트</a>
+      <a href="reinforcement.html">제주콘크리트보수보강</a>
+      <a href="waterproof.html">인젝션·특수방수</a>
       <a href="projects.html">시공사례</a>
       <a href="resources.html">기술자료</a>
-      <a href="materials.html">자재 구매</a>
+      <a href="materials.html">자재구매</a>
       <a href="about.html">회사소개</a>
       <a class="nav__cta" href="contact.html">상담문의</a>
     </nav>
@@ -850,7 +857,8 @@ ${slides}
   <div class="hero__inner">
     <h1 class="hero__title">${hero.title}</h1>
     <p class="hero__en">${esc(hero.en)}</p>
-    <p class="hero__sub">${esc(hero.sub)}</p>
+${hero.sub ? `    <p class="hero__sub">${esc(hero.sub)}</p>
+` : ''}${heroPillars}
   </div>
 
   <div class="hero__dots" id="dots">
@@ -1179,12 +1187,13 @@ function buildOrganisationGraph() {
       '@type': 'OfferCatalog',
       name: '전문 분야',
       itemListElement: [
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: '제주 노출콘크리트 보수·복원', description: '곰보·기포 면보수, 층조인트 단차 보정, 색상 및 패턴 복원, 오염·백화 하자보수, 발수 및 표면 보호', url: absUrl(SITE_URL, 'concrete.html') } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: '콘크리트 보수보강', description: '균열보수 및 에폭시 주입, 단면복구, 철근노출 및 박락 보수', url: absUrl(SITE_URL, 'reinforcement.html') } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: '제주 노출콘크리트 보수·복원', description: '곰보·기포 면보수, 층조인트 단차 보정, 색상 및 질감 복원, 오염·백화 하자보수, 발수 및 표면 보호', url: absUrl(SITE_URL, 'concrete.html') } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: '제주 콘크리트 보수보강', description: '균열보수 및 에폭시 인젝션, 단면복구, 철근노출 및 박락 보수, 철판·강재보강, 탄소섬유보강, 보·슬래브·기둥 구조보강', url: absUrl(SITE_URL, 'reinforcement.html') } },
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: '인젝션 특수방수', description: '누수 경로 추적, 우레탄 인젝션, 배면 그라우팅, 액상고무 도막방수', url: absUrl(SITE_URL, 'waterproof.html') } },
-        /* 세 전문 분야 아래의 공정별 상세 — 각각 전용 페이지가 있습니다. */
+        /* 세 전문 분야 아래의 공정별 상세 — 철판·강재보강은 허브의 해당 절, 나머지는 전용 페이지가 있습니다. */
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: '제주 철판보강 · 강재보강', description: '보·기둥·슬래브 등 기존 콘크리트 구조물의 철판·강재 보강 시공. 보강 여부와 보강량은 구조기술자의 검토와 보강설계에 따름', url: absUrl(SITE_URL, 'reinforcement.html#steel') } },
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: '제주 에폭시 균열보수 · 저압주입', description: '비구조부 균열보수, 구조부 에폭시 저압주입, 에폭시 기계식 인젝션', url: absUrl(SITE_URL, 'epoxy-crack-repair.html') } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: '제주 탄소섬유 보강 · CFRP 구조보강', description: '구조검토와 보강설계에 따른 탄소섬유시트(CFRP) 부착 보강. 철판·강재보강 전문시공', url: absUrl(SITE_URL, 'carbon-fiber-reinforcement.html') } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: '제주 탄소섬유 보강 · CFRP 구조보강', description: '구조검토와 보강설계에 따른 보·슬래브·기둥·벽체의 탄소섬유시트(CFRP) 부착 보강', url: absUrl(SITE_URL, 'carbon-fiber-reinforcement.html') } },
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: '제주 콘크리트 표면강화 · 발수코팅', description: '표면강화와 경화·분진억제, 침투형 발수코팅, 수분·염분 침투 저감', url: absUrl(SITE_URL, 'concrete-surface-protection.html') } },
         /* 콘채 제주총판 — 시공과 함께 자재를 공급합니다. 근거가 있는 사실만 적습니다. */
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: '노출콘크리트 면보수재 콘채 공급 · 기술지원', description: '제주도 콘채 총판. 노출콘크리트 보수재·색보정 마감재 공급과 배합·시공 기술지원', url: absUrl(SITE_URL, 'materials.html') } }

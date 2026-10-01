@@ -157,6 +157,19 @@ ul,ol{list-style:none}
 .hero__sub{margin-top:1.1em;font-size:clamp(.9rem,1.4vw,1.02rem);
   font-weight:300;color:var(--ink-2);letter-spacing:.02em}
 
+/* 핵심 두 축 — 같은 폭 · 같은 형식. 서비스 구간(.svc)과 같은 헤어라인 언어를 씁니다.
+   반투명 오프화이트 바탕은 사진 위에서도 글자 대비를 지키기 위한 것입니다. */
+.hero__pillars{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  width:min(100%,640px);margin:2.2em 0 0;padding:0;list-style:none;
+  border-top:1px solid rgba(22,22,22,.28);background:rgba(248,247,245,.72)}
+.hero__pillars li + li{border-left:1px solid rgba(22,22,22,.18)}
+.pillar{display:flex;flex-direction:column;gap:.45em;height:100%;
+  padding:1.05em 1.2em 1.15em;color:var(--ink);transition:background .3s var(--ease)}
+.pillar:hover,.pillar:focus-visible{background:rgba(255,255,255,.7)}
+.pillar__ttl{font-family:var(--serif);font-weight:500;font-size:clamp(1.02rem,1.5vw,1.16rem);letter-spacing:.01em}
+.pillar__ttl::after{content:" →";font-family:var(--sans);font-size:.8em;color:var(--sub)}
+.pillar__items{font-size:.8rem;line-height:1.7;color:var(--ink-2);letter-spacing:.01em;word-break:keep-all}
+
 .hero__dots{position:absolute;left:0;right:0;bottom:30px;z-index:3;
   display:flex;gap:12px;justify-content:center}
 .hero__dots button{width:26px;height:2px;background:rgba(40,38,35,.26);border:0;cursor:pointer;padding:0;transition:background .4s}
@@ -376,6 +389,11 @@ ul,ol{list-style:none}
   .hero__en{max-width:24em;margin-top:1.25em;font-size:.8rem;line-height:1.65;letter-spacing:.02em}
   .hero__sub{max-width:28em;margin-top:.85em;font-size:clamp(.88rem,3.7vw,.98rem);line-height:1.7}
   .hero__dots{bottom:22px}
+  .hero{grid-template-columns:minmax(0,1fr)}
+  .hero__inner{min-width:0}
+  .hero__pillars{grid-template-columns:1fr;margin-top:1.5em}
+  .hero__pillars li + li{border-left:0;border-top:1px solid rgba(22,22,22,.18)}
+  .pillar{padding:.85em 1em .9em}
 }
 
 /* <picture> 는 레이아웃에 끼어들지 않게 합니다.
