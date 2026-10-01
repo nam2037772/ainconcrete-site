@@ -50,7 +50,7 @@ function header(prefix, current, COMPANY) {
   <div class="header__bar">
     <a class="brand" href="${prefix}index.html">
       <img class="brand__mark" src="${prefix}assets/images/brand/logo.png" alt="" width="38" height="38" />
-      <span class="brand__text"><strong>${esc(COMPANY.brand)}</strong><em>${esc(COMPANY.brandSubline)}</em></span>
+      <span class="brand__text"><strong>${esc(COMPANY.headerBrand || COMPANY.brand)}</strong><em>${esc(COMPANY.headerSubline || COMPANY.brandSubline)}</em></span>
     </a>
     <nav class="gnb" id="gnb" aria-label="주요 메뉴">
       <ul class="gnb__list">

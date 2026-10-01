@@ -826,8 +826,8 @@ ${inlineCss.trim()}
 <header class="site-header" id="header">
   <div class="wrap">
     <a class="brand" href="index.html">
-      <b>${esc(c.brand)}</b>
-      <span>${esc(c.brandSubline)}</span>
+      <b>${esc(c.headerBrand || c.brand)}</b>
+      <span>${esc(c.headerSubline || c.brandSubline)}</span>
     </a>
     <nav class="nav" id="nav" aria-label="주요 메뉴" inert>
       <a href="index.html">HOME</a>
