@@ -196,7 +196,7 @@ ul,ol{list-style:none}
 .sec-head--row{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap}
 .sec-head--row .sec-head__desc{max-width:26em;color:var(--ink-2);font-size:.98rem;line-height:1.9}
 
-.service__grid{display:grid;grid-template-columns:repeat(2,1fr);grid-template-rows:auto auto;gap:0;position:relative}
+.service__grid{display:grid;grid-template-columns:repeat(2,1fr);grid-template-rows:auto auto;gap:24px 0;position:relative}   /* 행 간격: 03 이 01 의 하위로 읽히지 않게 */
 /* 세로 구분선 — 카드마다 border 를 주면 카드 높이에서 선이 끊기고, 둘째 줄(03)에도
    선이 생깁니다. 대신 1행 2열 칸을 기준으로 한 선 하나만 그려 01 | 02 사이만 나눕니다.
    (절대배치된 그리드 자식은 지정한 grid-area 를 기준 상자로 씁니다. 끝선을 생략하면
