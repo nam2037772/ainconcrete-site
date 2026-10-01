@@ -1191,7 +1191,7 @@ function buildOrganisationGraph() {
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: '제주 콘크리트 보수보강', description: '균열보수 및 에폭시 인젝션, 단면복구, 철근노출 및 박락 보수, 철판·강재보강, 탄소섬유보강, 보·슬래브·기둥 구조보강', url: absUrl(SITE_URL, 'reinforcement.html') } },
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: '인젝션 특수방수', description: '누수 경로 추적, 우레탄 인젝션, 배면 그라우팅, 액상고무 도막방수', url: absUrl(SITE_URL, 'waterproof.html') } },
         /* 세 전문 분야 아래의 공정별 상세 — 철판·강재보강은 허브의 해당 절, 나머지는 전용 페이지가 있습니다. */
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: '제주 철판보강 · 강재보강', description: '보·기둥·슬래브 등 기존 콘크리트 구조물의 철판·강재 보강 시공. 보강 여부와 보강량은 구조기술자의 검토와 보강설계에 따름', url: absUrl(SITE_URL, 'reinforcement.html#steel') } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: '제주 철판보강 · 강재보강', description: '보·기둥·슬래브 등 기존 콘크리트 구조물의 철판보강 에폭시 주입공법 및 강재보강 시공. 강판 설치 후 콘크리트와 강판 사이에 에폭시 수지를 주입해 일체화. 보강 여부와 보강량은 구조기술자의 검토와 보강설계에 따름', url: absUrl(SITE_URL, 'reinforcement.html#steel') } },
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: '제주 에폭시 균열보수 · 저압주입', description: '비구조부 균열보수, 구조부 에폭시 저압주입, 에폭시 기계식 인젝션', url: absUrl(SITE_URL, 'epoxy-crack-repair.html') } },
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: '제주 탄소섬유 보강 · CFRP 구조보강', description: '구조검토와 보강설계에 따른 보·슬래브·기둥·벽체의 탄소섬유시트(CFRP) 부착 보강', url: absUrl(SITE_URL, 'carbon-fiber-reinforcement.html') } },
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: '제주 콘크리트 표면강화 · 발수코팅', description: '표면강화와 경화·분진억제, 침투형 발수코팅, 수분·염분 침투 저감', url: absUrl(SITE_URL, 'concrete-surface-protection.html') } },
