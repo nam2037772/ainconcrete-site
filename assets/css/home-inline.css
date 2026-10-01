@@ -196,10 +196,16 @@ ul,ol{list-style:none}
 .sec-head--row{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap}
 .sec-head--row .sec-head__desc{max-width:26em;color:var(--ink-2);font-size:.98rem;line-height:1.9}
 
-.service__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0}
+.service__grid{display:grid;grid-template-columns:repeat(2,1fr);grid-template-rows:auto auto;gap:0;position:relative}
+/* 세로 구분선 — 카드마다 border 를 주면 카드 높이에서 선이 끊기고, 둘째 줄(03)에도
+   선이 생깁니다. 대신 1행 2열 칸을 기준으로 한 선 하나만 그려 01 | 02 사이만 나눕니다.
+   (절대배치된 그리드 자식은 지정한 grid-area 를 기준 상자로 씁니다. 끝선을 생략하면
+    auto = 그리드 바닥이 되므로 1/2 · 2/3 처럼 양끝을 적고, 명시적 행에만 해당하므로
+    grid-template-rows 로 두 행을 선언해 둡니다) */
+.service__grid::before{content:"";position:absolute;grid-column:2/3;grid-row:1/2;
+  top:0;bottom:0;left:0;border-left:1px solid var(--line);pointer-events:none}
 .svc{display:flex;flex-direction:column;padding:0 clamp(22px,2.4vw,40px)}
-.svc + .svc{border-left:1px solid var(--line)}   /* 얇은 세로 구분선만 */
-.svc:first-child{padding-left:0}
+.svc:nth-child(odd){padding-left:0}   /* 왼쪽 열(01 · 03)은 같은 선에서 시작 */
 .svc:last-child{padding-right:0}
 .svc__no{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--sub);margin-bottom:1.5em}
 .svc__ttl{font-family:var(--serif);font-weight:500;font-size:1.18rem;line-height:1.45}
@@ -372,10 +378,11 @@ ul,ol{list-style:none}
   .feature__media{order:-1}
   .works__grid{grid-template-columns:1fr}
   /* Service: 세로 구분선 → 가로 구분선 스택 */
-  .service__grid{grid-template-columns:1fr;gap:0}
+  .service__grid{grid-template-columns:1fr;grid-template-rows:none;gap:0}
   .svc{padding:34px 0}
   .svc:first-child{padding-top:0}
-  .svc + .svc{border-left:0;border-top:1px solid var(--line)}
+  .service__grid::before{display:none}
+  .svc + .svc{border-top:1px solid var(--line)}
   .contact__actions{gap:1.6em}
   /* 기술자료: 3열 → 세로 스택 */
   .doc{grid-template-columns:1fr;gap:.6em}
