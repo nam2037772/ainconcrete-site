@@ -237,6 +237,7 @@ function contentCard(item, prefix, FALLBACK_IMAGE) {
 /* ── 시공사례 상세 본문 (main.js initProjectDetail 과 1:1) ──── */
 function caseBody(p, ci, prefix, FALLBACK_IMAGE) {
   const rows = [
+    ['사례 번호', p.case_no ? 'No. ' + p.case_no : ''],
     ['시공 분야', p.category], ['건축물', p.building], ['현장 위치', p.location],
     ['시공 시기', fmtDate(p.date)], ['작업 기간', p.period]
   ].filter((r) => r[1]);

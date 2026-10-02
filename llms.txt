@@ -54,8 +54,9 @@
 
 ## 시공사례
 
-시공 전·중·후 사진과 적용 공법, 콘채 배합을 보정 없이 기록한 38건의 사례가 있습니다. 전체 목록: [시공사례](https://ainconcrete.com/projects.html)
+시공 전·중·후 사진과 적용 공법, 콘채 배합을 보정 없이 기록한 39건의 사례가 있습니다. 전체 목록: [시공사례](https://ainconcrete.com/projects.html)
 
+- [계단실 층간조인트의 노출콘크리트 면보수](https://ainconcrete.com/case/case-047-stairwell-floor-joint-exposed-concrete-repair.html)
 - [송파 오픈예정 식당 인더스트리얼 콘채 빈티지 벽체 시공](https://ainconcrete.com/case/case-045-songpa-restaurant-industrial-conchae-vintage-wall.html)
 - [제주 오염·백화 노출콘크리트 면보수 (콘채 라이트그레이2:아이보리1)](https://ainconcrete.com/case/case-044-jeju-stain-efflorescence-exposed-concrete-repair.html)
 - [제주 주택 웜그레이톤 콘채 노출콘크리트 마감 (아이보리·라이트그레이 1:1 배합)](https://ainconcrete.com/case/case-043-warm-gray-tone-conchae-jeju-house-finish.html)
