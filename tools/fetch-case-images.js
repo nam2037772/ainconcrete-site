@@ -16,6 +16,9 @@
      · 이미 있는 파일은 건너뜁니다. (--force 로 다시 받습니다)
      · 원본이 주소가 아니라 사이트 경로면(저장소 원본 data/case-sources) 이미
        저장소 안에 있는 사진이므로 내려받지 않고 있는지만 확인합니다.
+     · 옵시디언 첨부(![[파일명]])는 vault 의 파일을 찾아 복사합니다.
+       기존 사례와 같은 가로 773px 로 줄이고 EXIF(GPS 포함)는 지웁니다.
+       (tools/lib/local-image.js — Python Pillow 필요)
      · 사이트 이미지는 저장소 안에만 만듭니다. vault 안에는 쓰지 않습니다.
    ============================================================ */
 'use strict';
@@ -28,6 +31,7 @@ const {
   REPO_ROOT, CASE_IMAGE_ROOT, resolveVault, loadDrafts, assertWritable
 } = require('./lib/case-source');
 const { buildCasePlans } = require('./lib/case-plan');
+const { copyLocalImage } = require('./lib/local-image');
 
 const WRITE = process.argv.includes('--write');
 const FORCE = process.argv.includes('--force');
@@ -76,21 +80,26 @@ async function main() {
   const { plans, problems } = buildCasePlans(VAULT, drafts);
 
   const wanted = new Map();       // 사이트 경로 → url
-  plans.forEach((p) => p.images.downloads.forEach((d) => wanted.set(d.path, d.url)));
+  const localOf = new Map();      // 사이트 경로 → vault 안의 첨부 파일
+  plans.forEach((p) => p.images.downloads.forEach((d) => {
+    wanted.set(d.path, d.url);
+    if (d.local) localOf.set(d.path, d.local);
+  }));
 
   /* 원본이 주소인 것만 내려받습니다. 사이트 경로로 적힌 것(저장소 원본)은
      이미 저장소 안에 있는 사진이라 받을 것이 없습니다. */
   const isRemote = (url) => url.indexOf('http://') === 0 || url.indexOf('https://') === 0;
-  const inRepo = [...wanted].filter(([, url]) => !isRemote(url));
+  const inRepo = [...wanted].filter(([dest, url]) => !isRemote(url) && !localOf.has(dest));
   const missingInRepo = inRepo.filter(([dest]) => !fs.existsSync(path.join(REPO_ROOT, dest)));
   const todo = [...wanted].filter(([dest, url]) =>
-    isRemote(url) && (FORCE || !fs.existsSync(path.join(REPO_ROOT, dest))));
+    (isRemote(url) || localOf.has(dest)) && (FORCE || !fs.existsSync(path.join(REPO_ROOT, dest))));
 
   console.log('vault        : ' + VAULT);
   console.log('사례          : ' + plans.length + '건');
   console.log('참조 이미지   : ' + wanted.size + '개 (중복 제거 후)');
   console.log('저장소 안     : ' + inRepo.length + '개 (내려받지 않음)');
-  console.log('내려받을 대상 : ' + todo.length + '개\n');
+  console.log('vault 첨부    : ' + localOf.size + '개 (복사 · 가로 773px)');
+  console.log('가져올 대상   : ' + todo.length + '개\n');
 
   if (missingInRepo.length) {
     console.log('■ 저장소 안에 있어야 하는데 파일이 없습니다 (' + missingInRepo.length + '개)');
@@ -103,7 +112,9 @@ async function main() {
     let done = 0;
     for (const [dest, url] of todo) {
       try {
-        const size = await download(url, path.join(REPO_ROOT, dest));
+        const size = localOf.has(dest)
+          ? copyLocalImage(localOf.get(dest), path.join(REPO_ROOT, dest))
+          : await download(url, path.join(REPO_ROOT, dest));
         done++;
         if (done % 25 === 0 || done === todo.length) console.log(`  ${done}/${todo.length} …`);
         void size;
@@ -162,4 +173,8 @@ async function main() {
   process.exit(errors.length || errs.length ? 1 : 0);
 }
 
-main().catch((e) => { console.error(e); process.exit(1); });
+main().catch((e) => {
+  /* 경로를 못 찾는 등 예상한 오류는 안내문만 보여 줍니다 (스택 대신) */
+  console.error(e.code && /^E(NO|VAULT)/.test(e.code) ? '✗ ' + e.message : e);
+  process.exit(1);
+});

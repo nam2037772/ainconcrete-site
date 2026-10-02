@@ -32,8 +32,21 @@ const DRAFT_DIR = path.join('Wiki', '홈페이지', '발행대기');
 const REPO_SOURCE_DIR = path.join('data', 'case-sources');
 const REPO_SOURCE_RE = /^(\d{3})\.md$/;
 
-/** 기본 vault 위치 — 저장소 옆의 Vault/에릭_vault. --vault= 로 덮어쓸 수 있습니다. */
-const DEFAULT_VAULT = path.resolve(REPO_ROOT, '..', '..', 'Vault', '에릭_vault');
+/** 기본 vault 위치 — 아래 후보 중 실제로 있는 첫 곳. --vault= 로 덮어쓸 수 있습니다.
+      1) 저장소 옆의 Vault/에릭_vault (예전 배치)
+      2) 구글 드라이브 '내 드라이브…/Vault/에릭_vault' (지금 배치)
+    어느 곳도 없으면 1) 을 돌려주고, 읽는 쪽에서 경로를 적어 오류를 냅니다. */
+function defaultVault() {
+  const os = require('os');
+  const candidates = [path.resolve(REPO_ROOT, '..', '..', 'Vault', '에릭_vault')];
+  try {
+    fs.readdirSync(os.homedir())
+      .filter((name) => name.indexOf('내 드라이브') === 0 || name === 'My Drive')
+      .forEach((name) => candidates.push(path.join(os.homedir(), name, 'Vault', '에릭_vault')));
+  } catch (e) { /* 홈 폴더를 읽을 수 없으면 1) 만 씁니다 */ }
+  return candidates.find((c) => fs.existsSync(c)) || candidates[0];
+}
+const DEFAULT_VAULT = defaultVault();
 
 /** 명령줄 --이름=값 을 읽습니다. */
 function argValue(name, fallback) {
@@ -203,8 +216,17 @@ function loadRepoSources(repoRoot) {
  */
 function loadDrafts(vaultDir) {
   const dir = path.join(vaultDir, DRAFT_DIR);
+  if (!fs.existsSync(vaultDir)) {
+    const err = new Error([
+      'vault 폴더를 찾을 수 없습니다: ' + vaultDir,
+      '  --vault="…/에릭_vault" 또는 AINSAFE_VAULT 환경변수로 위치를 지정하세요.'
+    ].join(EOL));
+    err.code = 'ENOVAULT';
+    throw err;
+  }
   if (!fs.existsSync(dir)) {
-    const err = new Error('발행대기 폴더를 찾을 수 없습니다: ' + dir);
+    const err = new Error('발행대기 폴더를 찾을 수 없습니다: ' + dir + EOL +
+      '  기대하는 위치: <vault>/' + DRAFT_DIR.replace(/\\/g, '/'));
     err.code = 'ENODRAFT';
     throw err;
   }
@@ -304,7 +326,7 @@ function loadProjects(file = PROJECTS_FILE) {
 const KEY_ORDER = [
   'id', 'source', 'case_no', 'source_note', 'draft_file', 'review_required',
   'title', 'location', 'building', 'category', 'date', 'period',
-  'summary', 'problem', 'method', 'result',
+  'summary', 'problem', 'method', 'result', 'sections',
   'representative_image', 'before_images', 'process_images', 'after_images',
   'thumbnail', 'after', 'before', 'images', 'featured'
 ];

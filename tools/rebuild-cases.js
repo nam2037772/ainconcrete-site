@@ -32,6 +32,23 @@ const {
 const { buildCasePlans } = require('./lib/case-plan');
 
 const WRITE = process.argv.includes('--write');
+const DIFF = process.argv.includes('--diff');
+const ALLOW_REMOVE = process.argv.includes('--allow-remove');
+
+/** 키 순서와 상관없이 같은 값인지 */
+function sameValue(a, b) {
+  const canon = (v) => Array.isArray(v) ? v.map(canon)
+    : (v && typeof v === 'object')
+      ? Object.keys(v).sort().reduce((o, k) => (o[k] = canon(v[k]), o), {})
+      : v;
+  return JSON.stringify(canon(a)) === JSON.stringify(canon(b));
+}
+
+/** --diff 출력용 — 긴 값은 앞부분만 */
+function short(v) {
+  const s = v === undefined ? '(없음)' : JSON.stringify(v);
+  return s.length > 140 ? s.slice(0, 140) + '…' : s;
+}
 /* 예전 옵션 — vault 안의 발행대기 노트를 되쓰던 기능입니다.
    vault 는 읽기 전용이므로 조용히 무시하지 않고 그 자리에서 멈춥니다. */
 if (process.argv.includes('--sync-drafts')) {
@@ -61,6 +78,27 @@ function flatten(section) {
     .join(' ').replace(/\s+/g, ' ').trim();
 }
 
+/* ── layout: sections — 원고의 '## …' 절을 적힌 순서대로 본문으로 ──
+   기존 사례는 하자·공법·결과 세 칸에 맞춰 적지만, 이 서식은 원고의 소제목을
+   그대로 상세페이지의 소제목(h2)으로 씁니다. 화면 마크업은 세 칸과 같습니다.
+   '기술 메모'(내부용)와 이미지분류 절은 본문에 넣지 않습니다. */
+const NON_BODY_SECTIONS = new Set(['기술 메모', '대표사진', '시공전', '시공중', '시공후']);
+
+function toParagraphs(section) {
+  return String(section || '').split('\n')
+    .map((l) => l.trim())
+    .filter((l) => l && !/^#\s/.test(l) && !/^<!--|-->$/.test(l))
+    .map((l) => l.replace(/\*\*/g, '').replace(/^[-*]\s+/, '• '));
+}
+
+function bodySections(draft) {
+  if (String(draft.frontmatter.layout || '') !== 'sections') return null;
+  return Object.entries(draft.sections)
+    .filter(([heading]) => !NON_BODY_SECTIONS.has(heading))
+    .map(([heading, text]) => ({ heading, paragraphs: toParagraphs(text) }))
+    .filter((s) => s.paragraphs.length);
+}
+
 /* ── 사례 계획 → projects.js 항목 ──────────────────────────
    location / building / date / period / featured 는 사이트에서만 관리하는
    값이라 기존에 적어 둔 것이 있으면 그대로 물려받습니다. */
@@ -74,7 +112,9 @@ function toProject(plan, previous) {
   const process = paths(plan.images.process);
   const after = paths(plan.images.after);
 
-  return {
+  const sections = bodySections(plan.draft);
+
+  const project = {
     id: plan.id,
     source: 'obsidian',
     case_no: plan.case_no,
@@ -110,6 +150,9 @@ function toProject(plan, previous) {
     images: [],
     featured: !!prev.featured
   };
+  /* 절 서식 원고만 sections 를 갖습니다 — 기존 사례 항목은 모양이 그대로입니다 */
+  if (sections) project.sections = sections;
+  return project;
 }
 
 /* ── vault 로 되쓰지 않습니다 ───────────────────────────────
@@ -156,7 +199,8 @@ function main() {
 
   const added = projects.filter((p) => !prevByCase[p.case_no]);
   const kept = projects.filter((p) => prevByCase[p.case_no]);
-  const changed = kept.filter((p) => JSON.stringify(p) !== JSON.stringify(prevByCase[p.case_no]));
+  /* 키 순서는 무시하고 값만 비교합니다 (projects.js 는 정해진 키 순서로 다시 쓰입니다) */
+  const changed = kept.filter((p) => sameValue(p, prevByCase[p.case_no]) === false);
 
   console.log('vault            : ' + VAULT);
   console.log('Raw 사례          : ' + plans.length + '건');
@@ -167,6 +211,19 @@ function main() {
   console.log('사이트에서 삭제   : ' + dropped.length + '건  ' + dropped.map((p) => p.case_no + '(' + p.id + ')').join(', '));
   if (held.length) {
     console.log('보류(대표사진 없음): ' + held.length + '건  ' + held.map((p) => p.case_no).join(', '));
+  }
+
+  /* --diff : 바뀌는 사례를 필드 단위로 보여 줍니다 (쓰기 전에 꼭 확인) */
+  if (DIFF && changed.length) {
+    console.log('\n■ 필드별 변경');
+    changed.forEach((p) => {
+      const prev = prevByCase[p.case_no];
+      const keys = new Set(Object.keys(p).concat(Object.keys(prev)));
+      const lines = [...keys].filter((k) => JSON.stringify(p[k]) !== JSON.stringify(prev[k]))
+        .map((k) => `    ${k}: ${short(prev[k])}  →  ${short(p[k])}`);
+      console.log(`  ${p.case_no}`);
+      lines.forEach((l) => console.log(l));
+    });
   }
 
   const missingImages = [];
@@ -191,6 +248,17 @@ function main() {
     return;
   }
 
+  /* 안전장치 — 지금 사이트에 있는 사례가 빠지게 되면 쓰지 않고 멈춥니다.
+     (원본 폴더·발행대기 노트가 옮겨지거나 빠졌을 때 사례가 조용히 은퇴하지 않도록)
+     정말로 내리려는 경우에만 --allow-remove 를 붙입니다. */
+  if (dropped.length && !ALLOW_REMOVE) {
+    console.error('\n✗ 쓰지 않았습니다: 지금 사이트에 있는 사례 ' + dropped.length + '건이 빠지게 됩니다 — ' +
+      dropped.map((p) => p.case_no).join(', '));
+    console.error('  원본 노트와 발행대기 노트가 제자리에 있는지 먼저 확인하세요.');
+    console.error('  정말로 공개를 내리려는 것이면 --allow-remove 를 붙여 다시 실행하세요.');
+    process.exit(2);
+  }
+
   writeProjects({ source: bundle.source, PROJECTS: projects, PROJECT_ALIASES: aliases, RETIRED_PROJECT_IDS: retired });
   console.log('\n' + path.relative(REPO_ROOT, PROJECTS_FILE).replace(/\\/g, '/') + ' 를 다시 썼습니다.');
 
@@ -199,4 +267,11 @@ function main() {
   console.log('  node tools/check-site.js           # 검증');
 }
 
-main();
+/* 경로를 못 찾는 등 예상한 오류는 안내문만 보여 주고 멈춥니다 (스택 대신) */
+try {
+  main();
+} catch (e) {
+  if (!e.code || !/^E(NO|VAULT)/.test(e.code)) throw e;
+  console.error('✗ ' + e.message);
+  process.exit(1);
+}

@@ -242,9 +242,12 @@ function caseBody(p, ci, prefix, FALLBACK_IMAGE) {
     ['시공 시기', fmtDate(p.date)], ['작업 기간', p.period]
   ].filter((r) => r[1]);
 
-  const blocks = [
-    ['주요 하자 · 문제점', p.problem], ['적용 공법', p.method], ['시공 결과', p.result]
-  ].filter((r) => r[1]);
+  /* 본문 — 절 서식 원고(sections)가 있으면 그 소제목과 순서를 그대로 쓰고,
+     없으면 기존 세 칸(하자 · 공법 · 결과)을 씁니다. 마크업은 같습니다. */
+  const blocks = (p.sections && p.sections.length)
+    ? p.sections.map((s) => [s.heading, s.paragraphs])
+    : [['주요 하자 · 문제점', p.problem], ['적용 공법', p.method], ['시공 결과', p.result]]
+      .filter((r) => r[1]).map((r) => [r[0], [r[1]]]);
 
   const headMeta = [p.category, p.building, p.location, fmtDate(p.date), p.period]
     .filter(Boolean).map((t) => '<span>' + esc(t) + '</span>').join('');
@@ -297,7 +300,8 @@ function caseBody(p, ci, prefix, FALLBACK_IMAGE) {
     '<div class="wrap detail__grid">' +
       '<div class="detail__body">' +
         blocks.map((b) =>
-          '<section class="detail__block"><h2 class="h3">' + esc(b[0]) + '</h2><p>' + esc(b[1]) + '</p></section>'
+          '<section class="detail__block"><h2 class="h3">' + esc(b[0]) + '</h2>' +
+            b[1].map((t) => '<p>' + esc(t) + '</p>').join('') + '</section>'
         ).join('') +
         (ci.galleryImages.length ? '<div class="detail__gallery">' + ci.galleryImages.map((src) =>
           '<img src="' + prefix + esc(src) + '" alt="' + esc(p.title) + ' 추가 사진" loading="lazy"' + sizeAttrs(src) + ' />'

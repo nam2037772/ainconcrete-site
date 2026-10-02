@@ -47,23 +47,26 @@ function planImages(rawCase, slug) {
   const seen = new Map();          // url → 사이트 경로
   const downloads = [];
 
-  const assign = (url, file) => {
+  /* img.local — 옵시디언 첨부(![[파일명]])가 가리키는 vault 안의 실제 파일.
+     이런 사진은 내려받지 않고 복사합니다 (fetch-case-images.js). */
+  const assign = (img, file) => {
+    const url = img.url;
     if (seen.has(url)) return { url, file: seen.get(url).split('/').pop(), path: seen.get(url), reused: true };
     const p = `${dir}/${file}`;
     seen.set(url, p);
-    downloads.push({ url, path: p });
+    downloads.push(img.local ? { url, path: p, local: img.local } : { url, path: p });
     return { url, file, path: p, reused: false };
   };
 
   /* 대표사진 — 카드에는 첫 장만 씁니다. 노트에 여러 장이 적혀 있으면
      나머지도 대표 구간에 적힌 순서대로 함께 보여 줍니다. (골라내지 않습니다) */
   const repList = rawCase.images.representative.list.map((img, i) =>
-    assign(img.url, i === 0
+    assign(img, i === 0
       ? 'representative' + extensionOf(img.url)
       : `representative-${String(i + 1).padStart(2, '0')}${extensionOf(img.url)}`));
 
   const role = (key, prefix) => rawCase.images[key].list.map((img, i) =>
-    assign(img.url, `${prefix}-${String(i + 1).padStart(2, '0')}${extensionOf(img.url)}`));
+    assign(img, `${prefix}-${String(i + 1).padStart(2, '0')}${extensionOf(img.url)}`));
 
   return {
     dir,
@@ -92,7 +95,15 @@ function buildCasePlans(vaultDir, drafts) {
   raws.forEach((raw) => {
     const draft = raw.repoSource ? repoDrafts[raw.case_no] : drafts[raw.case_no];
     if (!draft) {
-      problems.push({ case_no: raw.case_no, level: 'error', text: '발행대기 노트가 없어 제목·본문을 만들 수 없습니다' });
+      problems.push({
+        case_no: raw.case_no,
+        level: 'error',
+        text: '발행대기 노트가 없어 제목·본문을 만들 수 없습니다 — ' +
+              `vault Wiki/홈페이지/발행대기 에 case_no: ${Number(raw.case_no)} 노트를 두거나 ` +
+              `저장소에 data/case-sources/${raw.case_no}.md 를 만드세요 (사례는 이번에 추가되지 않습니다)`
+      });
+      auditRawCase(raw).filter((i) => i.level === 'error')
+        .forEach((i) => problems.push({ case_no: raw.case_no, level: i.level, text: i.text }));
       return;
     }
     /* 같은 번호를 vault 노트도 쓰고 있으면 조용히 넘어가지 않고 알려 줍니다. */

@@ -160,18 +160,20 @@ images: [assets/images/projects/101-1.jpg]
 사이트 코드는 그 분류를 **해석하지 않고 그대로 옮기기만** 합니다.
 
 ```
-Raw/노출콘 시공기술사례/노출콘크리트 시공기술사례 - NNN.md   ← 정본
+사이트원본/01.1 노출콘기술/노출콘크리트 시공기술사례 - NNN.md   ← 정본 (vault, 읽기 전용)
   # 작업내용
   # 이미지분류
   ## 대표사진 / ## 시공전 / ## 시공중 / ## 시공후   ('사진없음' = 의도적으로 없음)
-        ↓  node tools/fetch-case-images.js --write   (참조된 사진만 내려받기)
+     사진은 ![](네이버 주소) 또는 ![[첨부 파일명]] 둘 다 됩니다
+        ↓  node tools/fetch-case-images.js --write
+           (주소는 내려받고, ![[첨부]] 는 vault 에서 찾아 가로 773px · EXIF 제거로 복사)
   assets/images/case-studies/case-NNN-<slug>/
     representative.jpg  before-01.jpg …  process-01.jpg …  after-01.jpg …
-        ↓  node tools/rebuild-cases.js --write --sync-drafts
+        ↓  node tools/rebuild-cases.js --write
+           (제목·요약·본문은 Wiki/홈페이지/발행대기/<slug>.md 또는 data/case-sources/NNN.md)
   assets/js/projects.js
     representative_image / representative_images
     before_images / process_images / after_images
-  Wiki/홈페이지/발행대기/<slug>.md  (프론트매터 + '관련 이미지' 절도 함께 갱신)
         ↓  assets/js/case-images.js  ← 이미지 선택 규칙이 있는 유일한 곳
   { representativeImage, representativeImages[], beforeImages[],
     processImages[], afterImages[], galleryImages[], showComparison }
@@ -208,13 +210,31 @@ Raw/노출콘 시공기술사례/노출콘크리트 시공기술사례 - NNN.md 
 ### 도구
 
 ```bash
-# vault 위치는 --vault= 또는 AINSAFE_VAULT 환경변수로 지정합니다.
-node tools/fetch-case-images.js                    # 미리보기 — 무엇을 받을지만 보여줍니다
-node tools/fetch-case-images.js --write --prune    # 내려받기 + 노트에서 빠진 사진 정리
-node tools/rebuild-cases.js                        # 미리보기 — 무엇이 바뀔지만 보여줍니다
-node tools/rebuild-cases.js --write --sync-drafts  # projects.js + 발행대기 노트 갱신
+# vault 위치: 기본은 '내 드라이브…/Vault/에릭_vault' 를 찾아 씁니다.
+#   다르면 --vault= 또는 AINSAFE_VAULT 로 지정합니다.
+# 원본 노트 폴더: 기본은 vault 안의 '사이트원본/01.1 노출콘기술'.
+#   옮겨지면 --raw-dir="vault 기준 상대경로" 또는 AINSAFE_RAW_DIR 로 지정합니다.
+node tools/fetch-case-images.js                    # 미리보기 — 무엇을 가져올지만 보여줍니다
+node tools/fetch-case-images.js --write            # 내려받기 / vault 첨부 복사
+node tools/rebuild-cases.js                        # 미리보기 — 추가·변경·그대로·삭제 건수
+node tools/rebuild-cases.js --diff                 # 바뀌는 사례를 필드 단위로 보여줌 (쓰기 전에 확인)
+node tools/rebuild-cases.js --write                # projects.js 다시 쓰기 (vault 는 고치지 않음)
+node tools/build-site.js --write                   # 상세 페이지 · 목록 · sitemap 다시 만들기
 node tools/check-cases.js                          # 배포 전 검증 — 실패 시 종료코드 1
 ```
+
+안전장치: `rebuild-cases --write` 는 지금 사이트에 있는 사례가 하나라도 빠지게 되면
+쓰지 않고 멈춥니다(종료코드 2). 원본 폴더나 발행대기 노트가 옮겨졌을 때 사례가 조용히
+내려가지 않게 하기 위해서입니다. 정말로 공개를 내릴 때만 `--allow-remove` 를 붙입니다.
+
+새 사례(048, 049 …) 등록 순서
+1. vault `사이트원본/01.1 노출콘기술/노출콘크리트 시공기술사례 - NNN.md` 에 사진 분류를 적습니다.
+2. 제목·요약·본문은 vault `Wiki/홈페이지/발행대기/<slug>.md` (프론트매터 `type: case`, `case_no: NNN`, `slug`)
+   또는 저장소 `data/case-sources/NNN.md` 에 둡니다. 둘 다 없으면 도구가 그 사례를 추가하지 않고 알려 줍니다.
+   같은 번호가 저장소에 있으면 저장소 원본이 우선합니다(사진 수가 vault 와 다르면 경고).
+   본문을 하자·공법·결과 세 칸이 아니라 원고의 소제목 그대로 쓰려면 프론트매터에 `layout: sections`
+   를 적습니다(`## 기술 메모` 절은 화면에 나오지 않습니다 — 047 참고).
+3. 위 도구를 미리보기 → `--write` 순서로 실행하고 `check-cases` · `check-site` 로 검증합니다.
 
 `check-cases.js` 가 확인하는 것: 스크립트 문법, 모든 사례의 대표 이미지 존재,
 참조 이미지 파일 실재, 원격 링크가 남아 있지 않은지, id 중복·별칭, 통합 목록 항목 수,

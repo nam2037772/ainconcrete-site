@@ -205,8 +205,8 @@ try {
   assert(strays.length === 0,
     `Raw 에 없는 이미지 파일 없음${strays.length ? ' — ' + strays.slice(0, 5).join(', ') : ''}`);
 } catch (e) {
-  if (e.code === 'ENORAW' || e.code === 'ENODRAFT') {
-    console.log('  · 옵시디언 vault 를 찾을 수 없어 건너뜁니다. (--vault= 또는 AINSAFE_VAULT)');
+  if (e.code === 'ENORAW' || e.code === 'ENODRAFT' || e.code === 'ENOVAULT') {
+    console.log('  · 옵시디언 원본을 찾을 수 없어 건너뜁니다. (--vault= / AINSAFE_VAULT, --raw-dir= / AINSAFE_RAW_DIR)'); console.log('    ' + e.message.split(String.fromCharCode(10)).join(String.fromCharCode(10) + '    '));
   } else {
     fail('Raw 대조 중 오류: ' + e.message);
   }
