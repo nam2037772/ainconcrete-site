@@ -75,7 +75,7 @@ const PROJECTS = [
     "id": "obsidian-case-047-stairwell-floor-joint-exposed-concrete-repair",
     "source": "obsidian",
     "case_no": "047",
-    "source_note": "data/case-sources/047.md",
+    "source_note": "사이트원본/01.1 노출콘기술/노출콘크리트 시공기술사례 - 047.md",
     "draft_file": "data/case-sources/047.md",
     "review_required": false,
     "title": "계단실 층간조인트의 노출콘크리트 면보수",
@@ -137,7 +137,7 @@ const PROJECTS = [
         ]
       }
     ],
-    "representative_image": "assets/images/case-studies/case-047-stairwell-floor-joint-exposed-concrete-repair/representative.jpg",
+    "representative_image": "assets/images/case-studies/case-047-stairwell-floor-joint-exposed-concrete-repair/representative.png",
     "before_images": [
       "assets/images/case-studies/case-047-stairwell-floor-joint-exposed-concrete-repair/before-01.jpg",
       "assets/images/case-studies/case-047-stairwell-floor-joint-exposed-concrete-repair/before-02.jpg",
@@ -159,14 +159,17 @@ const PROJECTS = [
       "assets/images/case-studies/case-047-stairwell-floor-joint-exposed-concrete-repair/after-06.jpg",
       "assets/images/case-studies/case-047-stairwell-floor-joint-exposed-concrete-repair/after-07.jpg"
     ],
-    "thumbnail": "assets/images/case-studies/case-047-stairwell-floor-joint-exposed-concrete-repair/representative.jpg",
+    "thumbnail": "assets/images/case-studies/case-047-stairwell-floor-joint-exposed-concrete-repair/representative.png",
     "after": "assets/images/case-studies/case-047-stairwell-floor-joint-exposed-concrete-repair/after-01.jpg",
     "before": "assets/images/case-studies/case-047-stairwell-floor-joint-exposed-concrete-repair/before-01.jpg",
     "images": [],
     "featured": false,
     "representative_images": [
-      "assets/images/case-studies/case-047-stairwell-floor-joint-exposed-concrete-repair/representative.jpg"
-    ]
+      "assets/images/case-studies/case-047-stairwell-floor-joint-exposed-concrete-repair/representative.png"
+    ],
+    "representative_alt": "계단실 층간조인트 노출콘크리트 면보수 시공 전·후 비교 사진",
+    "representative_fit": "contain",
+    "representative_hd": "assets/images/case-studies/case-047-stairwell-floor-joint-exposed-concrete-repair/representative-hd.jpg"
   },
   {
     "id": "obsidian-case-045-songpa-restaurant-industrial-conchae-vintage-wall",

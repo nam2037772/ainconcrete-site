@@ -204,6 +204,20 @@ try {
   }
   assert(strays.length === 0,
     `Raw 에 없는 이미지 파일 없음${strays.length ? ' — ' + strays.slice(0, 5).join(', ') : ''}`);
+
+  /* 사이트 파일이 지금의 원본에서 온 것인지 — 옵시디언에서 사진을 바꿨는데
+     같은 파일 이름이라 옛 사진이 남는 일을 막습니다 (data/case-image-sources.json) */
+  const { loadManifest, staleReason } = require('./lib/image-sources');
+  const manifest = loadManifest();
+  const stale = [];
+  plans.forEach((pl) => pl.images.downloads.forEach((d) => {
+    if (!/^https?:\/\//.test(d.url) && !d.local) return;      // 저장소 원본 경로
+    const why = staleReason(d, vault, manifest);
+    if (why) stale.push(`${d.path} (${why})`);
+  }));
+  assert(stale.length === 0,
+    `사이트 이미지가 원본과 같음 — 바뀐 원본 없음${stale.length ? ' — ' + stale.slice(0, 5).join(', ') +
+      ' → node tools/fetch-case-images.js --write' : ''}`);
 } catch (e) {
   if (e.code === 'ENORAW' || e.code === 'ENODRAFT' || e.code === 'ENOVAULT') {
     console.log('  · 옵시디언 원본을 찾을 수 없어 건너뜁니다. (--vault= / AINSAFE_VAULT, --raw-dir= / AINSAFE_RAW_DIR)'); console.log('    ' + e.message.split(String.fromCharCode(10)).join(String.fromCharCode(10) + '    '));

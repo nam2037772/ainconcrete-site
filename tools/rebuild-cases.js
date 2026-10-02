@@ -152,6 +152,15 @@ function toProject(plan, previous) {
   };
   /* 절 서식 원고만 sections 를 갖습니다 — 기존 사례 항목은 모양이 그대로입니다 */
   if (sections) project.sections = sections;
+  /* 대표사진 대체 텍스트 — 원고에 적었을 때만 (예: 시공 전·후 비교 이미지).
+     없으면 화면은 기존 문구("… 시공 완료 사진" 등)를 씁니다. */
+  if (fm.representative_alt) project.representative_alt = fm.representative_alt;
+  /* representative_fit: contain — 상세페이지 대표사진을 자르지 않고 전체를 보여 줍니다
+     (예: 라벨이 있는 시공 전·후 비교 이미지). 고화질본이 있으면 함께 적습니다. */
+  if (String(fm.representative_fit || '') === 'contain') {
+    project.representative_fit = 'contain';
+    if (plan.images.representativeHd) project.representative_hd = plan.images.representativeHd.path;
+  }
   return project;
 }
 

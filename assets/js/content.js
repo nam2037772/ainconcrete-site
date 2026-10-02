@@ -160,6 +160,8 @@ function projectToContent(p) {
     images: {
       thumbnail: ci.representativeImage,
       cover: ci.representativeImage,
+      /* 대표사진 대체 텍스트 — 사례에 따로 적은 경우에만 (없으면 카드 기본 문구) */
+      alt: p.representative_alt || '',
       before: ci.beforeImages[0] || '',
       gallery: ci.galleryImages,
       beforeImages: ci.beforeImages,

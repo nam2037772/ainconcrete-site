@@ -252,7 +252,7 @@
       '<article class="card">' +
         '<a class="card__link" href="' + caseHref(p.id) + '">' +
           '<span class="card__media">' +
-            '<img src="' + esc(img(ci.representativeImage)) + '" alt="' + esc(p.title) + ' 시공 완료 사진"' +
+            '<img src="' + esc(img(ci.representativeImage)) + '" alt="' + esc(p.representative_alt || p.title + ' 시공 완료 사진') + '"' +
             ' loading="lazy" width="800" height="600" />' +
             (ci.hasBefore ? '<span class="card__flag">BEFORE / AFTER</span>' : '') +
           '</span>' +
@@ -284,7 +284,7 @@
             '<a class="link-arrow" href="' + caseHref(p.id) + '">시공사례 자세히 보기</a>' +
           '</div>' +
           '<a class="project-split__media" href="' + caseHref(p.id) + '">' +
-            '<img src="' + rep + '" alt="' + esc(p.title) + ' 시공 완료 사진" loading="lazy" />' +
+            '<img src="' + rep + '" alt="' + esc(p.representative_alt || p.title + ' 시공 완료 사진') + '" loading="lazy" />' +
             flag +
           '</a>' +
         '</article>';
@@ -294,7 +294,7 @@
         '<article class="project-banner reveal">' +
           '<a class="project-banner__link" href="' + caseHref(p.id) + '">' +
             '<div class="project-banner__media">' +
-              '<img src="' + rep + '" alt="' + esc(p.title) + ' 시공 완료 사진" loading="lazy" />' +
+              '<img src="' + rep + '" alt="' + esc(p.representative_alt || p.title + ' 시공 완료 사진') + '" loading="lazy" />' +
               flag +
             '</div>' +
             '<div class="project-banner__body">' +
@@ -310,7 +310,7 @@
         '<article class="project-item reveal">' +
           '<a class="project-item__link" href="' + caseHref(p.id) + '">' +
             '<span class="project-item__media">' +
-              '<img src="' + rep + '" alt="' + esc(p.title) + ' 시공 완료 사진" loading="lazy" />' +
+              '<img src="' + rep + '" alt="' + esc(p.representative_alt || p.title + ' 시공 완료 사진') + '" loading="lazy" />' +
               flag +
             '</span>' +
             '<span class="project-item__body">' +
@@ -348,7 +348,7 @@
     var meta = [item.category || item.categoryRaw, item.date ? fmtDate(item.date) : '']
       .filter(Boolean)
       .map(function (t) { return '<span>' + esc(t) + '</span>'; }).join('');
-    var alt = item.title + ' 대표 이미지';
+    var alt = item.images.alt || item.title + ' 대표 이미지';
     /* 시공 전 사진이 있는 사례에만 비교 표시를 답니다 (기술문서에는 붙지 않습니다) */
     var flag = (item.images.beforeImages && item.images.beforeImages.length)
       ? '<span class="card__flag">BEFORE / AFTER</span>' : '';

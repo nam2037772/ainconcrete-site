@@ -20,18 +20,21 @@ const { spawnSync } = require('child_process');
 const { assertWritable } = require('./case-source');
 
 const SITE_WIDTH = 773;
+/* 상세페이지에서 자르지 않고 보여 주는 대표사진(representative_fit: contain)의
+   고화질본 최대 폭 — 원본이 더 작으면 원본 크기 그대로 둡니다(키우지 않음) */
+const HD_WIDTH = 1600;
 
 const PY = [
   'import sys',
   'from PIL import Image, ImageOps',
-  'src, dst, width = sys.argv[1], sys.argv[2], int(sys.argv[3])',
+  'src, dst, width, quality = sys.argv[1], sys.argv[2], int(sys.argv[3]), int(sys.argv[4])',
   'im = ImageOps.exif_transpose(Image.open(src))',
   'if im.width > width:',
   '    im = im.resize((width, round(im.height * width / im.width)), Image.LANCZOS)',
   'if dst.lower().endswith(".png"):',
   '    im.save(dst, "PNG", optimize=True)',
   'else:',
-  '    im.convert("RGB").save(dst, "JPEG", quality=86, optimize=True, progressive=True)',
+  '    im.convert("RGB").save(dst, "JPEG", quality=quality, optimize=True, progressive=True)',
   'print(im.width, im.height)'
 ].join('\n');
 
@@ -51,15 +54,17 @@ function python() {
 }
 
 /** vault 의 사진(src) → 사이트 이미지(dest, 절대경로). { width, height } 를 돌려줍니다. */
-function copyLocalImage(src, dest) {
+function copyLocalImage(src, dest, opts) {
+  const width = (opts && opts.width) || SITE_WIDTH;
+  const quality = (opts && opts.quality) || 86;
   const fs = require('fs');
   const path = require('path');
   assertWritable(dest);
   fs.mkdirSync(path.dirname(dest), { recursive: true });
-  const r = spawnSync(python(), ['-c', PY, src, dest, String(SITE_WIDTH)], { encoding: 'utf8' });
+  const r = spawnSync(python(), ['-c', PY, src, dest, String(width), String(quality)], { encoding: 'utf8' });
   if (r.status !== 0) throw new Error('사진 변환 실패: ' + src + ' — ' + (r.stderr || '').trim().split('\n').pop());
-  const [width, height] = String(r.stdout).trim().split(/\s+/).map(Number);
-  return { width, height };
+  const [outW, outH] = String(r.stdout).trim().split(/\s+/).map(Number);
+  return { width: outW, height: outH };
 }
 
-module.exports = { SITE_WIDTH, copyLocalImage };
+module.exports = { SITE_WIDTH, HD_WIDTH, copyLocalImage };

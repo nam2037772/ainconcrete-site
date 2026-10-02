@@ -42,7 +42,7 @@ function extensionOf(url) {
  * @returns {{ dir, representative, before[], process[], after[], downloads[] }}
  *   각 항목은 { url, file, path } 이며 downloads 는 중복을 뺀 실제 내려받기 목록입니다.
  */
-function planImages(rawCase, slug) {
+function planImages(rawCase, slug, opts) {
   const dir = `${CASE_IMAGE_ROOT}/case-${rawCase.case_no}-${slug}`;
   const seen = new Map();          // url → 사이트 경로
   const downloads = [];
@@ -68,9 +68,22 @@ function planImages(rawCase, slug) {
   const role = (key, prefix) => rawCase.images[key].list.map((img, i) =>
     assign(img, `${prefix}-${String(i + 1).padStart(2, '0')}${extensionOf(img.url)}`));
 
+  /* representative_fit: contain — 상세페이지에서 대표사진을 자르지 않고 보여 주는 사례.
+     카드용(가로 773px)과 별도로 원본 해상도 고화질본을 하나 더 만듭니다.
+     vault 첨부일 때만 만듭니다 (네이버 사진은 이미 가로 773px 라 키울 수 없습니다). */
+  let representativeHd = null;
+  const rep0 = rawCase.images.representative.list[0];
+  if (opts && opts.hdRepresentative && rep0 && rep0.local) {
+    const { HD_WIDTH } = require('./local-image');
+    const p = `${dir}/representative-hd.jpg`;
+    downloads.push({ url: rep0.url, path: p, local: rep0.local, width: HD_WIDTH, quality: 90 });
+    representativeHd = { url: rep0.url, file: 'representative-hd.jpg', path: p };
+  }
+
   return {
     dir,
     representative: repList[0] || null,
+    representativeHd,
     extraRepresentative: repList.slice(1),
     before: role('before', 'before'),
     process: role('process', 'process'),
@@ -117,7 +130,9 @@ function buildCasePlans(vaultDir, drafts) {
     }
     auditRawCase(raw).forEach((i) => problems.push({ case_no: raw.case_no, level: i.level, text: i.text }));
 
-    const images = planImages(raw, draft.slug);
+    const images = planImages(raw, draft.slug, {
+      hdRepresentative: String(draft.frontmatter.representative_fit || "") === "contain"
+    });
     plans.push({
       case_no: raw.case_no,
       slug: draft.slug,

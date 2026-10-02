@@ -169,7 +169,7 @@ function projectCard(p, ci, prefix, FALLBACK_IMAGE) {
     '<article class="card">' +
       '<a class="card__link" href="' + prefix + casePath(p.id) + '">' +
         '<span class="card__media">' +
-          '<img src="' + prefix + esc(src) + '" alt="' + esc(p.title) + ' 시공 완료 사진"' +
+          '<img src="' + prefix + esc(src) + '" alt="' + esc(p.representative_alt || p.title + ' 시공 완료 사진') + '"' +
           ' loading="lazy" width="800" height="600" />' +
           (ci.hasBefore ? '<span class="card__flag">BEFORE / AFTER</span>' : '') +
         '</span>' +
@@ -205,7 +205,7 @@ function resourceRow(r, prefix) {
 function contentCard(item, prefix, FALLBACK_IMAGE) {
   const meta = [item.category || item.categoryRaw, item.date ? fmtDate(item.date) : '']
     .filter(Boolean).map((t) => '<span>' + esc(t) + '</span>').join('');
-  const alt = item.title + ' 대표 이미지';
+  const alt = item.images.alt || item.title + ' 대표 이미지';
   const flag = (item.images.beforeImages && item.images.beforeImages.length)
     ? '<span class="card__flag">BEFORE / AFTER</span>' : '';
   /* 대표 이미지가 아예 없는 항목은 관계없는 대체 이미지를 끼워 넣지 않고
@@ -281,12 +281,28 @@ function caseBody(p, ci, prefix, FALLBACK_IMAGE) {
     ? ci.representativeImages
     : [imgOr(ci.representativeImage, FALLBACK_IMAGE)];
   /* 대표사진 첫 장은 이 페이지의 LCP 요소입니다 — 지연 로딩하지 않습니다. */
+  /* representative_fit: contain — 첫 대표사진을 자르지 않고 전체를 보여 줍니다.
+     (라벨이 있는 시공 전·후 비교 이미지처럼 잘리면 안 되는 사진)
+     카드용 773px 와 고화질본을 srcset 으로 함께 주어 화면 폭에 맞는 것을 고르게 합니다.
+     그 밖의 사례는 지금까지와 같은 전체 폭 · 고정 높이 · 가운데 자르기입니다. */
+  const contain = p.representative_fit === 'contain';
   const repHtml = repList.map((src, i) => {
     const s = imgOr(src, FALLBACK_IMAGE);
     const load = i === 0 ? ' fetchpriority="high"' : ' loading="lazy"';
+    const alt = esc(i === 0 && p.representative_alt ? p.representative_alt
+      : p.title + ' 대표 사진' + (repList.length > 1 ? ' ' + (i + 1) : ''));
+    if (contain && i === 0) {
+      const hd = p.representative_hd || '';
+      const w = (rel) => (/ width="(\d+)"/.exec(sizeAttrs(rel)) || [])[1];
+      const srcset = hd && w(s) && w(hd)
+        ? ' srcset="' + prefix + esc(s) + ' ' + w(s) + 'w, ' + prefix + esc(hd) + ' ' + w(hd) + 'w"' +
+          ' sizes="(min-width: 1100px) 1040px, 100vw"'
+        : '';
+      return '<figure class="detail__figure detail__figure--contain"><img src="' + prefix + esc(s) + '"' +
+        srcset + ' alt="' + alt + '"' + load + sizeAttrs(hd || s) + ' /></figure>';
+    }
     return '<figure class="detail__figure"><img src="' + prefix + esc(s) +
-      '" alt="' + esc(p.title) + ' 대표 사진' + (repList.length > 1 ? ' ' + (i + 1) : '') +
-      '"' + load + sizeAttrs(s) + ' /></figure>';
+      '" alt="' + alt + '"' + load + sizeAttrs(s) + ' /></figure>';
   }).join('');
 
   return '' +

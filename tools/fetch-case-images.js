@@ -32,6 +32,7 @@ const {
 } = require('./lib/case-source');
 const { buildCasePlans } = require('./lib/case-plan');
 const { copyLocalImage } = require('./lib/local-image');
+const { MANIFEST, loadManifest, saveManifest, fingerprint, staleReason } = require('./lib/image-sources');
 
 const WRITE = process.argv.includes('--write');
 const FORCE = process.argv.includes('--force');
@@ -81,25 +82,37 @@ async function main() {
 
   const wanted = new Map();       // 사이트 경로 → url
   const localOf = new Map();      // 사이트 경로 → vault 안의 첨부 파일
+  const itemOf = new Map();       // 사이트 경로 → 계획의 내려받기 항목
   plans.forEach((p) => p.images.downloads.forEach((d) => {
     wanted.set(d.path, d.url);
+    itemOf.set(d.path, d);
     if (d.local) localOf.set(d.path, d.local);
   }));
 
   /* 원본이 주소인 것만 내려받습니다. 사이트 경로로 적힌 것(저장소 원본)은
-     이미 저장소 안에 있는 사진이라 받을 것이 없습니다. */
+     이미 저장소 안에 있는 사진이라 받을 것이 없습니다.
+     파일이 있어도 원본이 바뀌었으면(장부와 다르면) 다시 가져옵니다. */
+  const manifest = loadManifest();
   const isRemote = (url) => url.indexOf('http://') === 0 || url.indexOf('https://') === 0;
   const inRepo = [...wanted].filter(([dest, url]) => !isRemote(url) && !localOf.has(dest));
   const missingInRepo = inRepo.filter(([dest]) => !fs.existsSync(path.join(REPO_ROOT, dest)));
-  const todo = [...wanted].filter(([dest, url]) =>
-    (isRemote(url) || localOf.has(dest)) && (FORCE || !fs.existsSync(path.join(REPO_ROOT, dest))));
+  const reasonOf = new Map();
+  const todo = [...wanted].filter(([dest, url]) => {
+    if (!isRemote(url) && !localOf.has(dest)) return false;
+    const why = FORCE ? 'force' : staleReason(itemOf.get(dest), VAULT, manifest);
+    if (why) reasonOf.set(dest, why);
+    return !!why;
+  });
+  const changed = [...reasonOf].filter(([, why]) => why === 'changed').map(([dest]) => dest);
 
   console.log('vault        : ' + VAULT);
   console.log('사례          : ' + plans.length + '건');
   console.log('참조 이미지   : ' + wanted.size + '개 (중복 제거 후)');
   console.log('저장소 안     : ' + inRepo.length + '개 (내려받지 않음)');
   console.log('vault 첨부    : ' + localOf.size + '개 (복사 · 가로 773px)');
-  console.log('가져올 대상   : ' + todo.length + '개\n');
+  console.log('가져올 대상   : ' + todo.length + '개' +
+    (changed.length ? ` (원본이 바뀐 파일 ${changed.length}개 포함)` : '') + '\n');
+  changed.forEach((dest) => console.log('  ↻ 원본 변경: ' + dest));
 
   if (missingInRepo.length) {
     console.log('■ 저장소 안에 있어야 하는데 파일이 없습니다 (' + missingInRepo.length + '개)');
@@ -113,8 +126,9 @@ async function main() {
     for (const [dest, url] of todo) {
       try {
         const size = localOf.has(dest)
-          ? copyLocalImage(localOf.get(dest), path.join(REPO_ROOT, dest))
+          ? copyLocalImage(localOf.get(dest), path.join(REPO_ROOT, dest), itemOf.get(dest))
           : await download(url, path.join(REPO_ROOT, dest));
+        manifest[dest] = fingerprint(itemOf.get(dest), VAULT);
         done++;
         if (done % 25 === 0 || done === todo.length) console.log(`  ${done}/${todo.length} …`);
         void size;
@@ -122,6 +136,16 @@ async function main() {
         errors.push(`${dest}\n      ${url}\n      ${e.message}`);
       }
     }
+    /* 장부에 아직 없는 네이버 사진은 지금 파일을 기준으로 적어 둡니다 (다시 받지 않음) */
+    [...wanted].forEach(([dest, url]) => {
+      if (!manifest[dest] && isRemote(url) && fs.existsSync(path.join(REPO_ROOT, dest))) {
+        manifest[dest] = fingerprint(itemOf.get(dest), VAULT);
+      }
+    });
+    /* 노트에서 빠진 경로는 장부에서도 뺍니다 */
+    Object.keys(manifest).forEach((k) => { if (!wanted.has(k)) delete manifest[k]; });
+    saveManifest(manifest);
+    console.log('  장부 갱신: ' + path.relative(REPO_ROOT, MANIFEST).replace(/\\/g, '/'));
   } else {
     todo.slice(0, 10).forEach(([dest]) => console.log('  · ' + dest));
     if (todo.length > 10) console.log(`  … 외 ${todo.length - 10}개`);

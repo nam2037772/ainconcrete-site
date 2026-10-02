@@ -11,8 +11,9 @@
     다른 위치를 쓰려면 --raw-dir="vault 기준 상대경로" 또는 AINSAFE_RAW_DIR)
 
    저장소 원본은 한 파일 안에 발행대기 본문과 '# 이미지분류' 를 함께 담습니다.
-   같은 번호가 양쪽에 있으면 **저장소 원본을 씁니다** — 사이트 쪽에서 본문과
-   사진을 따로 다듬어 둔 사례이기 때문입니다. 두 곳의 사진 수가 다르면 알려 줍니다.
+   같은 번호가 양쪽에 있으면 **사진 분류는 vault 원본 노트를 씁니다.**
+   저장소 원본은 그때 제목·본문으로만 쓰이고, 저장소 쪽 '# 이미지분류' 는
+   vault 에 노트가 없는 번호에만 쓰입니다.
 
    ▶ 노트 서식 (에릭이 확정한 고정 스키마)
        # 작업내용
@@ -176,25 +177,15 @@ function parseRawNote(raw) {
  * 같은 번호가 양쪽에 있으면 vault 의 Raw 노트를 씁니다.
  */
 function loadRawCases(vaultDir) {
-  const repo = loadRepoRawCases();
-  const byNo = new Map(repo.map((c) => [c.case_no, c]));
-  const vault = loadVaultRawCases(vaultDir).filter((c) => {
-    const r = byNo.get(c.case_no);
-    if (!r) return true;
-    /* 저장소 원본이 우선입니다. vault 노트와 사진 수가 다르면 알려 줍니다. */
-    const diff = ROLES.map(({ key, heading }) =>
-      c.images[key].list.length !== r.images[key].list.length
-        ? `${heading} vault ${c.images[key].list.length} · 저장소 ${r.images[key].list.length}` : '')
-      .filter(Boolean);
-    if (diff.length) {
-      r.notices = (r.notices || []).concat({
-        level: 'warn',
-        text: 'vault 원본과 저장소 원본의 사진 수가 다릅니다 (' + diff.join(', ') + ') — 저장소 원본을 씁니다'
-      });
-    }
-    r.vault_note = c.source_note;
-    return false;
-  });
+  /* 사진 분류는 언제나 옵시디언 원본 노트가 정본입니다.
+     같은 번호의 저장소 원본(data/case-sources)이 있어도 사진 분류는 vault 를 쓰고,
+     저장소 원본은 제목·본문(발행대기 역할)으로만 쓰입니다 (case-source.loadDrafts).
+     저장소 원본의 '# 이미지분류' 는 vault 에 노트가 없는 번호에만 쓰입니다.
+     (예전에는 저장소 원본이 우선이어서, 옵시디언에서 대표사진을 바꿔도
+      저장소에 굳어 있던 옛 분류가 계속 쓰였습니다 — 047) */
+  const vault = loadVaultRawCases(vaultDir);
+  const seen = new Set(vault.map((c) => c.case_no));
+  const repo = loadRepoRawCases().filter((c) => !seen.has(c.case_no));
   return vault.concat(repo).sort((a, b) => a.case_no.localeCompare(b.case_no));
 }
 

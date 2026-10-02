@@ -228,3 +228,8 @@ body[data-page=reinforcement] .phero::after,
 body[data-page=carbon-fiber] .phero::after,
 body[data-page=about] .phero::after{background:linear-gradient(0deg,rgba(14,13,12,.82) 0%,rgba(14,13,12,.62) 46%,rgba(14,13,12,.20) 82%,rgba(14,13,12,.06) 100%)}
 }
+/* 시공사례 상세 — 대표사진을 자르지 않는 사례 (representative_fit: contain)
+   라벨이 있는 시공 전·후 비교 이미지처럼 잘리면 안 되는 대표사진만 이 모양을 씁니다.
+   원본 비율 그대로 전체를 보여 주고, PC 에서는 너무 커지지 않게 폭·높이를 제한합니다. */
+.detail__figure.detail__figure--contain{display:flex;justify-content:center}
+.detail__figure.detail__figure--contain img{width:auto;height:auto;max-width:min(100%,1040px);max-height:min(82vh,780px);object-fit:contain}

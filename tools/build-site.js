@@ -740,7 +740,7 @@ ${hero.pillars.map((p) => `      <li><a class="pillar" href="${esc(p.link)}"><sp
       const flag = ci.hasBefore ? '<span>BEFORE / AFTER</span>' : '<span>AFTER</span>';
       const rep = ci.representativeImage;
       return `      <a class="work reveal" href="${casePath(p.id)}">` +
-        `<div class="work__media"><img src="${esc(rep)}" alt="${esc(p.title)} 시공 사진" loading="lazy"${sizeAttrs(rep)} /></div>` +
+        `<div class="work__media"><img src="${esc(rep)}" alt="${esc(p.representative_alt || p.title + ' 시공 사진')}" loading="lazy"${sizeAttrs(rep)} /></div>` +
         `<div class="work__meta">${flag}</div>` +
         `<h3 class="work__ttl">${esc(p.title)}</h3></a>`;
     }).join('\n');
