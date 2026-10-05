@@ -116,7 +116,7 @@ const RESOURCES = [
       </ul>
       <p>표준은 개정될 수 있으므로 인용 시 국가건설기준센터와 e나라 표준인증에서 최신본을 확인합니다. 이 문서는 현장 판단을 위한 기술자료이며, 모든 현장에 같은 공법을 일률적으로 적용하기 위한 표준시방서가 아닙니다.</p>
       <h3>10. 함께 보면 좋은 자료</h3>
-      <p>제주 해안환경의 조사 항목은 <a href="guide/jeju-chloride-corrosion-repair-010.html">제주 해안지역 콘크리트 염해와 철근부식 보수</a>에, 철근 녹 제거와 단면복구의 세부 공정은 <a href="guide/rebar-corrosion-spalling-repair-015.html">철근부식 및 콘크리트 박락 보수공법</a>에 정리했습니다. 공법 사이의 판단 순서는 <a href="guide/repair-method-selection-014.html">우레탄 · 에폭시 · 탄소섬유 선정 흐름</a>, 보강 자체는 <a href="guide/carbon-fiber-strengthening-012.html">탄소섬유시트(CFRP) 구조보강</a>에서 다룹니다. 현장 시공 범위는 <a href="reinforcement.html">콘크리트 보수보강</a>을 참고하십시오.</p>
+      <p>제주 해안환경의 조사 항목은 <a href="guide/jeju-chloride-corrosion-repair-010.html">제주 해안지역 콘크리트 염해와 철근부식 보수</a>에, 철근 녹 제거와 단면복구의 세부 공정은 <a href="guide/rebar-corrosion-spalling-repair-015.html">철근부식 및 콘크리트 박락 보수공법</a>에 정리했습니다. 공법 사이의 판단 순서는 <a href="guide/repair-method-selection-014.html">우레탄 · 에폭시 · 탄소섬유 선정 흐름</a>, 보강 자체는 <a href="guide/carbon-fiber-strengthening-012.html">탄소섬유시트(CFRP) 구조보강</a>에서 다룹니다. 현장 시공 범위는 <a href="reinforcement.html">콘크리트 보수보강</a>을, 보수를 마친 면의 발수 · 표면보호는 <a href="concrete-surface-protection.html">콘크리트 표면강화 · 발수제 시공</a>을 참고하십시오.</p>
     `
   },
   {
@@ -653,7 +653,7 @@ const RESOURCES = [
       <p>해안 옹벽, 주차장 슬래브 하부, 항만구조물처럼 염분과 물에 반복적으로 노출되는 구조물에서 박락과 철근부식이 자주 확인됩니다. 점검 주기를 두고 균열과 녹물 흔적을 기록해 두면, 손을 대야 하는 시점을 훨씬 이르게 잡을 수 있습니다.</p>
       <p>제주는 강수가 많고 태풍의 영향을 받습니다. 정기 점검 일정과 별개로 <strong>첫 큰 강우 이후와 태풍 이후</strong>를 확인 시점으로 넣어 두면, 새로 생긴 누수와 진행된 박락을 훨씬 빨리 찾을 수 있습니다.</p>
       <h3>9. 함께 보면 좋은 자료</h3>
-      <p>단면복구까지 마친 뒤 내력 부족이 확인되면 구조보강으로 이어집니다. 그 판단 순서는 <a href="guide/repair-method-selection-014.html">우레탄 · 에폭시 · 탄소섬유 공법 선정 흐름</a>에, 보강 자체는 <a href="guide/carbon-fiber-strengthening-012.html">탄소섬유시트(CFRP) 구조보강</a>에 정리했습니다. 현장 시공은 <a href="reinforcement.html">콘크리트 보수보강</a>에서 다룹니다.</p>
+      <p>단면복구까지 마친 뒤 내력 부족이 확인되면 구조보강으로 이어집니다. 그 판단 순서는 <a href="guide/repair-method-selection-014.html">우레탄 · 에폭시 · 탄소섬유 공법 선정 흐름</a>에, 보강 자체는 <a href="guide/carbon-fiber-strengthening-012.html">탄소섬유시트(CFRP) 구조보강</a>에 정리했습니다. 현장 시공은 <a href="reinforcement.html">콘크리트 보수보강</a>에서, 보수 후 표면보호는 <a href="concrete-surface-protection.html">콘크리트 표면강화 · 발수제 시공</a>에서 다룹니다.</p>
     `
   },
   {
@@ -803,6 +803,8 @@ const RESOURCES = [
       <p>해안가 현장은 내륙보다 재도포 주기를 짧게 계획하는 편이 좋습니다.</p>
       <h3>발수제 선택 기준</h3>
       <p>실란·실록산계는 침투 깊이가 깊어 노출콘크리트 면에 적합합니다. 표면에 막을 만드는 코팅형은 광택과 색 변화를 동반하므로 노출면에는 권하지 않습니다.</p>
+      <h3>발수는 방수가 아닙니다</h3>
+      <p>발수제는 표면의 흡수를 줄이는 보호재입니다. 균열·조인트·창호 주변처럼 물이 실제로 새는 경로가 있으면 먼저 보수합니다. 적용 범위와 시공 순서는 <a href="concrete-surface-protection.html#water-repellent">제주 콘크리트 발수제 시공</a>에, 누수 차단은 <a href="waterproof.html">인젝션 특수방수</a>에 정리했습니다.</p>
     `
   },
   {

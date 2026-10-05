@@ -50,6 +50,7 @@ const SITE_URL = D.siteUrlOf(COMPANY);
 
 const ROOT_PAGES = ['index.html', 'concrete.html', 'reinforcement.html', 'waterproof.html',
   'carbon-fiber-reinforcement.html', 'epoxy-crack-repair.html', 'concrete-surface-protection.html',
+  'steel-plate-reinforcement.html', 'vintage-concrete-finish.html',
   'projects.html',
   'resources.html', 'materials.html', 'about.html', 'contact.html',
   'privacy.html', '404.html', 'project.html', 'resource.html'];
@@ -269,6 +270,10 @@ console.log('\n[5] 정적 내부 링크 · 고아 페이지');
     'carbon-fiber-reinforcement.html': { cases: 0, guides: 2, material: true },
     'epoxy-crack-repair.html':         { cases: 0, guides: 2, material: true },
     'concrete-surface-protection.html':{ cases: 0, guides: 2, material: true },
+    /* 철판보강은 공개할 수 있는 완료 사례가 아직 없습니다 — 사례 링크를 기대하지 않습니다. */
+    'steel-plate-reinforcement.html':  { cases: 0, guides: 2, material: true },
+    /* 빈티지마감은 실제 콘채 질감마감 사례(석고보드·상가·식당 등)로 잇습니다. */
+    'vintage-concrete-finish.html':    { cases: 3, guides: 1, material: true },
     'materials.html':     { cases: 3, guides: 3, material: false }
   };
   Object.entries(EXPECT).forEach(([page, want]) => {

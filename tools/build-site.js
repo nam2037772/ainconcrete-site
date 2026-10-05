@@ -62,13 +62,15 @@ const SERVICE_BY_CATEGORY = {
   '균열·보수':    { name: '제주 콘크리트 보수보강', page: 'reinforcement.html' },
   '단면복구':     { name: '제주 콘크리트 보수보강', page: 'reinforcement.html' },
   '철근노출':     { name: '제주 콘크리트 보수보강', page: 'reinforcement.html' },
-  /* 아래 세 분류는 공정별 상세 페이지가 따로 있습니다.
+  /* 아래 분류는 공정별 상세 페이지가 따로 있습니다.
      사례 데이터에 이 분류를 적으면 상세 페이지의 about · 관련 링크가
      reinforcement.html 이 아니라 해당 공정 페이지를 가리킵니다. */
   '에폭시주입':   { name: '제주 에폭시 균열보수 · 저압주입', page: 'epoxy-crack-repair.html' },
   '에폭시저압주입': { name: '제주 에폭시 균열보수 · 저압주입', page: 'epoxy-crack-repair.html' },
   '에폭시인젝션': { name: '제주 에폭시 균열보수 · 저압주입', page: 'epoxy-crack-repair.html' },
   '탄소섬유':     { name: '제주 탄소섬유 보강 · CFRP 구조보강', page: 'carbon-fiber-reinforcement.html' },
+  '철판보강':     { name: '제주 철판보강 · 강판보강 에폭시 인젝션', page: 'steel-plate-reinforcement.html' },
+  '강판보강':     { name: '제주 철판보강 · 강판보강 에폭시 인젝션', page: 'steel-plate-reinforcement.html' },
   '표면강화':     { name: '제주 콘크리트 표면강화 · 발수코팅', page: 'concrete-surface-protection.html' },
   '인젝션':       { name: '인젝션 특수방수', page: 'waterproof.html' },
   '누수보수':     { name: '인젝션 특수방수', page: 'waterproof.html' },
@@ -597,6 +599,7 @@ function stampAssets(html) {
 const SHELL_PAGES = [
   'concrete.html', 'reinforcement.html', 'waterproof.html',
   'carbon-fiber-reinforcement.html', 'epoxy-crack-repair.html', 'concrete-surface-protection.html',
+  'steel-plate-reinforcement.html', 'vintage-concrete-finish.html',
   'projects.html', 'resources.html',
   'materials.html', 'about.html', 'contact.html', 'privacy.html', '404.html'
 ];
@@ -1190,11 +1193,12 @@ function buildOrganisationGraph() {
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: '제주 노출콘크리트 보수·복원', description: '곰보·기포 면보수, 층조인트 단차 보정, 색상 및 질감 복원, 오염·백화 하자보수, 발수 및 표면 보호', url: absUrl(SITE_URL, 'concrete.html') } },
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: '제주 콘크리트 보수보강', description: '균열보수 및 에폭시 인젝션, 단면복구, 철근노출 및 박락 보수, 철판·강재보강, 탄소섬유보강, 보·슬래브·기둥 구조보강', url: absUrl(SITE_URL, 'reinforcement.html') } },
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: '인젝션 특수방수', description: '누수 경로 추적, 우레탄 인젝션, 배면 그라우팅, 액상고무 도막방수', url: absUrl(SITE_URL, 'waterproof.html') } },
-        /* 세 전문 분야 아래의 공정별 상세 — 철판·강재보강은 허브의 해당 절, 나머지는 전용 페이지가 있습니다. */
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: '제주 철판보강 · 강재보강', description: '보·기둥·슬래브 등 기존 콘크리트 구조물의 철판보강 에폭시 주입공법 및 강재보강 시공. 강판 설치 후 콘크리트와 강판 사이에 에폭시 수지를 주입해 일체화. 보강 여부와 보강량은 구조기술자의 검토와 보강설계에 따름', url: absUrl(SITE_URL, 'reinforcement.html#steel') } },
+        /* 세 전문 분야 아래의 공정별 상세 — 모두 전용 페이지가 있습니다. */
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: '제주 철판보강 · 강재보강', description: '보·기둥·슬래브 등 기존 콘크리트 구조물의 철판보강 에폭시 주입공법 및 강재보강 시공. 강판 설치 후 콘크리트와 강판 사이에 에폭시 수지를 주입해 일체화. 보강 여부와 보강량은 구조기술자의 검토와 보강설계에 따름', url: absUrl(SITE_URL, 'steel-plate-reinforcement.html') } },
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: '제주 에폭시 균열보수 · 저압주입', description: '비구조부 균열보수, 구조부 에폭시 저압주입, 에폭시 기계식 인젝션', url: absUrl(SITE_URL, 'epoxy-crack-repair.html') } },
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: '제주 탄소섬유 보강 · CFRP 구조보강', description: '구조검토와 보강설계에 따른 보·슬래브·기둥·벽체의 탄소섬유시트(CFRP) 부착 보강', url: absUrl(SITE_URL, 'carbon-fiber-reinforcement.html') } },
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: '제주 콘크리트 표면강화 · 발수코팅', description: '표면강화와 경화·분진억제, 침투형 발수코팅, 수분·염분 침투 저감', url: absUrl(SITE_URL, 'concrete-surface-protection.html') } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: '제주 빈티지마감 · 빈티지월', description: '상가·카페·쇼룸·갤러리·주택 내부의 벽체·기둥·천장 일부에 콘크리트 질감과 색감, 에이징을 표현하는 디자인 마감. 바탕면 상태 확인 후 시공', url: absUrl(SITE_URL, 'vintage-concrete-finish.html') } },
         /* 콘채 제주총판 — 시공과 함께 자재를 공급합니다. 근거가 있는 사실만 적습니다. */
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: '노출콘크리트 면보수재 콘채 공급 · 기술지원', description: '제주도 콘채 총판. 노출콘크리트 보수재·색보정 마감재 공급과 배합·시공 기술지원', url: absUrl(SITE_URL, 'materials.html') } }
       ]
@@ -1257,6 +1261,8 @@ const STATIC_PAGES = [
   /* 공정별 상세 페이지 — 서비스 3축 아래의 세부 공법입니다.
      상위 서비스 페이지보다 한 단계 낮은 우선순위를 둡니다. */
   ['carbon-fiber-reinforcement.html', 'monthly', '0.8'],
+  ['steel-plate-reinforcement.html', 'monthly', '0.8'],
+  ['vintage-concrete-finish.html', 'monthly', '0.8'],
   ['epoxy-crack-repair.html', 'monthly', '0.8'],
   ['concrete-surface-protection.html', 'monthly', '0.8'],
   ['projects.html', 'weekly', '0.9'],
@@ -1363,6 +1369,7 @@ function main() {
      (projects/resources 는 위에서 이미 처리했으므로 제외) */
   const WIDGET_PAGES = ['concrete.html', 'reinforcement.html', 'waterproof.html',
     'carbon-fiber-reinforcement.html', 'epoxy-crack-repair.html', 'concrete-surface-protection.html',
+    'steel-plate-reinforcement.html', 'vintage-concrete-finish.html',
     'materials.html', 'about.html', 'contact.html'];
   const widgets = WIDGET_PAGES.filter((f) => fileExists(f))
     .map((f) => fillWidgets(f, readPage(f))).filter((w) => w.filled);

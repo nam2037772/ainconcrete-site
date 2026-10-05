@@ -119,7 +119,7 @@ window.SITE = {
       link: 'epoxy-crack-repair.html', linkText: '에폭시 균열보수' },
     { no: '03', title: '구조 보강',
       items: ['철판보강 에폭시 주입공법', '탄소섬유시트(CFRP)', '보 · 슬래브 · 기둥 보강'],
-      link: 'reinforcement.html#steel', linkText: '철판 · 강재보강' },
+      link: 'steel-plate-reinforcement.html', linkText: '철판 · 강재보강' },
     { no: '04', title: '콘크리트 복원',
       items: ['철근부식·박락 단면복구', '노출콘크리트 면보수·외관복원'],
       link: 'reinforcement.html#section', linkText: '단면복구 시공 기준' },
@@ -199,13 +199,13 @@ window.SITE = {
        공종별 상세 페이지가 생긴 뒤로 3줄만으로는 에폭시 주입 · CFRP · 표면보호가
        전역 어디에서도 닿지 않았습니다. tools/lib/render.js 의 하위 페이지 푸터와
        같은 목록입니다 — 한쪽만 고치면 홈과 하위 페이지의 전문 분야가 갈라집니다.
-       철근부식 · 단면복구는 상세 페이지가 없어 허브의 해당 절로 보냅니다.
-       철판 · 강재보강은 협력 공종이라 여기 넣지 않고 허브 안에서만 밝힙니다. */
+       철근부식 · 단면복구는 상세 페이지가 없어 허브의 해당 절로 보냅니다. */
     serviceLinks: [
       { label: '제주노출콘크리트 보수·복원', href: 'concrete.html' },
+      { label: '빈티지마감 · 빈티지월',     href: 'vintage-concrete-finish.html' },
       { label: '제주콘크리트보수보강',      href: 'reinforcement.html' },
       { label: '에폭시 균열주입',           href: 'epoxy-crack-repair.html' },
-      { label: '철판 · 강재보강',           href: 'reinforcement.html#steel' },
+      { label: '철판 · 강재보강',           href: 'steel-plate-reinforcement.html' },
       { label: 'CFRP 탄소섬유 구조보강',    href: 'carbon-fiber-reinforcement.html' },
       { label: '철근부식 · 단면복구',       href: 'reinforcement.html#rebar' },
       { label: '우레탄 인젝션 특수방수',    href: 'waterproof.html' },

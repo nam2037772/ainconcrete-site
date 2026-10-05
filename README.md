@@ -11,9 +11,11 @@
 ainsafe-site/
 ├─ index.html          메인 (전문성 선언 → 두 분야 → 실제 시공사례 → 기술자료 → 자재 → 상담)
 ├─ concrete.html       노출콘크리트 면보수 (공정별 기준 · 시공 흐름)
+│  └─ vintage-concrete-finish.html      빈티지마감 · 빈티지월 (벽체·기둥 질감 디자인 마감 — 바닥 공종 제외)
 ├─ reinforcement.html  콘크리트 보수보강 (균열보수 · 단면복구 · 증상별 공법 선택 가이드)
 ├─ waterproof.html     특수방수 (인젝션 · 배면그라우팅 · 액상고무)
 │  ├─ carbon-fiber-reinforcement.html   CFRP 탄소섬유 구조보강 (보수보강 하위 공정)
+│  ├─ steel-plate-reinforcement.html    철판·강판보강 에폭시 인젝션 (보수보강 하위 공정)
 │  ├─ epoxy-crack-repair.html           에폭시 균열보수 · 저압주입 (보수보강 하위 공정)
 │  └─ concrete-surface-protection.html  표면강화 · 발수코팅 (표면보호 하위 공정)
 ├─ projects.html       시공사례 목록 ★ (실제 현장 기록 / 검색 · 시공 전후 비교 우선)

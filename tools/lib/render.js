@@ -104,14 +104,15 @@ function footer(prefix, COMPANY, EXTERNAL_LINKS) {
     <!-- 전문 분야 — 핵심 두 축(노출콘크리트 · 콘크리트 보수보강)을 맨 위에 두고,
          그 아래에 공종별 상세 페이지를 적습니다. 메뉴만으로는 에폭시 주입·CFRP·
          표면보호 같은 공종 페이지가 전역 어디에서도 닿지 않기 때문입니다.
-         철근부식·단면복구와 철판·강재보강은 상세 페이지가 없으므로 허브의 해당 절로 보냅니다. -->
+         철근부식·단면복구는 상세 페이지가 없으므로 허브의 해당 절로 보냅니다. -->
     <nav class="footer__col" aria-label="전문 분야">
       <h2 class="footer__ttl">전문 분야</h2>
       <ul>
         <li><a href="${prefix}concrete.html">제주노출콘크리트 보수·복원</a></li>
+        <li><a href="${prefix}vintage-concrete-finish.html">빈티지마감 · 빈티지월</a></li>
         <li><a href="${prefix}reinforcement.html">제주콘크리트보수보강</a></li>
         <li><a href="${prefix}epoxy-crack-repair.html">에폭시 균열주입</a></li>
-        <li><a href="${prefix}reinforcement.html#steel">철판 · 강재보강</a></li>
+        <li><a href="${prefix}steel-plate-reinforcement.html">철판 · 강재보강</a></li>
         <li><a href="${prefix}carbon-fiber-reinforcement.html">CFRP 탄소섬유 구조보강</a></li>
         <li><a href="${prefix}reinforcement.html#rebar">철근부식 · 단면복구</a></li>
         <li><a href="${prefix}waterproof.html">우레탄 인젝션 특수방수</a></li>
