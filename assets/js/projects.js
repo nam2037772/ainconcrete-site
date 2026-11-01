@@ -72,6 +72,222 @@ const RETIRED_PROJECT_IDS = [
 
 const PROJECTS = [
   {
+    "id": "obsidian-case-051-seongsu-clothing-store-feature-wall-no2-aging-pattern",
+    "source": "obsidian",
+    "case_no": "051",
+    "source_note": "사이트원본/01.1 노출콘기술/노출콘크리트 시공기술사례 - 051.md",
+    "draft_file": "data/case-sources/051.md",
+    "review_required": false,
+    "title": "성수동 의류매장 인테리어 피처월 No.2 - Vintage Feature Wall",
+    "location": "",
+    "building": "",
+    "category": "노출콘크리트",
+    "date": "",
+    "period": "",
+    "summary": "성수동 의류매장 피처월 구간에서 이전 마감재가 뜯겨 나간 얼룩진 콘크리트 벽체와 기둥을 노출콘크리트 면보수재 콘채로 정리하고, 에이징 패턴과 코팅 마감으로 빈티지 노출콘크리트 분위기를 만든 사례. 시공 전 8장·시공 후 7장의 현장 사진.",
+    "problem": "• 이전 마감재(보드·미장·석재 흔적)가 불규칙하게 뜯겨 나가 바탕면이 얼룩지고 파손되어 있었습니다. • 벽체 일부에는 가로 줄눈 형태의 요철 패턴이 남아 있었습니다.",
+    "method": "",
+    "result": "",
+    "sections": [
+      {
+        "heading": "시공 대상 및 작업 개요",
+        "paragraphs": [
+          "• 성수동 의류매장 인테리어의 피처월 구간으로, 기존 콘크리트 벽체와 기둥 면을 정리해 빈티지 노출콘크리트 분위기로 마감한 사례입니다.",
+          "• 작업은 매장 피처월 콘크리트 벽체 면정리 및 빈티지 질감 마감입니다."
+        ]
+      },
+      {
+        "heading": "시공 전 상태",
+        "paragraphs": [
+          "• 이전 마감재(보드·미장·석재 흔적)가 불규칙하게 뜯겨 나가 바탕면이 얼룩지고 파손되어 있었습니다.",
+          "• 벽체 일부에는 가로 줄눈 형태의 요철 패턴이 남아 있었습니다."
+        ]
+      },
+      {
+        "heading": "주요 작업 내용",
+        "paragraphs": [
+          "• 잔존 마감재 및 들뜬 부위 제거, 파손 부위 면정리",
+          "• 노출콘크리트 면보수재 \"콘채\"로 벽체 균열·단차·요철 보정 및 면 조성",
+          "• 빈티지 느낌을 위한 에이징 패턴 연출",
+          "• 코팅 마감으로 표면 보호 및 톤 완성",
+          "• 인접 마감부는 비닐·테이프 보양 후 작업"
+        ]
+      },
+      {
+        "heading": "시공 방향",
+        "paragraphs": [
+          "• 바탕 상태가 서로 다른 면을 하나의 콘크리트 벽처럼 보이도록 정리하면서, 에이징 패턴이 자연스럽게 드러나는 빈티지 질감을 만드는 데 중점을 두었습니다."
+        ]
+      }
+    ],
+    "representative_image": "assets/images/case-studies/case-051-seongsu-clothing-store-feature-wall-no2-aging-pattern/representative.jpg",
+    "before_images": [
+      "assets/images/case-studies/case-051-seongsu-clothing-store-feature-wall-no2-aging-pattern/before-01.jpg",
+      "assets/images/case-studies/case-051-seongsu-clothing-store-feature-wall-no2-aging-pattern/before-02.jpg",
+      "assets/images/case-studies/case-051-seongsu-clothing-store-feature-wall-no2-aging-pattern/before-03.jpg",
+      "assets/images/case-studies/case-051-seongsu-clothing-store-feature-wall-no2-aging-pattern/before-04.jpg",
+      "assets/images/case-studies/case-051-seongsu-clothing-store-feature-wall-no2-aging-pattern/before-05.jpg",
+      "assets/images/case-studies/case-051-seongsu-clothing-store-feature-wall-no2-aging-pattern/before-06.jpg",
+      "assets/images/case-studies/case-051-seongsu-clothing-store-feature-wall-no2-aging-pattern/before-07.jpg",
+      "assets/images/case-studies/case-051-seongsu-clothing-store-feature-wall-no2-aging-pattern/before-08.jpg"
+    ],
+    "process_images": [],
+    "after_images": [
+      "assets/images/case-studies/case-051-seongsu-clothing-store-feature-wall-no2-aging-pattern/representative.jpg",
+      "assets/images/case-studies/case-051-seongsu-clothing-store-feature-wall-no2-aging-pattern/after-02.jpg",
+      "assets/images/case-studies/case-051-seongsu-clothing-store-feature-wall-no2-aging-pattern/after-03.jpg",
+      "assets/images/case-studies/case-051-seongsu-clothing-store-feature-wall-no2-aging-pattern/after-04.jpg",
+      "assets/images/case-studies/case-051-seongsu-clothing-store-feature-wall-no2-aging-pattern/after-05.jpg",
+      "assets/images/case-studies/case-051-seongsu-clothing-store-feature-wall-no2-aging-pattern/after-06.jpg",
+      "assets/images/case-studies/case-051-seongsu-clothing-store-feature-wall-no2-aging-pattern/after-07.jpg"
+    ],
+    "thumbnail": "assets/images/case-studies/case-051-seongsu-clothing-store-feature-wall-no2-aging-pattern/representative.jpg",
+    "after": "assets/images/case-studies/case-051-seongsu-clothing-store-feature-wall-no2-aging-pattern/representative.jpg",
+    "before": "assets/images/case-studies/case-051-seongsu-clothing-store-feature-wall-no2-aging-pattern/before-01.jpg",
+    "images": [],
+    "featured": false,
+    "representative_images": [
+      "assets/images/case-studies/case-051-seongsu-clothing-store-feature-wall-no2-aging-pattern/representative.jpg"
+    ]
+  },
+  {
+    "id": "obsidian-case-050-stair-vintage-exposed-concrete-conchae-putty",
+    "source": "obsidian",
+    "case_no": "050",
+    "source_note": "사이트원본/01.1 노출콘기술/노출콘크리트 시공기술사례 - 050.md",
+    "draft_file": "data/case-sources/050.md",
+    "review_required": false,
+    "title": "계단의 빈티지느낌의 노출콘크리트",
+    "location": "",
+    "building": "",
+    "category": "노출콘크리트",
+    "date": "",
+    "period": "",
+    "summary": "기존 콘크리트 계단의 불균일한 표면과 파손 부위를 면정리하고, 계단 측면·하부를 노출콘크리트 면보수재 콘채와 콘채 퍼티로 보정해 빈티지 콘크리트 질감으로 마감한 사례. 시공 전 6장·시공 후 7장의 현장 사진과 전후 비교 이미지.",
+    "problem": "",
+    "method": "",
+    "result": "",
+    "sections": [
+      {
+        "heading": "시공 대상 및 작업 개요",
+        "paragraphs": [
+          "• 작업은 콘크리트 계단 면정리 및 빈티지 질감 마감입니다.",
+          "• 기존 콘크리트 계단의 불균일한 표면과 파손 부위를 정리하고, 계단 측면 및 하부의 면을 보수한 시공 사례입니다."
+        ]
+      },
+      {
+        "heading": "주요 작업 내용",
+        "paragraphs": [
+          "• 콘크리트 계단 파손 부위 및 표면 면정리",
+          "• 노출콘크리트 면보수재 \"콘채\"를 이용한 보수 및 면 조성",
+          "• 계단 측면·하부 단차 및 요철 보정",
+          "• 콘채 퍼티 작업을 통한 표면 질감 조정",
+          "• 기존 구조물과 조화되는 빈티지 콘크리트 질감 마감"
+        ]
+      },
+      {
+        "heading": "시공 방향",
+        "paragraphs": [
+          "• 계단의 구조적 형태와 선을 살리면서 자연스러운 콘크리트 질감과 마감의 연속성을 확보하는 데 중점을 두었습니다."
+        ]
+      }
+    ],
+    "representative_image": "assets/images/case-studies/case-050-stair-vintage-exposed-concrete-conchae-putty/representative.jpg",
+    "before_images": [
+      "assets/images/case-studies/case-050-stair-vintage-exposed-concrete-conchae-putty/before-01.jpg",
+      "assets/images/case-studies/case-050-stair-vintage-exposed-concrete-conchae-putty/before-02.jpg",
+      "assets/images/case-studies/case-050-stair-vintage-exposed-concrete-conchae-putty/before-03.jpg",
+      "assets/images/case-studies/case-050-stair-vintage-exposed-concrete-conchae-putty/before-04.jpg",
+      "assets/images/case-studies/case-050-stair-vintage-exposed-concrete-conchae-putty/before-05.jpg",
+      "assets/images/case-studies/case-050-stair-vintage-exposed-concrete-conchae-putty/before-06.jpg"
+    ],
+    "process_images": [],
+    "after_images": [
+      "assets/images/case-studies/case-050-stair-vintage-exposed-concrete-conchae-putty/after-01.jpg",
+      "assets/images/case-studies/case-050-stair-vintage-exposed-concrete-conchae-putty/after-02.jpg",
+      "assets/images/case-studies/case-050-stair-vintage-exposed-concrete-conchae-putty/after-03.jpg",
+      "assets/images/case-studies/case-050-stair-vintage-exposed-concrete-conchae-putty/after-04.jpg",
+      "assets/images/case-studies/case-050-stair-vintage-exposed-concrete-conchae-putty/after-05.jpg",
+      "assets/images/case-studies/case-050-stair-vintage-exposed-concrete-conchae-putty/after-06.jpg",
+      "assets/images/case-studies/case-050-stair-vintage-exposed-concrete-conchae-putty/after-07.jpg"
+    ],
+    "thumbnail": "assets/images/case-studies/case-050-stair-vintage-exposed-concrete-conchae-putty/representative.jpg",
+    "after": "assets/images/case-studies/case-050-stair-vintage-exposed-concrete-conchae-putty/after-01.jpg",
+    "before": "assets/images/case-studies/case-050-stair-vintage-exposed-concrete-conchae-putty/before-01.jpg",
+    "images": [],
+    "featured": false,
+    "representative_images": [
+      "assets/images/case-studies/case-050-stair-vintage-exposed-concrete-conchae-putty/representative.jpg"
+    ],
+    "representative_alt": "콘크리트 계단 빈티지 노출콘크리트 면정리 시공 전·후 비교 사진",
+    "representative_fit": "contain",
+    "representative_hd": "assets/images/case-studies/case-050-stair-vintage-exposed-concrete-conchae-putty/representative-hd.jpg"
+  },
+  {
+    "id": "obsidian-case-049-seongsu-clothing-store-feature-wall-no1-opening-conchae",
+    "source": "obsidian",
+    "case_no": "049",
+    "source_note": "사이트원본/01.1 노출콘기술/노출콘크리트 시공기술사례 - 049.md",
+    "draft_file": "data/case-sources/049.md",
+    "review_required": false,
+    "title": "성수동 의류매장 인테리어 피처월 No.1 - Vintage Feature Wall",
+    "location": "",
+    "building": "",
+    "category": "노출콘크리트",
+    "date": "",
+    "period": "",
+    "summary": "성수동 의류매장 인테리어 피처월의 콘크리트 개구부 주변 파손 부위와 불균일한 표면을 노출콘크리트 면보수재 콘채로 면정리하고 기존 콘크리트와 이어지는 질감으로 복원한 사례. 시공 전 3장·시공 후 3장의 현장 사진.",
+    "problem": "",
+    "method": "",
+    "result": "",
+    "sections": [
+      {
+        "heading": "시공 대상 및 작업 개요",
+        "paragraphs": [
+          "• 성수동 의류매장 인테리어 피처월(Vintage Feature Wall) No.1 현장입니다. (원본 제목)",
+          "• 작업은 콘크리트 개구부 면정리 및 질감 복원입니다.",
+          "• 콘크리트 개구부 주변의 파손 부위와 불균일한 표면을 보수한 사례입니다.",
+          "• 개구부 상부와 측면의 거친 단면을 정리하고, 기존 콘크리트 표면과 조화를 이루도록 면처리 및 질감 복원 작업을 진행했습니다."
+        ]
+      },
+      {
+        "heading": "시공 포인트",
+        "paragraphs": [
+          "• 개구부 모서리 및 파손 부위 면정리",
+          "• 노출콘크리트 면보수재 \"콘채\"를 이용한 보수 및 면 조성",
+          "• 표면 요철 보정과 단차 최소화",
+          "• 기존 콘크리트와의 질감 연속성 확보"
+        ]
+      },
+      {
+        "heading": "시공 방향",
+        "paragraphs": [
+          "• 단순히 표면을 매끄럽게 만드는 것이 아니라, 기존 콘크리트의 자연스러운 질감을 유지하는 데 중점을 두었습니다."
+        ]
+      }
+    ],
+    "representative_image": "assets/images/case-studies/case-049-seongsu-clothing-store-feature-wall-no1-opening-conchae/representative.jpg",
+    "before_images": [
+      "assets/images/case-studies/case-049-seongsu-clothing-store-feature-wall-no1-opening-conchae/before-01.jpg",
+      "assets/images/case-studies/case-049-seongsu-clothing-store-feature-wall-no1-opening-conchae/before-02.jpg",
+      "assets/images/case-studies/case-049-seongsu-clothing-store-feature-wall-no1-opening-conchae/before-03.jpg"
+    ],
+    "process_images": [],
+    "after_images": [
+      "assets/images/case-studies/case-049-seongsu-clothing-store-feature-wall-no1-opening-conchae/representative.jpg",
+      "assets/images/case-studies/case-049-seongsu-clothing-store-feature-wall-no1-opening-conchae/after-02.jpg",
+      "assets/images/case-studies/case-049-seongsu-clothing-store-feature-wall-no1-opening-conchae/after-03.jpg"
+    ],
+    "thumbnail": "assets/images/case-studies/case-049-seongsu-clothing-store-feature-wall-no1-opening-conchae/representative.jpg",
+    "after": "assets/images/case-studies/case-049-seongsu-clothing-store-feature-wall-no1-opening-conchae/representative.jpg",
+    "before": "assets/images/case-studies/case-049-seongsu-clothing-store-feature-wall-no1-opening-conchae/before-01.jpg",
+    "images": [],
+    "featured": false,
+    "representative_images": [
+      "assets/images/case-studies/case-049-seongsu-clothing-store-feature-wall-no1-opening-conchae/representative.jpg"
+    ]
+  },
+  {
     "id": "obsidian-case-047-stairwell-floor-joint-exposed-concrete-repair",
     "source": "obsidian",
     "case_no": "047",

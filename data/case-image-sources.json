@@ -1514,5 +1514,150 @@
   "assets/images/case-studies/case-047-stairwell-floor-joint-exposed-concrete-repair/representative.png": {
     "source": "vault:Assets/콘크리트 벽 보수 전후 비교 (1).png",
     "sha256": "3f864a8f25168e50322dcbb46bf6ae5336dab6682f1b500bf0737fa238d91187"
+  },
+  "assets/images/case-studies/case-049-seongsu-clothing-store-feature-wall-no1-opening-conchae/after-02.jpg": {
+    "source": "vault:Assets/20261017_235359.jpg",
+    "sha256": "928d39be8f68c772b45dae9211a400e5734686d6bcf3a129b54d304232f17d81"
+  },
+  "assets/images/case-studies/case-049-seongsu-clothing-store-feature-wall-no1-opening-conchae/after-03.jpg": {
+    "source": "vault:Assets/20261017_235103.jpg",
+    "sha256": "03327c57006940427db4852693fa3935b8958669c7b4be902c4b3f4bf319a151"
+  },
+  "assets/images/case-studies/case-049-seongsu-clothing-store-feature-wall-no1-opening-conchae/before-01.jpg": {
+    "source": "vault:Assets/20261016_204736.jpg",
+    "sha256": "6afbbb763d4904446624b4325d3c5e4c29fee4a9fd31dc9ca2b1414a76d6f1a0"
+  },
+  "assets/images/case-studies/case-049-seongsu-clothing-store-feature-wall-no1-opening-conchae/before-02.jpg": {
+    "source": "vault:Assets/20261016_204716.jpg",
+    "sha256": "1029eee86f20242cbf613d907d82af05d1cecff87d88336bf13c8125f5369995"
+  },
+  "assets/images/case-studies/case-049-seongsu-clothing-store-feature-wall-no1-opening-conchae/before-03.jpg": {
+    "source": "vault:Assets/20261016_204723.jpg",
+    "sha256": "ff0128079e80536e91db13786ea1d71393871babce55fcb746175caf8bbead25"
+  },
+  "assets/images/case-studies/case-049-seongsu-clothing-store-feature-wall-no1-opening-conchae/representative.jpg": {
+    "source": "vault:Assets/20261017_235341.jpg",
+    "sha256": "dd8a9f8498b86f7d26c3e654b1ca0309033e2bf391a9e778b88ce92164965c04"
+  },
+  "assets/images/case-studies/case-050-stair-vintage-exposed-concrete-conchae-putty/after-01.jpg": {
+    "source": "vault:Assets/20261011_142429.jpg",
+    "sha256": "b0c09bfeea17026bc755d160065282aed4007f72229288968969922b40cbbc50"
+  },
+  "assets/images/case-studies/case-050-stair-vintage-exposed-concrete-conchae-putty/after-02.jpg": {
+    "source": "vault:Assets/20261011_150123.jpg",
+    "sha256": "650caeef053357273998f1c5f26bf5743e77d0cea9c0f665d9128419c3660bda"
+  },
+  "assets/images/case-studies/case-050-stair-vintage-exposed-concrete-conchae-putty/after-03.jpg": {
+    "source": "vault:Assets/20261011_150132.jpg",
+    "sha256": "5177cd220cd9e9ce06c7f7edf73de37e86cb96cf48b82944c37095a84dec89c1"
+  },
+  "assets/images/case-studies/case-050-stair-vintage-exposed-concrete-conchae-putty/after-04.jpg": {
+    "source": "vault:Assets/20261018_095025.jpg",
+    "sha256": "e4d2a3ccd29437d7488274b521080d1f0910b716bc78c18d781b97dbb0a773bd"
+  },
+  "assets/images/case-studies/case-050-stair-vintage-exposed-concrete-conchae-putty/after-05.jpg": {
+    "source": "vault:Assets/20261018_095030.jpg",
+    "sha256": "1022866a723c20644d9e2451cd311c3c9c5e8b3134f5b32fcbcb2a92b15d41a0"
+  },
+  "assets/images/case-studies/case-050-stair-vintage-exposed-concrete-conchae-putty/after-06.jpg": {
+    "source": "vault:Assets/20261018_095105.jpg",
+    "sha256": "0ea2807a5cac9d70e790199eb32b811d44730cddbb570235aa26da5bcff8ddde"
+  },
+  "assets/images/case-studies/case-050-stair-vintage-exposed-concrete-conchae-putty/after-07.jpg": {
+    "source": "vault:Assets/20261018_095226.jpg",
+    "sha256": "7cda5f4ac12f825a7c63b7b7107963d06a3b7a90e05bfddd0c6f5c92c3f8ce29"
+  },
+  "assets/images/case-studies/case-050-stair-vintage-exposed-concrete-conchae-putty/before-01.jpg": {
+    "source": "vault:Assets/20261003_152750.jpg",
+    "sha256": "970d71b2aa558b2ca9a9b6c8a57720e16a612c8b4822e3cdeadd49d0ef07a2a9"
+  },
+  "assets/images/case-studies/case-050-stair-vintage-exposed-concrete-conchae-putty/before-02.jpg": {
+    "source": "vault:Assets/20261003_152824.jpg",
+    "sha256": "fb602d609de311678b8ee4d6738db390b6ab972d3e2d7b5cf9e8e4df38407622"
+  },
+  "assets/images/case-studies/case-050-stair-vintage-exposed-concrete-conchae-putty/before-03.jpg": {
+    "source": "vault:Assets/20261003_152837.jpg",
+    "sha256": "04f325ea20c340d63edc51de4549e6a9d13c5d10026a0b468c36b47f971dc953"
+  },
+  "assets/images/case-studies/case-050-stair-vintage-exposed-concrete-conchae-putty/before-04.jpg": {
+    "source": "vault:Assets/20261003_152838.jpg",
+    "sha256": "fc387980efd9c2ebac3ffa542dd034e9c0eba31309f0432c7141e485b08ba216"
+  },
+  "assets/images/case-studies/case-050-stair-vintage-exposed-concrete-conchae-putty/before-05.jpg": {
+    "source": "vault:Assets/20261003_152844.jpg",
+    "sha256": "11996f87c04ba3d6de19390745fc27a5e4046afce85de36c1a067462d1e745a2"
+  },
+  "assets/images/case-studies/case-050-stair-vintage-exposed-concrete-conchae-putty/before-06.jpg": {
+    "source": "vault:Assets/20261003_152846.jpg",
+    "sha256": "0ab41d7806bd71a5b5077c27379ad6b52d81c8ab554b8e4123f7e9b16976e32d"
+  },
+  "assets/images/case-studies/case-050-stair-vintage-exposed-concrete-conchae-putty/representative-hd.jpg": {
+    "source": "vault:Assets/계단_시공전후_좌우_원본.jpg",
+    "sha256": "f9fac8c22cac4d63be4a7a1a88cd9a0f14d48df99d9c7faa6e4dfe63858f00bc",
+    "width": 1600
+  },
+  "assets/images/case-studies/case-050-stair-vintage-exposed-concrete-conchae-putty/representative.jpg": {
+    "source": "vault:Assets/계단_시공전후_좌우_원본.jpg",
+    "sha256": "f9fac8c22cac4d63be4a7a1a88cd9a0f14d48df99d9c7faa6e4dfe63858f00bc"
+  },
+  "assets/images/case-studies/case-051-seongsu-clothing-store-feature-wall-no2-aging-pattern/after-02.jpg": {
+    "source": "vault:Assets/20261014_162320.jpg",
+    "sha256": "4a541a8a0b5f1fb37786c8f533dd084b96672c759e6d5e4efbc814b50d1f164b"
+  },
+  "assets/images/case-studies/case-051-seongsu-clothing-store-feature-wall-no2-aging-pattern/after-03.jpg": {
+    "source": "vault:Assets/20261014_162337.jpg",
+    "sha256": "d93290ac42e2f4dc02f92b9e25c363410bc5c38ebc91c96fb22aacad35a5691f"
+  },
+  "assets/images/case-studies/case-051-seongsu-clothing-store-feature-wall-no2-aging-pattern/after-04.jpg": {
+    "source": "vault:Assets/20261014_162351.jpg",
+    "sha256": "78af5ba4bc9d3e10defdc3f02682a2eca2a366cfb62f852e7e4e8b1e0aba5fc9"
+  },
+  "assets/images/case-studies/case-051-seongsu-clothing-store-feature-wall-no2-aging-pattern/after-05.jpg": {
+    "source": "vault:Assets/20261014_162415.jpg",
+    "sha256": "a3187dc4babddb6839e8d9c2b74e88adf5d93851b1833f4b0aaa1dfc42c1a9ac"
+  },
+  "assets/images/case-studies/case-051-seongsu-clothing-store-feature-wall-no2-aging-pattern/after-06.jpg": {
+    "source": "vault:Assets/20261014_162422.jpg",
+    "sha256": "51fde0a2d8d821e61b9b9f3d59200cbe1ca187d89d2e43ea30a8de4808ecf04e"
+  },
+  "assets/images/case-studies/case-051-seongsu-clothing-store-feature-wall-no2-aging-pattern/after-07.jpg": {
+    "source": "vault:Assets/20261014_162429.jpg",
+    "sha256": "ecf7bd4f8077eddef09431234ee871535874056257721c976a08a54872398f78"
+  },
+  "assets/images/case-studies/case-051-seongsu-clothing-store-feature-wall-no2-aging-pattern/before-01.jpg": {
+    "source": "vault:Assets/20261013_095325.jpg",
+    "sha256": "9a6888791f10411b2eea5cef764331b35ac61243680c423ee33f7fcd15f8325d"
+  },
+  "assets/images/case-studies/case-051-seongsu-clothing-store-feature-wall-no2-aging-pattern/before-02.jpg": {
+    "source": "vault:Assets/20261013_095339.jpg",
+    "sha256": "04af5bb90836539393285a59637acc3bb53fffd62c44b9f39a6789ecc0cdfad5"
+  },
+  "assets/images/case-studies/case-051-seongsu-clothing-store-feature-wall-no2-aging-pattern/before-03.jpg": {
+    "source": "vault:Assets/20261013_095415.jpg",
+    "sha256": "64494d0d02885879b3eaff96559942d8a6a02768f51b749e52688ee381d77752"
+  },
+  "assets/images/case-studies/case-051-seongsu-clothing-store-feature-wall-no2-aging-pattern/before-04.jpg": {
+    "source": "vault:Assets/20261013_095436.jpg",
+    "sha256": "652090c1d9e94dad877fa5af7ed2c88927ddc4d0ca55d36dfabbdd15f30c0d71"
+  },
+  "assets/images/case-studies/case-051-seongsu-clothing-store-feature-wall-no2-aging-pattern/before-05.jpg": {
+    "source": "vault:Assets/20261013_095442.jpg",
+    "sha256": "4ab78b0eec664c9d65191ea4c605f1373a553b8bac8d51183b16dd6182513647"
+  },
+  "assets/images/case-studies/case-051-seongsu-clothing-store-feature-wall-no2-aging-pattern/before-06.jpg": {
+    "source": "vault:Assets/20261013_095455.jpg",
+    "sha256": "abebffb28129ee8643b838b1082753e26b0e69f0a594def556359516bd0622d2"
+  },
+  "assets/images/case-studies/case-051-seongsu-clothing-store-feature-wall-no2-aging-pattern/before-07.jpg": {
+    "source": "vault:Assets/20261013_095503.jpg",
+    "sha256": "74ff59ca682ea70ab7f06a4dcc2df233b2f8abe6bf16a74525a8a279bf613275"
+  },
+  "assets/images/case-studies/case-051-seongsu-clothing-store-feature-wall-no2-aging-pattern/before-08.jpg": {
+    "source": "vault:Assets/20261013_103748.jpg",
+    "sha256": "2659151e41aeb1ed671303e61b78c4300165a89e80c221f9da38985885e21d7b"
+  },
+  "assets/images/case-studies/case-051-seongsu-clothing-store-feature-wall-no2-aging-pattern/representative.jpg": {
+    "source": "vault:Assets/20261014_162307.jpg",
+    "sha256": "8bdefbe866c38bd44d14403e91767cf11c8795e5fa2897ef01118f5ec229b66d"
   }
 }

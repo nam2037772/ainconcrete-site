@@ -11,6 +11,9 @@
    해당 목록 페이지로 보냅니다. shim 자체는 noindex 입니다.
    ============================================================ */
 var LEGACY_CASE_ROUTES = {
+  "obsidian-case-051-seongsu-clothing-store-feature-wall-no2-aging-pattern": "case/case-051-seongsu-clothing-store-feature-wall-no2-aging-pattern.html",
+  "obsidian-case-050-stair-vintage-exposed-concrete-conchae-putty": "case/case-050-stair-vintage-exposed-concrete-conchae-putty.html",
+  "obsidian-case-049-seongsu-clothing-store-feature-wall-no1-opening-conchae": "case/case-049-seongsu-clothing-store-feature-wall-no1-opening-conchae.html",
   "obsidian-case-047-stairwell-floor-joint-exposed-concrete-repair": "case/case-047-stairwell-floor-joint-exposed-concrete-repair.html",
   "obsidian-case-045-songpa-restaurant-industrial-conchae-vintage-wall": "case/case-045-songpa-restaurant-industrial-conchae-vintage-wall.html",
   "obsidian-case-044-jeju-stain-efflorescence-exposed-concrete-repair": "case/case-044-jeju-stain-efflorescence-exposed-concrete-repair.html",

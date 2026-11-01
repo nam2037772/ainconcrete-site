@@ -38,6 +38,9 @@ const WRITE = process.argv.includes('--write');
 const FORCE = process.argv.includes('--force');
 const PRUNE = process.argv.includes('--prune');
 const VAULT = resolveVault();
+/* --only=049,050 : 지정한 번호의 사진만 다루고, 다른 사례의 장부·파일은 건드리지 않습니다. */
+const ONLY = (process.argv.find((a) => a.startsWith('--only=')) || '').slice(7)
+  .split(',').map((s) => s.trim().padStart(3, '0')).filter((s) => s !== '000');
 
 /* 네이버 CDN 은 리퍼러 없이도 열리지만, 블로그와 같은 조건으로 요청합니다. */
 const HEADERS = {
@@ -78,7 +81,9 @@ function download(url, dest, redirects = 0) {
 
 async function main() {
   const drafts = loadDrafts(VAULT);
-  const { plans, problems } = buildCasePlans(VAULT, drafts);
+  const built = buildCasePlans(VAULT, drafts);
+  const problems = built.problems.filter((p) => !ONLY.length || ONLY.indexOf(p.case_no) > -1);
+  const plans = ONLY.length ? built.plans.filter((p) => ONLY.indexOf(p.case_no) > -1) : built.plans;
 
   const wanted = new Map();       // 사이트 경로 → url
   const localOf = new Map();      // 사이트 경로 → vault 안의 첨부 파일
@@ -143,7 +148,7 @@ async function main() {
       }
     });
     /* 노트에서 빠진 경로는 장부에서도 뺍니다 */
-    Object.keys(manifest).forEach((k) => { if (!wanted.has(k)) delete manifest[k]; });
+    if (!ONLY.length) Object.keys(manifest).forEach((k) => { if (!wanted.has(k)) delete manifest[k]; });
     saveManifest(manifest);
     console.log('  장부 갱신: ' + path.relative(REPO_ROOT, MANIFEST).replace(/\\/g, '/'));
   } else {
@@ -155,7 +160,7 @@ async function main() {
   const caseDirs = new Set(plans.map((p) => p.images.dir));
   const root = path.join(REPO_ROOT, CASE_IMAGE_ROOT);
   const stale = [];
-  if (fs.existsSync(root)) {
+  if (!ONLY.length && fs.existsSync(root)) {
     fs.readdirSync(root).forEach((name) => {
       const rel = `${CASE_IMAGE_ROOT}/${name}`;
       const full = path.join(root, name);

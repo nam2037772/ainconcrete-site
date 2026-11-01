@@ -34,6 +34,10 @@ const { buildCasePlans } = require('./lib/case-plan');
 const WRITE = process.argv.includes('--write');
 const DIFF = process.argv.includes('--diff');
 const ALLOW_REMOVE = process.argv.includes('--allow-remove');
+/* --only=049,050 : 지정한 번호만 만들거나 갱신하고, 나머지 사례는 그대로 둡니다.
+   (발행대기 노트가 없어진 옛 사례를 건드리지 않고 새 사례만 추가할 때) */
+const ONLY = (process.argv.find((a) => a.startsWith('--only=')) || '').slice(7)
+  .split(',').map((s) => s.trim().padStart(3, '0')).filter((s) => s !== '000');
 
 /** 키 순서와 상관없이 같은 값인지 */
 function sameValue(a, b) {
@@ -185,12 +189,18 @@ function main() {
   before.forEach((p) => { prevByCase[p.case_no] = p; });
 
   /* 대표사진을 읽을 수 없는 사례는 다른 사진으로 채우지 않고 보류합니다. */
-  const publishable = plans.filter((p) => p.images.representative);
-  const held = plans.filter((p) => !p.images.representative);
+  const onlyPlans = ONLY.length ? plans.filter((p) => ONLY.indexOf(p.case_no) > -1) : plans;
+  const publishable = onlyPlans.filter((p) => p.images.representative);
+  const held = onlyPlans.filter((p) => !p.images.representative);
 
-  const projects = publishable
+  let projects = publishable
     .map((plan) => toProject(plan, prevByCase[plan.case_no]))
     .sort((a, b) => b.case_no.localeCompare(a.case_no));
+  if (ONLY.length) {
+    const touched = new Set(projects.map((p) => p.case_no));
+    projects = before.filter((p) => !touched.has(p.case_no)).concat(projects)
+      .sort((a, b) => b.case_no.localeCompare(a.case_no));
+  }
 
   /* 사라진 사례 — 주소가 죽지 않도록 은퇴 목록으로 옮깁니다. */
   const liveIds = projects.map((p) => p.id);

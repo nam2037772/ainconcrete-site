@@ -224,14 +224,10 @@ function loadDrafts(vaultDir) {
     err.code = 'ENOVAULT';
     throw err;
   }
-  if (!fs.existsSync(dir)) {
-    const err = new Error('발행대기 폴더를 찾을 수 없습니다: ' + dir + EOL +
-      '  기대하는 위치: <vault>/' + DRAFT_DIR.replace(/\\/g, '/'));
-    err.code = 'ENODRAFT';
-    throw err;
-  }
+  /* 발행대기 폴더가 없어도 저장소 원본(data/case-sources)만으로 동작합니다. */
   const index = {};
-  fs.readdirSync(dir).filter((f) => f.endsWith('.md')).forEach((f) => {
+  const vaultDrafts = fs.existsSync(dir) ? fs.readdirSync(dir) : [];
+  vaultDrafts.filter((f) => f.endsWith('.md')).forEach((f) => {
     const full = path.join(dir, f);
     const raw = fs.readFileSync(full, 'utf8');
     const fm = parseFrontmatter(raw);
