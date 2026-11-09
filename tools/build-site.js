@@ -118,7 +118,8 @@ ${ogImage ? `<meta property="og:image" content="${esc(ogImage)}" />
 ` : ''}<meta property="og:url" content="${esc(canonical)}" />
 <meta property="og:locale" content="ko_KR" />
 <meta name="twitter:card" content="${ogImage ? 'summary_large_image' : 'summary'}" />
-<link rel="icon" href="${SUB_PREFIX}assets/images/brand/logo.png" />
+<link rel="icon" href="${SUB_PREFIX}favicon.ico" sizes="48x48" />
+<link rel="apple-touch-icon" href="${SUB_PREFIX}apple-touch-icon.png" />
 ${R.FONT_LINKS}
 <link rel="stylesheet" href="${SUB_PREFIX}assets/css/style.css" />
 <link rel="stylesheet" href="${SUB_PREFIX}assets/css/homepage-subpages.css" />
@@ -824,7 +825,8 @@ ${(() => {
 })()}
 <title>${esc(S.meta.title)}</title>
 <meta name="description" content="${esc(S.meta.description)}" />
-<link rel="icon" href="assets/images/brand/logo.png" />
+<link rel="icon" href="favicon.ico" sizes="48x48" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
 <link rel="canonical" href="${esc(SITE_URL)}" />
 <meta name="robots" content="index, follow" />
 <meta property="og:type" content="website" />
