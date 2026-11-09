@@ -440,9 +440,13 @@ function injectGrid(file, baseType, text) {
   }
   const pool = poolFor(baseType);
   const cards = pool.slice(0, STEP).map((item) => R.contentCard(item, '', FALLBACK_IMAGE)).join('\n');
-  const next = text.slice(0, start + GRID_MARK.open.length) +
+  let next = text.slice(0, start + GRID_MARK.open.length) +
     '\n' + cards + '\n' +
     text.slice(end);
+  /* "총 N건" 도 정적 HTML 에 실제 건수를 써 둡니다. (예전에는 0 으로 두고 자바스크립트가 채워서,
+     자바스크립트를 실행하지 않는 검색엔진·AI 크롤러에는 "총 0건"으로 보였습니다.)
+     자바스크립트가 켜지면 main.js 가 검색·필터 결과에 맞춰 다시 씁니다. */
+  next = next.replace(/(<strong id="contentCount">)\d+(<\/strong>)/, '$1' + pool.length + '$2');
   return { file, next, total: pool.length, rendered: Math.min(STEP, pool.length) };
 }
 
@@ -751,7 +755,10 @@ ${hero.pillars.map((p) => `      <li><a class="pillar" href="${esc(p.link)}"><sp
 
   /* 시공사례 카드 — 시공 전 사진이 있는 사례를 앞에 둡니다 (기존 홈 규칙 그대로) */
   const worksLimit = ws.homeLimit || 3;
-  const works = PROJECTS
+  /* 메인의 시공 전·후 3건도 목록(projects.html)과 같은 최신순 규칙(byRecencyDesc)으로 고릅니다.
+     예전에는 projects.js 에 적힌 순서 그대로 앞의 3건을 가져와서, 사례를 어디에 추가하느냐에 따라
+     결과가 달라졌습니다. 아래 hasBefore 정렬은 안정 정렬이라 같은 그룹 안에서는 최신순이 유지됩니다. */
+  const works = PROJECTS.slice().sort(byRecencyDesc)
     .map((p) => ({ p, ci: CaseImages.normalize(p) }))
     .filter((x) => x.ci.representativeImage)
     .sort((a, b) => (b.ci.hasBefore ? 1 : 0) - (a.ci.hasBefore ? 1 : 0))
