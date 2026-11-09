@@ -56,8 +56,9 @@
 
 ## 시공사례
 
-시공 전·중·후 사진과 적용 공법, 콘채 배합을 보정 없이 기록한 42건의 사례가 있습니다. 전체 목록: [시공사례](https://ainconcrete.com/projects.html)
+시공 전·중·후 사진과 적용 공법, 콘채 배합을 보정 없이 기록한 43건의 사례가 있습니다(노출콘크리트 42건 · 누수보수 1건). 전체 목록: [시공사례](https://ainconcrete.com/projects.html)
 
+- [철골조 창호 누수 보수 - 녹 부위 샌딩·방청·실리콘 재시공](https://ainconcrete.com/case/case-052-steel-frame-window-leak-rust-silicone-repair.html): 철골 녹 팽창으로 파열된 창호 둘레 실리콘을 샌딩·방청 후 재시공한 누수보수 사례(인젝션 공법 아님).
 - [성수동 의류매장 인테리어 피처월 No.2 - Vintage Feature Wall](https://ainconcrete.com/case/case-051-seongsu-clothing-store-feature-wall-no2-aging-pattern.html)
 - [계단의 빈티지느낌의 노출콘크리트](https://ainconcrete.com/case/case-050-stair-vintage-exposed-concrete-conchae-putty.html)
 - [성수동 의류매장 인테리어 피처월 No.1 - Vintage Feature Wall](https://ainconcrete.com/case/case-049-seongsu-clothing-store-feature-wall-no1-opening-conchae.html)

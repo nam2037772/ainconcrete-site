@@ -1659,5 +1659,30 @@
   "assets/images/case-studies/case-051-seongsu-clothing-store-feature-wall-no2-aging-pattern/representative.jpg": {
     "source": "vault:Assets/20261014_162307.jpg",
     "sha256": "8bdefbe866c38bd44d14403e91767cf11c8795e5fa2897ef01118f5ec229b66d"
+  },
+  "assets/images/case-studies/case-052-steel-frame-window-leak-rust-silicone-repair/after-01.jpg": {
+    "source": "vault:Assets/20261108_133010.jpg",
+    "sha256": "83a29e4c5e3f83b0b55d6fffe167730f4c10b85e708883c3b4ba70ff11f3be17"
+  },
+  "assets/images/case-studies/case-052-steel-frame-window-leak-rust-silicone-repair/after-02.jpg": {
+    "source": "vault:Assets/20261108_103354.jpg",
+    "sha256": "70843d201d7eb7c82b465c3af0b6e0a404c34931744f02dd480d877344782f73"
+  },
+  "assets/images/case-studies/case-052-steel-frame-window-leak-rust-silicone-repair/before-01.jpg": {
+    "source": "vault:Assets/20261107_142854.jpg",
+    "sha256": "688407b209dc1e19a6d54c92513cd06a9480dbf0905e9ebf55b9c0b9e896f2a9"
+  },
+  "assets/images/case-studies/case-052-steel-frame-window-leak-rust-silicone-repair/before-02.jpg": {
+    "source": "vault:Assets/20261107_150413.jpg",
+    "sha256": "54d6813372b18d74c730a7cbc791befa82af90c55d1724e22490e649444864be"
+  },
+  "assets/images/case-studies/case-052-steel-frame-window-leak-rust-silicone-repair/representative-hd.jpg": {
+    "source": "vault:Assets/창호 누수 보수 시공 전후.png",
+    "sha256": "35e2a557163b9a4f79d16fbe045700ec01844c2355d8c44b633a04107955dc8b",
+    "width": 1600
+  },
+  "assets/images/case-studies/case-052-steel-frame-window-leak-rust-silicone-repair/representative.png": {
+    "source": "vault:Assets/창호 누수 보수 시공 전후.png",
+    "sha256": "35e2a557163b9a4f79d16fbe045700ec01844c2355d8c44b633a04107955dc8b"
   }
 }

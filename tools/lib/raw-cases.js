@@ -186,6 +186,16 @@ function loadRawCases(vaultDir) {
   const vault = loadVaultRawCases(vaultDir);
   const seen = new Set(vault.map((c) => c.case_no));
   const repo = loadRepoRawCases().filter((c) => !seen.has(c.case_no));
+  /* 저장소 원본의 '# 이미지분류' 에 옵시디언 첨부(![[파일명]])가 있으면 vault 의 실제 파일로 풀어 둡니다. */
+  repo.forEach((c) => {
+    c.notices = c.notices || [];
+    ROLES.forEach(({ key }) => c.images[key].list.forEach((img) => {
+      if (!img.wiki) return;
+      const hit = resolveWikiImage(vaultDir, img.wiki);
+      if (hit.file) img.local = hit.file;
+      else c.notices.push({ level: 'error', text: hit.error });
+    }));
+  });
   return vault.concat(repo).sort((a, b) => a.case_no.localeCompare(b.case_no));
 }
 

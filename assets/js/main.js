@@ -400,7 +400,8 @@
       } else if (mode === 'all' || !mode) {
         list = PROJECTS.slice().sort(byRecencyDesc);
       } else {
-        list = PROJECTS.filter(function (p) { return p.category === mode; }).sort(byRecencyDesc);
+        var wanted = mode.split(',').map(function (x) { return x.trim(); }).filter(Boolean);
+        list = PROJECTS.filter(function (p) { return wanted.indexOf(p.category) > -1; }).sort(byRecencyDesc);
       }
       list = list.slice(0, limit);
       var isAsymmetric = box.classList.contains('works-asymmetric');

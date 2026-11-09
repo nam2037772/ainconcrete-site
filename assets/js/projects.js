@@ -72,6 +72,76 @@ const RETIRED_PROJECT_IDS = [
 
 const PROJECTS = [
   {
+    "id": "obsidian-case-052-steel-frame-window-leak-rust-silicone-repair",
+    "source": "obsidian",
+    "case_no": "052",
+    "source_note": "data/case-sources/052.md",
+    "draft_file": "data/case-sources/052.md",
+    "review_required": false,
+    "title": "철골조 창호 누수 보수 - 녹 부위 샌딩·방청·실리콘 재시공",
+    "location": "",
+    "building": "",
+    "category": "누수보수",
+    "date": "",
+    "period": "",
+    "summary": "철골조에 설치한 창호에서 누수가 발생한 현장. 철골 녹이 팽창하며 실리콘이 파열된 부위의 녹을 샌딩하고 방청 처리한 뒤 실리콘을 다시 시공한 창호 누수보수 사례입니다.",
+    "problem": "",
+    "method": "",
+    "result": "",
+    "sections": [
+      {
+        "heading": "현장 개요",
+        "paragraphs": [
+          "• 철골조 건물에 설치한 창호에서 누수가 발생한 현장입니다.",
+          "• 이 사례는 철골 프레임과 창호가 만나는 부위의 실리콘 마감을 보수한 누수보수 사례이며, 우레탄·에폭시 인젝션 공법을 적용한 사례가 아닙니다."
+        ]
+      },
+      {
+        "heading": "누수 상태와 원인",
+        "paragraphs": [
+          "• 철골조에서 녹이 발생한 뒤 팽창했고, 그 압력으로 창호 둘레의 실리콘이 파열되어 누수가 생긴 것으로 기록되어 있습니다.",
+          "• 시공 전 사진에서는 철골 프레임 표면의 녹과 실리콘 마감이 끊기고 벌어진 틈을 확인할 수 있습니다."
+        ]
+      },
+      {
+        "heading": "보수 방법",
+        "paragraphs": [
+          "• 철골조 녹 발생 부위를 샌딩하여 녹을 제거합니다.",
+          "• 녹을 제거한 부위에 방청 처리를 합니다.",
+          "• 파열된 실리콘을 걷어내고 실리콘을 다시 시공합니다."
+        ]
+      },
+      {
+        "heading": "시공 후 상태",
+        "paragraphs": [
+          "• 시공 후 사진에서는 방청 처리한 철골 면과 새로 시공한 실리콘 마감선을 확인할 수 있습니다.",
+          "• 시공 후 누수 차단 여부와 경과 기간은 확인된 기록이 없어 적지 않았습니다."
+        ]
+      }
+    ],
+    "representative_image": "assets/images/case-studies/case-052-steel-frame-window-leak-rust-silicone-repair/representative.png",
+    "before_images": [
+      "assets/images/case-studies/case-052-steel-frame-window-leak-rust-silicone-repair/before-01.jpg",
+      "assets/images/case-studies/case-052-steel-frame-window-leak-rust-silicone-repair/before-02.jpg"
+    ],
+    "process_images": [],
+    "after_images": [
+      "assets/images/case-studies/case-052-steel-frame-window-leak-rust-silicone-repair/after-01.jpg",
+      "assets/images/case-studies/case-052-steel-frame-window-leak-rust-silicone-repair/after-02.jpg"
+    ],
+    "thumbnail": "assets/images/case-studies/case-052-steel-frame-window-leak-rust-silicone-repair/representative.png",
+    "after": "assets/images/case-studies/case-052-steel-frame-window-leak-rust-silicone-repair/after-01.jpg",
+    "before": "assets/images/case-studies/case-052-steel-frame-window-leak-rust-silicone-repair/before-01.jpg",
+    "images": [],
+    "featured": false,
+    "representative_images": [
+      "assets/images/case-studies/case-052-steel-frame-window-leak-rust-silicone-repair/representative.png"
+    ],
+    "representative_alt": "철골조 창호 누수 보수 시공 전·후 비교 사진",
+    "representative_fit": "contain",
+    "representative_hd": "assets/images/case-studies/case-052-steel-frame-window-leak-rust-silicone-repair/representative-hd.jpg"
+  },
+  {
     "id": "obsidian-case-051-seongsu-clothing-store-feature-wall-no2-aging-pattern",
     "source": "obsidian",
     "case_no": "051",

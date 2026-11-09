@@ -73,8 +73,9 @@ const SERVICE_BY_CATEGORY = {
   '강판보강':     { name: '제주 철판보강 · 강판보강 에폭시 인젝션', page: 'steel-plate-reinforcement.html' },
   '표면강화':     { name: '제주 콘크리트 표면강화 · 발수코팅', page: 'concrete-surface-protection.html' },
   '인젝션':       { name: '인젝션 특수방수', page: 'waterproof.html' },
-  '누수보수':     { name: '인젝션 특수방수', page: 'waterproof.html' },
-  '특수방수':     { name: '인젝션 특수방수', page: 'waterproof.html' }
+  /* 누수보수·특수방수 사례가 모두 인젝션 공법은 아니므로 '인젝션' 이라는 이름을 붙이지 않습니다 (JSON-LD about · 버튼 문구에 쓰임) */
+  '누수보수':     { name: '누수보수 · 특수방수', page: 'waterproof.html' },
+  '특수방수':     { name: '누수보수 · 특수방수', page: 'waterproof.html' }
 };
 const DEFAULT_SERVICE = { name: '제주 노출콘크리트 보수', page: 'concrete.html' };
 function serviceOf(category) { return SERVICE_BY_CATEGORY[category] || DEFAULT_SERVICE; }
@@ -195,9 +196,10 @@ function buildCasePage(p, sorted, idx) {
     ]
   });
 
-  /* 관련 시공사례 — main.js 와 같은 규칙 (같은 분야 우선, 없으면 최신) */
-  let related = sorted.filter((o) => o.id !== p.id && o.category === p.category).slice(0, 3);
-  if (!related.length) related = sorted.filter((o) => o.id !== p.id).slice(0, 3);
+  /* 관련 시공사례 — 같은 분야만 보여 줍니다.
+     같은 분야 사례가 없을 때 다른 분야의 최신 사례로 채우지 않습니다
+     (누수보수 사례 아래에 노출콘크리트 사례가 '관련'으로 붙는 것을 막습니다). */
+  const related = sorted.filter((o) => o.id !== p.id && o.category === p.category).slice(0, 3);
   const relatedHtml = related
     .map((o) => R.projectCard(o, CaseImages.normalize(o), SUB_PREFIX, FALLBACK_IMAGE)).join('');
 
@@ -208,7 +210,8 @@ function buildCasePage(p, sorted, idx) {
     (next ? '<a href="' + SUB_PREFIX + casePath(next.id) + '">' + esc(next.title) + ' →</a>' : '<span></span>');
 
   /* 이 사례와 같은 공정을 설명한 기술자료 (있을 때만) */
-  const guide = RESOURCES.filter((r) => serviceOf(r.category).page === svc.page)
+  /* 누수보수 사례(창호 실리콘 보수 등)는 공법이 달라 인젝션 기술자료를 '관련 기술자료' 로 잇지 않습니다. */
+  const guide = p.category === '누수보수' ? null : RESOURCES.filter((r) => serviceOf(r.category).page === svc.page)
     .slice().sort(byRecencyDesc)[0];
 
   const html = `${headBlock({ rel, title, description, image: rep, schema })}
@@ -231,10 +234,10 @@ ${R.caseBody(p, ci, SUB_PREFIX, FALLBACK_IMAGE)}
 <section class="section">
   <div class="wrap">
     <header class="section__head section__head--row reveal">
-      <div><p class="eyebrow">RELATED CONTENT</p><h2 class="h2">관련 시공사례</h2></div>
-      <p class="section__desc">이 현장과 같은 분야의 기록입니다. 결함 상태와 적용 공법을 사례마다 적어 두었습니다.</p>
-    </header>
-    <div class="grid grid--3" id="relatedWorks">${relatedHtml}</div>
+      <div><p class="eyebrow">RELATED CONTENT</p><h2 class="h2">${related.length ? '관련 시공사례' : '관련 공정 · 기술자료'}</h2></div>
+      <p class="section__desc">${related.length ? '이 현장과 같은 분야의 기록입니다. 결함 상태와 적용 공법을 사례마다 적어 두었습니다.' : '같은 분야의 다른 시공사례는 아직 공개하지 않았습니다. 관련 공정과 기술자료를 확인해 보세요.'}</p>
+    </header>${related.length ? `
+    <div class="grid grid--3" id="relatedWorks">${relatedHtml}</div>` : ''}
     <div class="section__more">
       <a class="btn btn--dark" href="${SUB_PREFIX}projects.html">전체 시공사례 보기</a>
       <a class="btn btn--line" href="${SUB_PREFIX}${svc.page}">${esc(svc.name)} 공정 보기</a>${guide ? `
@@ -330,12 +333,19 @@ function buildGuidePage(r) {
 
   /* 이 분야에 공개된 시공사례가 아직 없으면(예: 콘크리트 보수보강) 빈 카드 그리드를
      보여주는 대신 이 구간 전체를 건너뜁니다 — 없는 것을 있는 것처럼 두지 않습니다. */
+  /* 인젝션·특수방수 자료에 연결되는 사례는 공법이 같다는 뜻이 아니라 같은 분야(누수보수)의 기록입니다.
+     '이 기준이 적용된' 이라고 쓰면 사실과 다르므로 문구를 나눕니다. */
+  const isLeak = svc.page === 'waterproof.html';
+  const worksTitle = isLeak ? '같은 분야의 누수보수 현장' : '이 기준이 적용된 현장';
+  const worksDesc = isLeak
+    ? '누수보수 분야의 실제 현장 기록입니다. 이 자료에서 설명한 공법과 같은 공법이라는 뜻은 아니며, 각 사례에 적용한 공법은 사례 본문에서 확인하실 수 있습니다.'
+    : '여기 정리한 기준이 실제 현장에서 어떤 결과로 나왔는지 시공 전후 사진으로 확인하실 수 있습니다.';
   const realWorksSection = cases.length ? `
 <section class="section section--mist">
   <div class="wrap">
     <header class="section__head section__head--row reveal">
-      <div><p class="eyebrow">REAL WORKS</p><h2 class="h2">이 기준이 적용된 현장</h2></div>
-      <p class="section__desc">여기 정리한 기준이 실제 현장에서 어떤 결과로 나왔는지 시공 전후 사진으로 확인하실 수 있습니다.</p>
+      <div><p class="eyebrow">REAL WORKS</p><h2 class="h2">${worksTitle}</h2></div>
+      <p class="section__desc">${worksDesc}</p>
     </header>
     <div class="grid grid--3">${casesHtml}</div>
     <div class="section__more">
@@ -467,7 +477,9 @@ function pickWorks(mode, limit) {
   } else if (mode === 'all' || !mode) {
     list = PROJECTS.slice().sort(byRecencyDesc);
   } else {
-    list = PROJECTS.filter((p) => p.category === mode).sort(byRecencyDesc);
+    /* 쉼표로 여러 분류를 적을 수 있습니다. 예) data-works="누수보수,특수방수" (main.js 와 같은 규칙) */
+    const wanted = mode.split(',').map((x) => x.trim()).filter(Boolean);
+    list = PROJECTS.filter((p) => wanted.indexOf(p.category) > -1).sort(byRecencyDesc);
   }
   return list.slice(0, limit);
 }
