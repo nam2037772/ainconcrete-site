@@ -1186,7 +1186,11 @@ function buildOrganisationGraph() {
        따로 밝힙니다. 셋을 구분해 두어야 검색엔진이 같은 주체로 묶습니다. */
     name: COMPANY.brand,
     legalName: COMPANY.legalName,
-    alternateName: [COMPANY.shortName, COMPANY.name, COMPANY.nameEn].filter(Boolean),
+    /* 화면에 쓰는 이름(제주 콘크리트 보수)과 띄어쓰기 변형까지 모두 밝혀 같은 회사로 묶이게 합니다.
+       name 과 같은 값은 빼고, 중복도 제거합니다. */
+    alternateName: Array.from(new Set(
+      (COMPANY.alternateNames || []).concat([COMPANY.shortName, COMPANY.name, COMPANY.nameEn])
+    )).filter((n) => n && n !== COMPANY.brand),
     slogan: COMPANY.brandSubline,
     description: COMPANY.description,
     telephone: COMPANY.tel,
@@ -1232,6 +1236,7 @@ function buildOrganisationGraph() {
     sameAs: [COMPANY.storeUrl]
       .concat(['blog', 'youtube', 'instagram']
         .map((k) => EXTERNAL_LINKS[k] && EXTERNAL_LINKS[k].url))
+      .concat(COMPANY.relatedSites || [])
       .filter(Boolean)
   };
 
@@ -1268,7 +1273,7 @@ function buildOrganisationGraph() {
     '@id': SITE_ID,
     url: SITE_URL,
     name: COMPANY.brand,
-    alternateName: '제주 노출콘크리트',
+    alternateName: [COMPANY.headerBrand, '제주 노출콘크리트'].filter((n) => n && n !== COMPANY.brand),
     inLanguage: 'ko-KR',
     publisher: { '@id': ORG_ID }
   };

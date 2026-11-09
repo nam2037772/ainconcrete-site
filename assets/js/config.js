@@ -45,6 +45,17 @@ const COMPANY = {
      헤더·푸터의 브랜드 아래 줄은 brandSubline(한글)을 씁니다 — 이 사이트를
      찾는 사람이 실제로 검색하는 말이 한글이기 때문입니다. */
   nameEn: 'Jeju Exposed Concrete Repair',
+  /* 같은 회사를 가리키는 다른 이름들 — 구조화데이터 alternateName 에만 씁니다.
+     화면 헤더는 '제주 콘크리트 보수', 검색용 이름(brand)은 '제주노출콘크리트'라서 이름이 둘입니다.
+     검색엔진·AI 답변 엔진이 두 이름을 한 회사로 묶도록, 쓰는 이름과 띄어쓰기 변형을 모두 밝혀 둡니다.
+     ※ 실제로 쓰는 이름만 적습니다. */
+  alternateNames: [
+    '제주 콘크리트 보수',
+    '제주콘크리트보수',
+    '제주 노출콘크리트',
+    '제주콘크리트보수보강',
+    '제주 콘크리트 보수보강'
+  ],
   slogan: '제주 노출콘크리트 보수 · 제주 콘크리트 보수보강 · 누수보수·특수방수',
 
   /* 구조화데이터(ProfessionalService)의 회사 설명 — 여기 한 곳에서만 관리합니다. */
@@ -160,6 +171,9 @@ const COMPANY = {
      이 사이트의 대표 주소(siteUrl)가 아니라, 같은 사업자의 별도 사이트입니다.
      구조화데이터에서는 sameAs 로만 연결합니다. */
   storeUrl: 'https://www.ainsafety.com',
+  /* 같은 회사가 운영하는 그 밖의 사이트 — 구조화데이터 sameAs 에만 연결합니다.
+     jejusafety.kr = 제주안전시설 (접속 확인함, 2026-11-09) */
+  relatedSites: ['https://jejusafety.kr/'],
 
   /* ▶ 도메인을 옮길 때 고치는 곳은 여기 한 줄입니다.
        바꾼 뒤 반드시 node tools/build-site.js --write 를 실행하세요.
