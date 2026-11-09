@@ -159,8 +159,8 @@ ul,ol{list-style:none}
 
 /* 핵심 두 축 — 같은 폭 · 같은 형식. 서비스 구간(.svc)과 같은 헤어라인 언어를 씁니다.
    반투명 오프화이트 바탕은 사진 위에서도 글자 대비를 지키기 위한 것입니다. */
-.hero__pillars{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
-  width:min(100%,640px);margin:2.2em 0 0;padding:0;list-style:none;
+.hero__pillars{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  width:min(100%,900px);margin:2.2em 0 0;padding:0;list-style:none;
   border-top:1px solid rgba(22,22,22,.28);background:rgba(248,247,245,.72)}
 .hero__pillars li + li{border-left:1px solid rgba(22,22,22,.18)}
 .pillar{display:flex;flex-direction:column;gap:.45em;height:100%;
