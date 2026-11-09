@@ -29,8 +29,8 @@ const {
 
 const NAV_ITEMS = [
   ['index.html', 'HOME'],
-  ['concrete.html', '제주노출콘크리트'],
-  ['reinforcement.html', '제주콘크리트보수보강'],
+  ['concrete.html', '노출콘크리트'],
+  ['reinforcement.html', '콘크리트보수보강'],
   ['waterproof.html', '누수보수·특수방수'],
   ['projects.html', '시공사례'],
   ['resources.html', '기술자료'],
@@ -108,9 +108,9 @@ function footer(prefix, COMPANY, EXTERNAL_LINKS) {
     <nav class="footer__col" aria-label="전문 분야">
       <h2 class="footer__ttl">전문 분야</h2>
       <ul>
-        <li><a href="${prefix}concrete.html">제주노출콘크리트 보수·복원</a></li>
+        <li><a href="${prefix}concrete.html">노출콘크리트 보수·복원</a></li>
         <li><a href="${prefix}vintage-concrete-finish.html">빈티지마감 · 빈티지월</a></li>
-        <li><a href="${prefix}reinforcement.html">제주콘크리트보수보강</a></li>
+        <li><a href="${prefix}reinforcement.html">콘크리트보수보강</a></li>
         <li><a href="${prefix}epoxy-crack-repair.html">에폭시 균열주입</a></li>
         <li><a href="${prefix}steel-plate-reinforcement.html">철판 · 강재보강</a></li>
         <li><a href="${prefix}carbon-fiber-reinforcement.html">CFRP 탄소섬유 구조보강</a></li>

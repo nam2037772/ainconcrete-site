@@ -851,8 +851,8 @@ ${inlineCss.trim()}
     </a>
     <nav class="nav" id="nav" aria-label="주요 메뉴" inert>
       <a href="index.html">HOME</a>
-      <a href="concrete.html">제주노출콘크리트</a>
-      <a href="reinforcement.html">제주콘크리트보수보강</a>
+      <a href="concrete.html">노출콘크리트</a>
+      <a href="reinforcement.html">콘크리트보수보강</a>
       <a href="waterproof.html">누수보수·특수방수</a>
       <a href="projects.html">시공사례</a>
       <a href="resources.html">기술자료</a>

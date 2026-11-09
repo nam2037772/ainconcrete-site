@@ -44,9 +44,9 @@ window.SITE = {
     /* 핵심 두 축 — 첫 화면에서 '노출콘크리트만 하는 곳'으로 읽히지 않도록
        두 분야를 같은 크기·같은 형식으로 나란히 둡니다. 항목은 3~6개까지만. */
     pillars: [
-      { title: '제주노출콘크리트', link: 'concrete.html',
+      { title: '노출콘크리트', link: 'concrete.html',
         items: ['노출콘크리트 면보수', '색상복원', '질감복원'] },
-      { title: '제주콘크리트보수보강', link: 'reinforcement.html',
+      { title: '콘크리트보수보강', link: 'reinforcement.html',
         items: ['균열보수', '단면복구', '인젝션', '철판보강', '강재보강', '구조물보강'] }
     ],
     images: [
@@ -82,11 +82,11 @@ window.SITE = {
     desc:    '표면의 표정을 되살리는 노출콘크리트 보수, 구조의 성능을 되살리는 콘크리트 보수보강. 누수가 얽힌 현장은 누수보수·특수방수로 함께 다룹니다.'
   },
   services: [
-    { no: '01', title: '제주노출콘크리트',
+    { no: '01', title: '노출콘크리트',
       items: ['면보수', '색상 · 질감 복원', '하자보수'],
       text: '곰보·단차·얼룩 같은 표면 하자를 덮지 않고, 기존 면과 이어지는 색과 질감으로 다시 만들어 넣습니다.',
       link: 'concrete.html' },
-    { no: '02', title: '제주콘크리트보수보강',
+    { no: '02', title: '콘크리트보수보강',
       items: ['균열보수 · 에폭시 인젝션', '단면복구', '철판 · 강재보강', '탄소섬유보강'],
       text: '균열·박락·철근노출 같은 구조적 손상을 진단한 뒤 보수하고, 내력이 부족한 보·슬래브·기둥은 구조검토에 따라 보강합니다.',
       link: 'reinforcement.html' },
@@ -201,9 +201,9 @@ window.SITE = {
        같은 목록입니다 — 한쪽만 고치면 홈과 하위 페이지의 전문 분야가 갈라집니다.
        철근부식 · 단면복구는 상세 페이지가 없어 허브의 해당 절로 보냅니다. */
     serviceLinks: [
-      { label: '제주노출콘크리트 보수·복원', href: 'concrete.html' },
+      { label: '노출콘크리트 보수·복원', href: 'concrete.html' },
       { label: '빈티지마감 · 빈티지월',     href: 'vintage-concrete-finish.html' },
-      { label: '제주콘크리트보수보강',      href: 'reinforcement.html' },
+      { label: '콘크리트보수보강',      href: 'reinforcement.html' },
       { label: '에폭시 균열주입',           href: 'epoxy-crack-repair.html' },
       { label: '철판 · 강재보강',           href: 'steel-plate-reinforcement.html' },
       { label: 'CFRP 탄소섬유 구조보강',    href: 'carbon-fiber-reinforcement.html' },
