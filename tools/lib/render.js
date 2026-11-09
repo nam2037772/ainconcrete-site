@@ -31,7 +31,7 @@ const NAV_ITEMS = [
   ['index.html', 'HOME'],
   ['concrete.html', '제주노출콘크리트'],
   ['reinforcement.html', '제주콘크리트보수보강'],
-  ['waterproof.html', '인젝션·특수방수'],
+  ['waterproof.html', '누수보수·특수방수'],
   ['projects.html', '시공사례'],
   ['resources.html', '기술자료'],
   ['materials.html', '자재구매'],
@@ -115,7 +115,7 @@ function footer(prefix, COMPANY, EXTERNAL_LINKS) {
         <li><a href="${prefix}steel-plate-reinforcement.html">철판 · 강재보강</a></li>
         <li><a href="${prefix}carbon-fiber-reinforcement.html">CFRP 탄소섬유 구조보강</a></li>
         <li><a href="${prefix}reinforcement.html#rebar">철근부식 · 단면복구</a></li>
-        <li><a href="${prefix}waterproof.html">우레탄 인젝션 특수방수</a></li>
+        <li><a href="${prefix}waterproof.html">누수보수·특수방수</a></li>
         <li><a href="${prefix}concrete-surface-protection.html">표면강화 · 발수보호</a></li>
       </ul>
     </nav>

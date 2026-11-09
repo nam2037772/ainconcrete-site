@@ -11,6 +11,13 @@
    해당 목록 페이지로 보냅니다. shim 자체는 noindex 입니다.
    ============================================================ */
 var LEGACY_CASE_ROUTES = {
+  "obsidian-case-059-rooftop-elastic-urethane-waterproofing-process": "case/case-059-rooftop-elastic-urethane-waterproofing-process.html",
+  "obsidian-case-058-bathroom-floor-leak-slab-hole-repair-waterproofing": "case/case-058-bathroom-floor-leak-slab-hole-repair-waterproofing.html",
+  "obsidian-case-057-townhouse-flat-roof-liquid-rubber-waterproofing": "case/case-057-townhouse-flat-roof-liquid-rubber-waterproofing.html",
+  "obsidian-case-056-aluminum-window-frame-leak-mortar-gap-waterproofing": "case/case-056-aluminum-window-frame-leak-mortar-gap-waterproofing.html",
+  "obsidian-case-055-old-house-rooftop-polymer-cement-elastic-coating-waterproofing": "case/case-055-old-house-rooftop-polymer-cement-elastic-coating-waterproofing.html",
+  "obsidian-case-054-old-house-rooftop-waste-concrete-removal-urethane-waterproofing": "case/case-054-old-house-rooftop-waste-concrete-removal-urethane-waterproofing.html",
+  "obsidian-case-053-exterior-wall-diagonal-crack-leak-urethane-injection": "case/case-053-exterior-wall-diagonal-crack-leak-urethane-injection.html",
   "obsidian-case-052-steel-frame-window-leak-rust-silicone-repair": "case/case-052-steel-frame-window-leak-rust-silicone-repair.html",
   "obsidian-case-051-seongsu-clothing-store-feature-wall-no2-aging-pattern": "case/case-051-seongsu-clothing-store-feature-wall-no2-aging-pattern.html",
   "obsidian-case-050-stair-vintage-exposed-concrete-conchae-putty": "case/case-050-stair-vintage-exposed-concrete-conchae-putty.html",

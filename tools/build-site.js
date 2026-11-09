@@ -72,10 +72,10 @@ const SERVICE_BY_CATEGORY = {
   '철판보강':     { name: '제주 철판보강 · 강판보강 에폭시 인젝션', page: 'steel-plate-reinforcement.html' },
   '강판보강':     { name: '제주 철판보강 · 강판보강 에폭시 인젝션', page: 'steel-plate-reinforcement.html' },
   '표면강화':     { name: '제주 콘크리트 표면강화 · 발수코팅', page: 'concrete-surface-protection.html' },
-  '인젝션':       { name: '인젝션 특수방수', page: 'waterproof.html' },
+  '인젝션':       { name: '누수보수·특수방수', page: 'waterproof.html' },
   /* 누수보수·특수방수 사례가 모두 인젝션 공법은 아니므로 '인젝션' 이라는 이름을 붙이지 않습니다 (JSON-LD about · 버튼 문구에 쓰임) */
-  '누수보수':     { name: '누수보수 · 특수방수', page: 'waterproof.html' },
-  '특수방수':     { name: '누수보수 · 특수방수', page: 'waterproof.html' }
+  '누수보수':     { name: '누수보수·특수방수', page: 'waterproof.html' },
+  '특수방수':     { name: '누수보수·특수방수', page: 'waterproof.html' }
 };
 const DEFAULT_SERVICE = { name: '제주 노출콘크리트 보수', page: 'concrete.html' };
 function serviceOf(category) { return SERVICE_BY_CATEGORY[category] || DEFAULT_SERVICE; }
@@ -199,7 +199,7 @@ function buildCasePage(p, sorted, idx) {
   /* 관련 시공사례 — 같은 분야만 보여 줍니다.
      같은 분야 사례가 없을 때 다른 분야의 최신 사례로 채우지 않습니다
      (누수보수 사례 아래에 노출콘크리트 사례가 '관련'으로 붙는 것을 막습니다). */
-  const related = sorted.filter((o) => o.id !== p.id && o.category === p.category).slice(0, 3);
+  const related = sorted.filter((o) => o.id !== p.id && serviceOf(o.category).page === svc.page).slice(0, 3);
   const relatedHtml = related
     .map((o) => R.projectCard(o, CaseImages.normalize(o), SUB_PREFIX, FALLBACK_IMAGE)).join('');
 
@@ -323,17 +323,22 @@ function buildGuidePage(r) {
   const relatedHtml = related.map((o) => R.resourceRow(o, SUB_PREFIX)).join('');
 
   /* 이 기준이 실제로 적용된 사례 3건 — 같은 분야에서 시공 전 사진이 있는 것 우선 */
+  const wantInjection = r.category === '인젝션' || /인젝션/.test(r.title);
   const cases = PROJECTS
     .filter((p) => serviceOf(p.category).page === svc.page)
     .map((p) => ({ p, ci: CaseImages.normalize(p) }))
-    .sort((a, b) => (b.ci.hasBefore ? 1 : 0) - (a.ci.hasBefore ? 1 : 0))
+    /* 인젝션 자료에는 인젝션을 실제로 적용한 사례를 먼저, 그다음 시공 전 사진이 있는 사례를 보여 줍니다. */
+    .sort((a, b) => {
+      const inj = (x) => (wantInjection && /인젝션/.test(x.p.title + ' ' + x.p.summary) ? 2 : 0) + (x.ci.hasBefore ? 1 : 0);
+      return inj(b) - inj(a);
+    })
     .slice(0, 3);
   const casesHtml = cases
     .map(({ p, ci }) => R.projectCard(p, ci, SUB_PREFIX, FALLBACK_IMAGE)).join('');
 
   /* 이 분야에 공개된 시공사례가 아직 없으면(예: 콘크리트 보수보강) 빈 카드 그리드를
      보여주는 대신 이 구간 전체를 건너뜁니다 — 없는 것을 있는 것처럼 두지 않습니다. */
-  /* 인젝션·특수방수 자료에 연결되는 사례는 공법이 같다는 뜻이 아니라 같은 분야(누수보수)의 기록입니다.
+  /* 누수보수·특수방수 자료에 연결되는 사례는 공법이 같다는 뜻이 아니라 같은 분야(누수보수)의 기록입니다.
      '이 기준이 적용된' 이라고 쓰면 사실과 다르므로 문구를 나눕니다. */
   const isLeak = svc.page === 'waterproof.html';
   const worksTitle = isLeak ? '같은 분야의 누수보수 현장' : '이 기준이 적용된 현장';
@@ -848,7 +853,7 @@ ${inlineCss.trim()}
       <a href="index.html">HOME</a>
       <a href="concrete.html">제주노출콘크리트</a>
       <a href="reinforcement.html">제주콘크리트보수보강</a>
-      <a href="waterproof.html">인젝션·특수방수</a>
+      <a href="waterproof.html">누수보수·특수방수</a>
       <a href="projects.html">시공사례</a>
       <a href="resources.html">기술자료</a>
       <a href="materials.html">자재구매</a>
@@ -1204,7 +1209,7 @@ function buildOrganisationGraph() {
       itemListElement: [
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: '제주 노출콘크리트 보수·복원', description: '곰보·기포 면보수, 층조인트 단차 보정, 색상 및 질감 복원, 오염·백화 하자보수, 발수 및 표면 보호', url: absUrl(SITE_URL, 'concrete.html') } },
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: '제주 콘크리트 보수보강', description: '균열보수 및 에폭시 인젝션, 단면복구, 철근노출 및 박락 보수, 철판·강재보강, 탄소섬유보강, 보·슬래브·기둥 구조보강', url: absUrl(SITE_URL, 'reinforcement.html') } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: '인젝션 특수방수', description: '누수 경로 추적, 우레탄 인젝션, 배면 그라우팅, 액상고무 도막방수', url: absUrl(SITE_URL, 'waterproof.html') } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: '누수보수·특수방수', description: '누수 경로 추적, 우레탄 인젝션, 배면 그라우팅, 액상고무 도막방수', url: absUrl(SITE_URL, 'waterproof.html') } },
         /* 세 전문 분야 아래의 공정별 상세 — 모두 전용 페이지가 있습니다. */
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: '제주 철판보강 · 강재보강', description: '보·기둥·슬래브 등 기존 콘크리트 구조물의 철판보강 에폭시 주입공법 및 강재보강 시공. 강판 설치 후 콘크리트와 강판 사이에 에폭시 수지를 주입해 일체화. 보강 여부와 보강량은 구조기술자의 검토와 보강설계에 따름', url: absUrl(SITE_URL, 'steel-plate-reinforcement.html') } },
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: '제주 에폭시 균열보수 · 저압주입', description: '비구조부 균열보수, 구조부 에폭시 저압주입, 에폭시 기계식 인젝션', url: absUrl(SITE_URL, 'epoxy-crack-repair.html') } },

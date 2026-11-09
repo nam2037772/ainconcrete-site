@@ -72,6 +72,560 @@ const RETIRED_PROJECT_IDS = [
 
 const PROJECTS = [
   {
+    "id": "obsidian-case-059-rooftop-elastic-urethane-waterproofing-process",
+    "source": "obsidian",
+    "case_no": "059",
+    "source_note": "data/case-sources/059.md",
+    "draft_file": "data/case-sources/059.md",
+    "review_required": false,
+    "title": "옥상 탄성우레탄 방수 시공과정 - 바탕정리·하도·씰란트·중도",
+    "location": "",
+    "building": "",
+    "category": "누수보수",
+    "date": "",
+    "period": "",
+    "summary": "옥상 바닥의 구배를 확인하고 바탕을 정리한 뒤 우레탄 하도, 씰란트, 탄성우레탄 중도 순서로 시공한 옥상 방수 사례입니다. 상도는 공정 설명으로 함께 정리했습니다.",
+    "problem": "",
+    "method": "",
+    "result": "",
+    "sections": [
+      {
+        "heading": "현장 개요",
+        "paragraphs": [
+          "• 옥상방수 의뢰로 작업한 현장입니다. 바탕면의 구배를 확인하고 바탕 청소를 먼저 했습니다."
+        ]
+      },
+      {
+        "heading": "시공 과정",
+        "paragraphs": [
+          "1. 바탕 정리: 스크래퍼나 헤라 등으로 표면을 정리한 뒤 청소했습니다.",
+          "2. 줄눈 커팅(필요한 경우): 콘크리트 거동에 따른 균열에 대비해 줄눈을 커팅합니다.",
+          "3. 우레탄 하도: 롤러로 도장하며, 콘크리트에 하도가 많이 흡수되면 묽게 희석해 2회 이상 얇게 도장합니다. 이번 현장은 노루표 크린탄1000으로 하도 시공했습니다.",
+          "4. 씰란트 작업: 줄눈 커팅부와 균열부를 우레탄 씰란트로 채웁니다.",
+          "5. 우레탄 중도: 노루페인트 크린탄 2100을 사용했고, 1차 스크래핑 도장 후 핀홀은 씰란트로 눈매꿈하고 2차 본도장을 하는 방식입니다.",
+          "6. 우레탄 상도(공정 설명): 자외선에 의한 중도재 황변을 막기 위해 롤러로 상도를 도장합니다. 이 현장의 상도 시공 사진은 없습니다."
+        ]
+      },
+      {
+        "heading": "시공 사진",
+        "paragraphs": [
+          "• 시공 전 바탕 상태, 하도 시공, 중도 도장 사진을 작업 순서대로 실었습니다."
+        ]
+      }
+    ],
+    "representative_image": "assets/images/case-studies/case-059-rooftop-elastic-urethane-waterproofing-process/representative.jpg",
+    "before_images": [
+      "assets/images/case-studies/case-059-rooftop-elastic-urethane-waterproofing-process/before-01.jpg"
+    ],
+    "process_images": [
+      "assets/images/case-studies/case-059-rooftop-elastic-urethane-waterproofing-process/process-01.jpg",
+      "assets/images/case-studies/case-059-rooftop-elastic-urethane-waterproofing-process/process-02.jpg",
+      "assets/images/case-studies/case-059-rooftop-elastic-urethane-waterproofing-process/process-03.jpg",
+      "assets/images/case-studies/case-059-rooftop-elastic-urethane-waterproofing-process/process-04.jpg",
+      "assets/images/case-studies/case-059-rooftop-elastic-urethane-waterproofing-process/process-05.jpg",
+      "assets/images/case-studies/case-059-rooftop-elastic-urethane-waterproofing-process/process-06.jpg",
+      "assets/images/case-studies/case-059-rooftop-elastic-urethane-waterproofing-process/representative.jpg"
+    ],
+    "after_images": [],
+    "thumbnail": "assets/images/case-studies/case-059-rooftop-elastic-urethane-waterproofing-process/representative.jpg",
+    "after": "",
+    "before": "assets/images/case-studies/case-059-rooftop-elastic-urethane-waterproofing-process/before-01.jpg",
+    "images": [],
+    "featured": false,
+    "representative_images": [
+      "assets/images/case-studies/case-059-rooftop-elastic-urethane-waterproofing-process/representative.jpg"
+    ],
+    "representative_alt": "옥상 탄성우레탄 방수 중도 시공 사진"
+  },
+  {
+    "id": "obsidian-case-058-bathroom-floor-leak-slab-hole-repair-waterproofing",
+    "source": "obsidian",
+    "case_no": "058",
+    "source_note": "data/case-sources/058.md",
+    "draft_file": "data/case-sources/058.md",
+    "review_required": false,
+    "title": "화장실 바닥 누수 - 슬래브 관통부 보수와 지수 방수",
+    "location": "",
+    "building": "",
+    "category": "누수보수",
+    "date": "",
+    "period": "",
+    "summary": "겉보기에는 멀쩡한 화장실에서 누수가 발생한 현장. 타일과 몰탈을 철거해 슬래브의 관통 구멍을 확인하고, 접착·고강도 보수몰탈·초급결 지수 처리와 담수시험 후 타일을 시공한 사례입니다.",
+    "problem": "",
+    "method": "",
+    "result": "",
+    "sections": [
+      {
+        "heading": "현장 개요",
+        "paragraphs": [
+          "• 겉보기에는 문제가 없어 보이는 화장실에서 물이 샌다는 연락을 받고 현장을 방문했습니다."
+        ]
+      },
+      {
+        "heading": "누수 부위 확인",
+        "paragraphs": [
+          "• 아래층에서 보니 단열재와 우레탄폼으로 마감한 흔적이 있었고, 자세히 보면 철근이 보였습니다.",
+          "• 드레인 주변을 줄눈부터 커팅해 타일과 몰탈을 철거하고 물을 부어 누수 부위를 확인했습니다.",
+          "• 슬래브 콘크리트가 없는 직경 20cm 정도의 관통 구멍이 있었고, 구멍을 보수하지 않은 채 우레탄폼으로 채우고 타일을 시공한 것으로 보였습니다."
+        ]
+      },
+      {
+        "heading": "시공 과정",
+        "paragraphs": [
+          "1. 우레탄폼을 깨끗이 걷어냈습니다.",
+          "2. 신구 콘크리트 접착제(본크론)를 도포했습니다.",
+          "3. 고강도 보수몰탈(마페이 CD1)로 구멍을 보수했고, 누수 부위는 CD1로 2차 집중 보수했습니다.",
+          "4. 초급결 지수제(마페이 CX1)로 방수를 2회 했습니다.",
+          "5. 담수시험을 했습니다.",
+          "6. 타일을 시공했습니다."
+        ]
+      }
+    ],
+    "representative_image": "assets/images/case-studies/case-058-bathroom-floor-leak-slab-hole-repair-waterproofing/representative.jpg",
+    "before_images": [
+      "assets/images/case-studies/case-058-bathroom-floor-leak-slab-hole-repair-waterproofing/before-01.jpg",
+      "assets/images/case-studies/case-058-bathroom-floor-leak-slab-hole-repair-waterproofing/before-02.jpg",
+      "assets/images/case-studies/case-058-bathroom-floor-leak-slab-hole-repair-waterproofing/before-03.jpg"
+    ],
+    "process_images": [
+      "assets/images/case-studies/case-058-bathroom-floor-leak-slab-hole-repair-waterproofing/process-01.jpg",
+      "assets/images/case-studies/case-058-bathroom-floor-leak-slab-hole-repair-waterproofing/process-02.jpg",
+      "assets/images/case-studies/case-058-bathroom-floor-leak-slab-hole-repair-waterproofing/process-03.jpg",
+      "assets/images/case-studies/case-058-bathroom-floor-leak-slab-hole-repair-waterproofing/process-04.jpg",
+      "assets/images/case-studies/case-058-bathroom-floor-leak-slab-hole-repair-waterproofing/process-05.jpg",
+      "assets/images/case-studies/case-058-bathroom-floor-leak-slab-hole-repair-waterproofing/process-06.jpg",
+      "assets/images/case-studies/case-058-bathroom-floor-leak-slab-hole-repair-waterproofing/process-07.jpg",
+      "assets/images/case-studies/case-058-bathroom-floor-leak-slab-hole-repair-waterproofing/process-08.jpg",
+      "assets/images/case-studies/case-058-bathroom-floor-leak-slab-hole-repair-waterproofing/process-09.jpg",
+      "assets/images/case-studies/case-058-bathroom-floor-leak-slab-hole-repair-waterproofing/process-10.jpg",
+      "assets/images/case-studies/case-058-bathroom-floor-leak-slab-hole-repair-waterproofing/process-11.jpg",
+      "assets/images/case-studies/case-058-bathroom-floor-leak-slab-hole-repair-waterproofing/process-12.jpg",
+      "assets/images/case-studies/case-058-bathroom-floor-leak-slab-hole-repair-waterproofing/process-13.jpg"
+    ],
+    "after_images": [
+      "assets/images/case-studies/case-058-bathroom-floor-leak-slab-hole-repair-waterproofing/after-01.jpg"
+    ],
+    "thumbnail": "assets/images/case-studies/case-058-bathroom-floor-leak-slab-hole-repair-waterproofing/representative.jpg",
+    "after": "assets/images/case-studies/case-058-bathroom-floor-leak-slab-hole-repair-waterproofing/after-01.jpg",
+    "before": "assets/images/case-studies/case-058-bathroom-floor-leak-slab-hole-repair-waterproofing/before-01.jpg",
+    "images": [],
+    "featured": false,
+    "representative_images": [
+      "assets/images/case-studies/case-058-bathroom-floor-leak-slab-hole-repair-waterproofing/representative.jpg"
+    ],
+    "representative_alt": "화장실 바닥 누수 보수 후 지수층 양생 사진"
+  },
+  {
+    "id": "obsidian-case-057-townhouse-flat-roof-liquid-rubber-waterproofing",
+    "source": "obsidian",
+    "case_no": "057",
+    "source_note": "data/case-sources/057.md",
+    "draft_file": "data/case-sources/057.md",
+    "review_required": false,
+    "title": "타운하우스 평지붕 옥상누수 - 액체고무방수",
+    "location": "",
+    "building": "",
+    "category": "누수보수",
+    "date": "",
+    "period": "",
+    "summary": "타운하우스 평지붕 옥상 누수 현장. 드레인 주변 구배와 파라펫·조인트 균열을 정리하고 초급결지수제와 크랙실란트로 보수한 뒤 침투성 액상고무방수와 탄성도막방수로 마감한 사례입니다.",
+    "problem": "• 옥상 바닥이 많이 손상되어 있었고, 기존 방수는 우레탄이 아니라 에폭시였습니다. • 기존 드레인은 바닥형이었고, 드레인 주변 구배가 좋지 않아 물이 고였던 흔적이 있었습니다. • 파라펫 안쪽에 균열이 있었고, 균열을 통해 바닥으로 누수가 진행됐을 가능성이 보였습니다. • 바닥 조인트에도 균열이 있었습니다. 신축 시 조인트 방수를 하지 않았던 것으로 추정됩니다.",
+    "method": "",
+    "result": "",
+    "sections": [
+      {
+        "heading": "현장 개요",
+        "paragraphs": [
+          "• 타운하우스 평지붕 옥상의 누수로, 물만 새지 않으면 되는 조건의 의뢰였습니다. 우레탄방수는 공사비가 많이 나와 액체고무방수로 진행했습니다."
+        ]
+      },
+      {
+        "heading": "시공 전 상태",
+        "paragraphs": [
+          "• 옥상 바닥이 많이 손상되어 있었고, 기존 방수는 우레탄이 아니라 에폭시였습니다.",
+          "• 기존 드레인은 바닥형이었고, 드레인 주변 구배가 좋지 않아 물이 고였던 흔적이 있었습니다.",
+          "• 파라펫 안쪽에 균열이 있었고, 균열을 통해 바닥으로 누수가 진행됐을 가능성이 보였습니다.",
+          "• 바닥 조인트에도 균열이 있었습니다. 신축 시 조인트 방수를 하지 않았던 것으로 추정됩니다."
+        ]
+      },
+      {
+        "heading": "시공 과정",
+        "paragraphs": [
+          "1. 튀어나온 PVC 파이프를 절단하고 주변을 그라인딩·샌딩해 구배를 맞췄습니다.",
+          "2. 드레인 주변은 박막 시공이 가능한 초급결지수제(마페이 CX1)로 보수했습니다. 거주 세대가 있어 철거 진동을 줄이기 위한 선택이며, 하루 만에 처리했습니다.",
+          "3. 조인트 균열은 크랙실란트로 처리했습니다.",
+          "4. 바탕 습기를 제거해 마른 상태에서 바닥방수를 시작했습니다.",
+          "5. 침투성 액상고무방수제를 스프레이와 롤러로 도포했습니다.",
+          "6. 마감 품질을 높이기 위해 탄성도막방수제(코타실F)를 시공했습니다."
+        ]
+      },
+      {
+        "heading": "시공 사진",
+        "paragraphs": [
+          "• 시공 전, 시공 중(그라인딩·보수·액상고무 도포), 탄성도막방수 시공 완료 사진을 작업 순서대로 실었습니다."
+        ]
+      }
+    ],
+    "representative_image": "assets/images/case-studies/case-057-townhouse-flat-roof-liquid-rubber-waterproofing/representative.jpg",
+    "before_images": [
+      "assets/images/case-studies/case-057-townhouse-flat-roof-liquid-rubber-waterproofing/before-01.jpg",
+      "assets/images/case-studies/case-057-townhouse-flat-roof-liquid-rubber-waterproofing/before-02.jpg",
+      "assets/images/case-studies/case-057-townhouse-flat-roof-liquid-rubber-waterproofing/before-03.jpg",
+      "assets/images/case-studies/case-057-townhouse-flat-roof-liquid-rubber-waterproofing/before-04.jpg",
+      "assets/images/case-studies/case-057-townhouse-flat-roof-liquid-rubber-waterproofing/before-05.jpg",
+      "assets/images/case-studies/case-057-townhouse-flat-roof-liquid-rubber-waterproofing/before-06.jpg",
+      "assets/images/case-studies/case-057-townhouse-flat-roof-liquid-rubber-waterproofing/before-07.jpg",
+      "assets/images/case-studies/case-057-townhouse-flat-roof-liquid-rubber-waterproofing/before-08.jpg",
+      "assets/images/case-studies/case-057-townhouse-flat-roof-liquid-rubber-waterproofing/before-09.jpg"
+    ],
+    "process_images": [
+      "assets/images/case-studies/case-057-townhouse-flat-roof-liquid-rubber-waterproofing/process-01.jpg",
+      "assets/images/case-studies/case-057-townhouse-flat-roof-liquid-rubber-waterproofing/process-02.jpg",
+      "assets/images/case-studies/case-057-townhouse-flat-roof-liquid-rubber-waterproofing/process-03.jpg",
+      "assets/images/case-studies/case-057-townhouse-flat-roof-liquid-rubber-waterproofing/process-04.jpg",
+      "assets/images/case-studies/case-057-townhouse-flat-roof-liquid-rubber-waterproofing/process-05.jpg",
+      "assets/images/case-studies/case-057-townhouse-flat-roof-liquid-rubber-waterproofing/process-06.jpg",
+      "assets/images/case-studies/case-057-townhouse-flat-roof-liquid-rubber-waterproofing/process-07.jpg",
+      "assets/images/case-studies/case-057-townhouse-flat-roof-liquid-rubber-waterproofing/process-08.jpg",
+      "assets/images/case-studies/case-057-townhouse-flat-roof-liquid-rubber-waterproofing/process-09.jpg"
+    ],
+    "after_images": [
+      "assets/images/case-studies/case-057-townhouse-flat-roof-liquid-rubber-waterproofing/after-01.jpg",
+      "assets/images/case-studies/case-057-townhouse-flat-roof-liquid-rubber-waterproofing/representative.jpg"
+    ],
+    "thumbnail": "assets/images/case-studies/case-057-townhouse-flat-roof-liquid-rubber-waterproofing/representative.jpg",
+    "after": "assets/images/case-studies/case-057-townhouse-flat-roof-liquid-rubber-waterproofing/after-01.jpg",
+    "before": "assets/images/case-studies/case-057-townhouse-flat-roof-liquid-rubber-waterproofing/before-01.jpg",
+    "images": [],
+    "featured": false,
+    "representative_images": [
+      "assets/images/case-studies/case-057-townhouse-flat-roof-liquid-rubber-waterproofing/representative.jpg"
+    ],
+    "representative_alt": "타운하우스 옥상 액체고무방수 시공 완료 사진"
+  },
+  {
+    "id": "obsidian-case-056-aluminum-window-frame-leak-mortar-gap-waterproofing",
+    "source": "obsidian",
+    "case_no": "056",
+    "source_note": "data/case-sources/056.md",
+    "draft_file": "data/case-sources/056.md",
+    "review_required": false,
+    "title": "알루미늄 창호 창틀 주변 누수 - 사춤 균열 보수",
+    "location": "",
+    "building": "",
+    "category": "누수보수",
+    "date": "",
+    "period": "",
+    "summary": "알루미늄 창호의 창호 사춤 균열로 누수가 발생한 현장. 기존 바탕면을 제거하고 사춤면 주변에 초속경 방수제를 투입한 뒤 창틀 주변 도막방수와 코킹으로 마감하며 단계마다 살수 테스트를 한 사례입니다.",
+    "problem": "",
+    "method": "",
+    "result": "",
+    "sections": [
+      {
+        "heading": "현장 개요",
+        "paragraphs": [
+          "• 알루미늄 창호에서 누수가 발생한 현장입니다.",
+          "• 원인은 창호 사춤(창틀 주변 모르타르 채움부)의 균열로 기록되어 있습니다."
+        ]
+      },
+      {
+        "heading": "작업 순서",
+        "paragraphs": [
+          "1. 기존 바탕면을 제거합니다.",
+          "2. 바탕면과 사춤면 주변에 초속경 방수제(마페이 CX-1)를 투입합니다.",
+          "3. 창틀 주변을 도막방수로 다시 시공합니다.",
+          "4. 창틀 주변을 코킹합니다.",
+          "• 단계마다 살수 테스트를 한 뒤 다음 단계를 시공했습니다."
+        ]
+      },
+      {
+        "heading": "시공 사진",
+        "paragraphs": [
+          "• 시공 전: 기존 바탕면을 걷어낸 창호 상부 콘크리트 면의 상태입니다.",
+          "• 시공 후: 보수한 창호 상부 마감 면입니다."
+        ]
+      }
+    ],
+    "representative_image": "assets/images/case-studies/case-056-aluminum-window-frame-leak-mortar-gap-waterproofing/representative.jpg",
+    "before_images": [
+      "assets/images/case-studies/case-056-aluminum-window-frame-leak-mortar-gap-waterproofing/before-01.jpg",
+      "assets/images/case-studies/case-056-aluminum-window-frame-leak-mortar-gap-waterproofing/before-02.jpg",
+      "assets/images/case-studies/case-056-aluminum-window-frame-leak-mortar-gap-waterproofing/before-03.jpg",
+      "assets/images/case-studies/case-056-aluminum-window-frame-leak-mortar-gap-waterproofing/before-04.jpg"
+    ],
+    "process_images": [],
+    "after_images": [
+      "assets/images/case-studies/case-056-aluminum-window-frame-leak-mortar-gap-waterproofing/after-01.jpg",
+      "assets/images/case-studies/case-056-aluminum-window-frame-leak-mortar-gap-waterproofing/after-02.jpg",
+      "assets/images/case-studies/case-056-aluminum-window-frame-leak-mortar-gap-waterproofing/after-03.jpg",
+      "assets/images/case-studies/case-056-aluminum-window-frame-leak-mortar-gap-waterproofing/after-04.jpg"
+    ],
+    "thumbnail": "assets/images/case-studies/case-056-aluminum-window-frame-leak-mortar-gap-waterproofing/representative.jpg",
+    "after": "assets/images/case-studies/case-056-aluminum-window-frame-leak-mortar-gap-waterproofing/after-01.jpg",
+    "before": "assets/images/case-studies/case-056-aluminum-window-frame-leak-mortar-gap-waterproofing/before-01.jpg",
+    "images": [],
+    "featured": false,
+    "representative_images": [
+      "assets/images/case-studies/case-056-aluminum-window-frame-leak-mortar-gap-waterproofing/representative.jpg"
+    ],
+    "representative_alt": "알루미늄 창호 창틀 주변 누수 보수 사진"
+  },
+  {
+    "id": "obsidian-case-055-old-house-rooftop-polymer-cement-elastic-coating-waterproofing",
+    "source": "obsidian",
+    "case_no": "055",
+    "source_note": "data/case-sources/055.md",
+    "draft_file": "data/case-sources/055.md",
+    "review_required": false,
+    "title": "제주 성읍 구옥 옥상방수 - 연삭·드레인 보강·폴리머시멘트·탄성도막",
+    "location": "",
+    "building": "",
+    "category": "누수보수",
+    "date": "",
+    "period": "",
+    "summary": "제주 성읍 구옥의 노후 옥상을 연삭, CX-1 드레인 주변 보강, 폴리머시멘트 방수, 탄성도막방수 순서로 시공하고 창틀 하부 균열부에는 우레탄 인젝션을 적용한 사례입니다.",
+    "problem": "",
+    "method": "",
+    "result": "",
+    "sections": [
+      {
+        "heading": "현장 개요",
+        "paragraphs": [
+          "• 제주 성읍에 위치한 구옥으로, 기존 옥상의 노후화가 진행된 상태였습니다.",
+          "• 단순 보수가 아니라 구조물의 상태와 배수 환경까지 고려한 방수 시스템으로 시공했습니다."
+        ]
+      },
+      {
+        "heading": "적용한 방수 시스템",
+        "paragraphs": [
+          "연삭 → CX-1 드레인 주변 보강 → 폴리머시멘트 방수 → 탄성도막방수 순서로 시공했습니다.",
+          "1. 바탕 정리(연삭): 약한 콘크리트층, 먼지, 오염물, 들뜬 부분을 제거하기 위해 전체를 연삭했습니다.",
+          "2. 배수 개선: 드레인 주변을 연삭해 구배를 잡고 CX-1을 적용해 드레인 주변 취약부를 보강했습니다.",
+          "3. 폴리머시멘트 방수층: 프리믹스와 시멘트를 섞은 폴리머시멘트 방수층을 시공했습니다.",
+          "4. 탄성도막방수 마감: 최종 마감은 탄성도막방수로 진행했습니다.",
+          "5. 창틀 하부 균열부: 우레탄 인젝션을 적용했습니다."
+        ]
+      },
+      {
+        "heading": "우레탄 방수를 선택하지 않은 이유",
+        "paragraphs": [
+          "• 이번 현장은 오래된 구옥이라 노후 콘크리트와 미세균열 가능성, 기존 바탕과의 부착력, 구조물의 움직임, 수분 이동을 함께 검토해 위 시스템을 택했습니다. 우레탄 방수가 나빠서가 아니라 현장 조건에 맞춘 선택입니다."
+        ]
+      },
+      {
+        "heading": "시공 사진",
+        "paragraphs": [
+          "• 대표 사진은 시공 전·후 비교 이미지입니다.",
+          "• 연삭, 드레인 주변 보강(시공 전·후), 폴리머방수 단계와 창틀 하부 균열부 인젝션 관련 사진을 작업 순서대로 실었습니다."
+        ]
+      }
+    ],
+    "representative_image": "assets/images/case-studies/case-055-old-house-rooftop-polymer-cement-elastic-coating-waterproofing/representative.jpg",
+    "before_images": [
+      "assets/images/case-studies/case-055-old-house-rooftop-polymer-cement-elastic-coating-waterproofing/before-01.jpg",
+      "assets/images/case-studies/case-055-old-house-rooftop-polymer-cement-elastic-coating-waterproofing/before-02.jpg"
+    ],
+    "process_images": [
+      "assets/images/case-studies/case-055-old-house-rooftop-polymer-cement-elastic-coating-waterproofing/process-01.jpg",
+      "assets/images/case-studies/case-055-old-house-rooftop-polymer-cement-elastic-coating-waterproofing/process-02.jpg",
+      "assets/images/case-studies/case-055-old-house-rooftop-polymer-cement-elastic-coating-waterproofing/process-03.jpg",
+      "assets/images/case-studies/case-055-old-house-rooftop-polymer-cement-elastic-coating-waterproofing/process-04.jpg",
+      "assets/images/case-studies/case-055-old-house-rooftop-polymer-cement-elastic-coating-waterproofing/process-05.jpg",
+      "assets/images/case-studies/case-055-old-house-rooftop-polymer-cement-elastic-coating-waterproofing/process-06.jpg",
+      "assets/images/case-studies/case-055-old-house-rooftop-polymer-cement-elastic-coating-waterproofing/process-07.jpg",
+      "assets/images/case-studies/case-055-old-house-rooftop-polymer-cement-elastic-coating-waterproofing/process-08.jpg",
+      "assets/images/case-studies/case-055-old-house-rooftop-polymer-cement-elastic-coating-waterproofing/process-09.jpg",
+      "assets/images/case-studies/case-055-old-house-rooftop-polymer-cement-elastic-coating-waterproofing/process-10.jpg",
+      "assets/images/case-studies/case-055-old-house-rooftop-polymer-cement-elastic-coating-waterproofing/process-11.jpg",
+      "assets/images/case-studies/case-055-old-house-rooftop-polymer-cement-elastic-coating-waterproofing/process-12.jpg",
+      "assets/images/case-studies/case-055-old-house-rooftop-polymer-cement-elastic-coating-waterproofing/process-13.jpg",
+      "assets/images/case-studies/case-055-old-house-rooftop-polymer-cement-elastic-coating-waterproofing/process-14.jpg",
+      "assets/images/case-studies/case-055-old-house-rooftop-polymer-cement-elastic-coating-waterproofing/process-15.jpg"
+    ],
+    "after_images": [],
+    "thumbnail": "assets/images/case-studies/case-055-old-house-rooftop-polymer-cement-elastic-coating-waterproofing/representative.jpg",
+    "after": "",
+    "before": "assets/images/case-studies/case-055-old-house-rooftop-polymer-cement-elastic-coating-waterproofing/before-01.jpg",
+    "images": [],
+    "featured": false,
+    "representative_images": [
+      "assets/images/case-studies/case-055-old-house-rooftop-polymer-cement-elastic-coating-waterproofing/representative.jpg"
+    ],
+    "representative_alt": "구옥 옥상방수 시공 전·후 비교 사진",
+    "representative_fit": "contain"
+  },
+  {
+    "id": "obsidian-case-054-old-house-rooftop-waste-concrete-removal-urethane-waterproofing",
+    "source": "obsidian",
+    "case_no": "054",
+    "source_note": "data/case-sources/054.md",
+    "draft_file": "data/case-sources/054.md",
+    "review_required": false,
+    "title": "40년 된 구옥 옥상 누수 - 폐콘 철거 후 우레탄방수",
+    "location": "",
+    "building": "",
+    "category": "누수보수",
+    "date": "",
+    "period": "",
+    "summary": "준공 40년 된 구옥의 증축 옥상에서 누수 원인이던 폐콘 채움층을 철거하고, 메쉬 보강과 우레탄 하도·실란트·중도·상도로 방수했으며 하부에서는 우레탄 인젝션도 적용한 사례입니다.",
+    "problem": "",
+    "method": "",
+    "result": "",
+    "sections": [
+      {
+        "heading": "현장 개요",
+        "paragraphs": [
+          "• 준공한 지 40년 된 구옥입니다. 기존 방수층은 거의 없었고, 평지붕을 증축해 옥상 누수가 심했습니다."
+        ]
+      },
+      {
+        "heading": "누수 상태와 원인",
+        "paragraphs": [
+          "• 옥상 바닥을 폐콘으로 채우고 그 위에 미장을 한 뒤 우레탄으로 방수한 상태였습니다.",
+          "• 출처를 알 수 없는 물이 계속 떨어졌고, 옥상 바닥을 두드려 확인한 끝에 폐콘으로 채워진 공간에 물이 가득 차 있는 것을 알게 됐습니다. 비가 오지 않는 날에도 그 물이 떨어지고 있었습니다.",
+          "• 폐콘을 걷어내자 상당한 양의 폐콘과 물이 내부에 갇혀 있었습니다."
+        ]
+      },
+      {
+        "heading": "시공 과정",
+        "paragraphs": [
+          "• 폐콘을 모두 철거·반출하고 그라인더나 샌딩기로 바탕을 정리했습니다.",
+          "• 누수가 심한 조인트 부위에 집중했고, 구배가 나오지 않는 곳은 구배를 잡았습니다.",
+          "• 조인트 부분은 메쉬를 감았고, 우레탄만으로 감당이 안 되는 곳은 습식으로 보강했습니다.",
+          "• 메쉬 양생 후 우레탄 하도와 조인트 실란트 처리를 했고, 우레탄 실란트는 모든 코너에 적용했습니다.",
+          "• 실란트 처리 후 우레탄 중도와 상도 작업을 했습니다.",
+          "• 하부에서는 우레탄 인젝션도 적용했습니다(이 공정의 사진은 없습니다)."
+        ]
+      },
+      {
+        "heading": "참고",
+        "paragraphs": [
+          "• 부분적인 방수이며, 표면 상태에 따라 표면강화가 필요한 현장도 있습니다."
+        ]
+      }
+    ],
+    "representative_image": "assets/images/case-studies/case-054-old-house-rooftop-waste-concrete-removal-urethane-waterproofing/representative.jpg",
+    "before_images": [
+      "assets/images/case-studies/case-054-old-house-rooftop-waste-concrete-removal-urethane-waterproofing/before-01.jpg",
+      "assets/images/case-studies/case-054-old-house-rooftop-waste-concrete-removal-urethane-waterproofing/before-02.jpg",
+      "assets/images/case-studies/case-054-old-house-rooftop-waste-concrete-removal-urethane-waterproofing/before-03.jpg",
+      "assets/images/case-studies/case-054-old-house-rooftop-waste-concrete-removal-urethane-waterproofing/before-04.jpg"
+    ],
+    "process_images": [
+      "assets/images/case-studies/case-054-old-house-rooftop-waste-concrete-removal-urethane-waterproofing/process-01.jpg",
+      "assets/images/case-studies/case-054-old-house-rooftop-waste-concrete-removal-urethane-waterproofing/process-02.jpg",
+      "assets/images/case-studies/case-054-old-house-rooftop-waste-concrete-removal-urethane-waterproofing/process-03.jpg",
+      "assets/images/case-studies/case-054-old-house-rooftop-waste-concrete-removal-urethane-waterproofing/process-04.jpg",
+      "assets/images/case-studies/case-054-old-house-rooftop-waste-concrete-removal-urethane-waterproofing/process-05.jpg",
+      "assets/images/case-studies/case-054-old-house-rooftop-waste-concrete-removal-urethane-waterproofing/process-06.jpg",
+      "assets/images/case-studies/case-054-old-house-rooftop-waste-concrete-removal-urethane-waterproofing/process-07.jpg",
+      "assets/images/case-studies/case-054-old-house-rooftop-waste-concrete-removal-urethane-waterproofing/process-08.jpg",
+      "assets/images/case-studies/case-054-old-house-rooftop-waste-concrete-removal-urethane-waterproofing/process-09.jpg",
+      "assets/images/case-studies/case-054-old-house-rooftop-waste-concrete-removal-urethane-waterproofing/process-10.jpg",
+      "assets/images/case-studies/case-054-old-house-rooftop-waste-concrete-removal-urethane-waterproofing/process-11.jpg"
+    ],
+    "after_images": [
+      "assets/images/case-studies/case-054-old-house-rooftop-waste-concrete-removal-urethane-waterproofing/representative.jpg",
+      "assets/images/case-studies/case-054-old-house-rooftop-waste-concrete-removal-urethane-waterproofing/after-02.jpg"
+    ],
+    "thumbnail": "assets/images/case-studies/case-054-old-house-rooftop-waste-concrete-removal-urethane-waterproofing/representative.jpg",
+    "after": "assets/images/case-studies/case-054-old-house-rooftop-waste-concrete-removal-urethane-waterproofing/representative.jpg",
+    "before": "assets/images/case-studies/case-054-old-house-rooftop-waste-concrete-removal-urethane-waterproofing/before-01.jpg",
+    "images": [],
+    "featured": false,
+    "representative_images": [
+      "assets/images/case-studies/case-054-old-house-rooftop-waste-concrete-removal-urethane-waterproofing/representative.jpg"
+    ],
+    "representative_alt": "구옥 옥상 폐콘 철거 후 우레탄방수 시공 사진"
+  },
+  {
+    "id": "obsidian-case-053-exterior-wall-diagonal-crack-leak-urethane-injection",
+    "source": "obsidian",
+    "case_no": "053",
+    "source_note": "data/case-sources/053.md",
+    "draft_file": "data/case-sources/053.md",
+    "review_required": false,
+    "title": "외벽 사인장균열 누수 - 우레탄 인젝션과 균열·박락 마감 보수",
+    "location": "",
+    "building": "",
+    "category": "인젝션",
+    "date": "",
+    "period": "",
+    "summary": "노출콘크리트 외벽 개구부 하부의 사인장균열(사선균열)을 따라 누수가 진행된 현장. 우레탄 인젝션으로 관통 균열을 충진하고, 인젝션 패커 제거 후 균열·박락 부위를 크랙실란트와 보수몰탈로 마감 보수한 사례입니다.",
+    "problem": "",
+    "method": "",
+    "result": "",
+    "sections": [
+      {
+        "heading": "현장 개요",
+        "paragraphs": [
+          "• 제주 노출콘크리트 외벽의 개구부(창호) 하부 균열을 보수한 현장입니다.",
+          "• 외벽 누수는 창호 주변과 개구부 하부에서 많이 발생하고, 개구부 누수는 대부분 사인장균열 또는 창틀 사춤 부위에서 생깁니다."
+        ]
+      },
+      {
+        "heading": "누수 부위와 상태",
+        "paragraphs": [
+          "• 개구부 하부의 사인장균열(사선균열)을 통해 누수가 진행되는 것을 확인했습니다.",
+          "• 외벽에는 콘크리트 박락(떨어져 나간) 부위도 있었습니다."
+        ]
+      },
+      {
+        "heading": "적용한 공법 — 우레탄 인젝션",
+        "paragraphs": [
+          "• 사인장균열을 통해 관통된 균열을 우레탄 인젝션으로 보수했습니다.",
+          "• 인젝션 작업 중 외부로 우레탄이 발포되며 균열 부위를 충진합니다.",
+          "• 충분히 발포가 진행된 뒤 우레탄을 제거하고, 콘크리트 탈락 부위를 보수합니다."
+        ]
+      },
+      {
+        "heading": "마감 보수",
+        "paragraphs": [
+          "• 내부: 인젝션 시공이 끝난 뒤 인젝션 패커를 제거하고 균열 부위를 크랙실란트(테라코 테라크랙씰)로 보수합니다.",
+          "• 외부: 박락 부위의 상태에 따라 크랙실란트(크랙실5000) 또는 고강도보수몰탈(마페이 CD1)로 보수한 뒤 콘채(노출콘크리트 면보수재)로 마감 보수합니다."
+        ]
+      },
+      {
+        "heading": "시공 사진",
+        "paragraphs": [
+          "• 시공 전: 실내 균열부와 외벽 박락 부위 사진입니다.",
+          "• 시공 중: 균열에 인젝션 패커를 설치한 모습과, 인젝션 중 외부로 우레탄이 발포된 모습입니다.",
+          "• 시공 후: 외벽 박락 부위와 실내 균열부의 보수 후 사진입니다."
+        ]
+      }
+    ],
+    "representative_image": "assets/images/case-studies/case-053-exterior-wall-diagonal-crack-leak-urethane-injection/representative.jpg",
+    "before_images": [
+      "assets/images/case-studies/case-053-exterior-wall-diagonal-crack-leak-urethane-injection/before-01.png",
+      "assets/images/case-studies/case-053-exterior-wall-diagonal-crack-leak-urethane-injection/before-02.png",
+      "assets/images/case-studies/case-053-exterior-wall-diagonal-crack-leak-urethane-injection/before-03.png",
+      "assets/images/case-studies/case-053-exterior-wall-diagonal-crack-leak-urethane-injection/before-04.png",
+      "assets/images/case-studies/case-053-exterior-wall-diagonal-crack-leak-urethane-injection/before-05.png",
+      "assets/images/case-studies/case-053-exterior-wall-diagonal-crack-leak-urethane-injection/before-06.png"
+    ],
+    "process_images": [
+      "assets/images/case-studies/case-053-exterior-wall-diagonal-crack-leak-urethane-injection/process-01.png",
+      "assets/images/case-studies/case-053-exterior-wall-diagonal-crack-leak-urethane-injection/representative.jpg"
+    ],
+    "after_images": [
+      "assets/images/case-studies/case-053-exterior-wall-diagonal-crack-leak-urethane-injection/after-01.png",
+      "assets/images/case-studies/case-053-exterior-wall-diagonal-crack-leak-urethane-injection/after-02.png",
+      "assets/images/case-studies/case-053-exterior-wall-diagonal-crack-leak-urethane-injection/after-03.png",
+      "assets/images/case-studies/case-053-exterior-wall-diagonal-crack-leak-urethane-injection/after-04.png",
+      "assets/images/case-studies/case-053-exterior-wall-diagonal-crack-leak-urethane-injection/after-05.png",
+      "assets/images/case-studies/case-053-exterior-wall-diagonal-crack-leak-urethane-injection/after-06.png"
+    ],
+    "thumbnail": "assets/images/case-studies/case-053-exterior-wall-diagonal-crack-leak-urethane-injection/representative.jpg",
+    "after": "assets/images/case-studies/case-053-exterior-wall-diagonal-crack-leak-urethane-injection/after-01.png",
+    "before": "assets/images/case-studies/case-053-exterior-wall-diagonal-crack-leak-urethane-injection/before-01.png",
+    "images": [],
+    "featured": false,
+    "representative_images": [
+      "assets/images/case-studies/case-053-exterior-wall-diagonal-crack-leak-urethane-injection/representative.jpg"
+    ],
+    "representative_alt": "외벽 사인장균열 우레탄 인젝션 시공 사진"
+  },
+  {
     "id": "obsidian-case-052-steel-frame-window-leak-rust-silicone-repair",
     "source": "obsidian",
     "case_no": "052",

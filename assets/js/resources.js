@@ -314,7 +314,7 @@ const RESOURCES = [
       </ul>
       <h3>8. 어떤 서비스로 이어지는가</h3>
       <ul>
-        <li>물이 흐르는 활성 누수 → <a href="waterproof.html">인젝션 특수방수</a></li>
+        <li>물이 흐르는 활성 누수 → <a href="waterproof.html">누수보수·특수방수</a></li>
         <li>안정된 균열의 단면 회복 → <a href="reinforcement.html">콘크리트 보수보강</a>의 에폭시 주입</li>
         <li>철근부식·박락 → <a href="reinforcement.html">콘크리트 보수보강</a>의 단면복구</li>
         <li>내력 부족 → 구조검토 후 탄소섬유 보강</li>
@@ -412,7 +412,7 @@ const RESOURCES = [
         <li>철근부식이 진행 중인 부위를 주입만으로 마감해 얼마 뒤 같은 자리가 다시 부푼 경우</li>
       </ul>
       <h3>12. 어떤 서비스로 이어지는가</h3>
-      <p>안정된 균열의 주입과 단면복구는 <a href="reinforcement.html">콘크리트 보수보강</a>에서, 물이 흐르는 활성 누수의 1차 지수는 <a href="waterproof.html">인젝션 특수방수</a>에서 다룹니다. 노출콘크리트 면에서 균열선까지 눈에 띄지 않게 정리해야 한다면 <a href="concrete.html">노출콘크리트 면보수</a>가 이어집니다. 세 가지를 어떤 순서로 조합할지는 <a href="guide/repair-method-selection-014.html">공법 선정 흐름</a>에 정리해 두었습니다.</p>
+      <p>안정된 균열의 주입과 단면복구는 <a href="reinforcement.html">콘크리트 보수보강</a>에서, 물이 흐르는 활성 누수의 1차 지수는 <a href="waterproof.html">누수보수·특수방수</a>에서 다룹니다. 노출콘크리트 면에서 균열선까지 눈에 띄지 않게 정리해야 한다면 <a href="concrete.html">노출콘크리트 면보수</a>가 이어집니다. 세 가지를 어떤 순서로 조합할지는 <a href="guide/repair-method-selection-014.html">공법 선정 흐름</a>에 정리해 두었습니다.</p>
     `
   },
   {
@@ -555,7 +555,7 @@ const RESOURCES = [
       <p>제주는 강수가 많고 태풍의 영향을 받습니다. 시공 직후의 검사만으로 끝내지 않고, <strong>첫 큰 강우 이후와 태풍 이후</strong>를 점검 일정에 넣어 두는 편이 현실적입니다. 외벽·옥상·지하주차장·옹벽처럼 물과 바람에 직접 노출되는 부위에서 특히 그렇습니다.</p>
       <p>여름철 일사를 직접 받는 외부 부재는 표면온도가 크게 올라갑니다. 접착 계면의 온도 조건은 재료 시방의 범위 안에 있어야 하므로, 표면온도를 실측하고 작업 시간대를 조정합니다.</p>
       <h3>12. 어떤 서비스로 이어지는가</h3>
-      <p>보강 전 단계인 취약부 제거·철근 처리·단면복구는 <a href="reinforcement.html">콘크리트 보수보강</a>에서 함께 진행합니다. 보강 원리와 적용 범위는 <a href="guide/carbon-fiber-strengthening-012.html">탄소섬유시트(CFRP) 구조보강</a>에, 보강 전에 누수를 먼저 잡아야 하는 경우는 <a href="waterproof.html">인젝션 특수방수</a>에 정리되어 있습니다.</p>
+      <p>보강 전 단계인 취약부 제거·철근 처리·단면복구는 <a href="reinforcement.html">콘크리트 보수보강</a>에서 함께 진행합니다. 보강 원리와 적용 범위는 <a href="guide/carbon-fiber-strengthening-012.html">탄소섬유시트(CFRP) 구조보강</a>에, 보강 전에 누수를 먼저 잡아야 하는 경우는 <a href="waterproof.html">누수보수·특수방수</a>에 정리되어 있습니다.</p>
     `
   },
   {
@@ -804,7 +804,7 @@ const RESOURCES = [
       <h3>발수제 선택 기준</h3>
       <p>실란·실록산계는 침투 깊이가 깊어 노출콘크리트 면에 적합합니다. 표면에 막을 만드는 코팅형은 광택과 색 변화를 동반하므로 노출면에는 권하지 않습니다.</p>
       <h3>발수는 방수가 아닙니다</h3>
-      <p>발수제는 표면의 흡수를 줄이는 보호재입니다. 균열·조인트·창호 주변처럼 물이 실제로 새는 경로가 있으면 먼저 보수합니다. 적용 범위와 시공 순서는 <a href="concrete-surface-protection.html#water-repellent">제주 콘크리트 발수제 시공</a>에, 누수 차단은 <a href="waterproof.html">인젝션 특수방수</a>에 정리했습니다.</p>
+      <p>발수제는 표면의 흡수를 줄이는 보호재입니다. 균열·조인트·창호 주변처럼 물이 실제로 새는 경로가 있으면 먼저 보수합니다. 적용 범위와 시공 순서는 <a href="concrete-surface-protection.html#water-repellent">제주 콘크리트 발수제 시공</a>에, 누수 차단은 <a href="waterproof.html">누수보수·특수방수</a>에 정리했습니다.</p>
     `
   },
   {
